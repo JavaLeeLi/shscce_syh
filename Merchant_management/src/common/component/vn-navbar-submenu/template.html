@@ -1,0 +1,7 @@
+<ul class="nav-submenu"
+    ng-class="{'show': $state.includes(showOn), 'current': $state.includes(showOn)}">
+    <li ng-class="{'active': $state.includes(menu.name)}"
+        ng-repeat="menu in menus track by $index">
+        <a ui-sref="{{ menu.name }}" >{{ menu.text}}</a>
+    </li>
+</ul>

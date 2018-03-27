@@ -1,0 +1,83 @@
+<div id="aui-slide-img" vs-slide="">
+    <div class="aui-slide-wrap">
+        <div class="aui-slide-node bg-dark">
+            <!--<img src="../../image/l1.png"/>-->1
+        </div>
+        <div class="aui-slide-node bg-dark">
+            <!--<img src="../../image/l2.png"/>-->2
+        </div>
+        <div class="aui-slide-node bg-dark">
+            <!--<img src="../../image/l3.png"/>-->3
+        </div>
+    </div>
+    <div class="aui-slide-page-wrap"><!--分页容器--></div>
+</div>
+
+<div class="aui-searchbar" id="search">
+    <div class="aui-searchbar-input aui-border-radius" tapmode ng-click="vm.a = !vm.a">
+        <i class="aui-iconfont aui-icon-search"></i>
+        <form action="javascript:search();">
+            <input type="search" placeholder="请输入搜索内容" id="search-input">
+        </form>
+    </div>
+    <div class="aui-searchbar-cancel" ng-class="{aaa:vm.a}" tapmod>取消</div>
+</div>
+
+<div id="aui-slide-bar" vs-slide="">
+    <div class="aui-slide-wrap">
+        <div class="aui-slide-node">
+            <div class="aui-grid">
+                <div class="aui-row">
+                    <div class="aui-col-xs-4">
+                        <div class="aui-badge">88</div>
+                        <i class="aui-iconfont aui-icon-home"></i>
+                        <div class="aui-grid-label">首页</div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <i class="aui-iconfont aui-icon-gear"></i>
+                        <div class="aui-grid-label">设置</div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <i class="aui-iconfont aui-icon-map"></i>
+                        <div class="aui-grid-label">地图</div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <i class="aui-iconfont aui-icon-calendar"></i>
+                        <div class="aui-grid-label">日历</div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="aui-badge"></div>
+                        <i class="aui-iconfont aui-icon-date"></i>
+                        <div class="aui-grid-label">日期</div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="aui-dot"></div>
+                        <i class="aui-iconfont aui-icon-cart"></i>
+                        <div class="aui-grid-label">购物车</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aui-slide-node aui-slide-node-middle aui-slide-node-center">
+            <div class="aui-content-padded">
+                <span class="aui-text-danger">AUI Slide</span> 轮播组件不只局限于放置图片，可以自定义内容，分页样式有圆点(dot)，线条(line),结合AUI
+                Flex来实现图片及内容的水平、垂直居中
+            </div>
+        </div>
+        <div class="aui-slide-node aui-bg-warning aui-slide-node-middle aui-slide-node-center">
+            <div class="aui-content-padded">
+                <span class="aui-text-danger">AUI Slide</span>提供了常用的配置属性，可以自定义宽度，高度，自动播放，分页器样式等，支持无缝循环轮播
+            </div>
+        </div>
+        <div class="aui-slide-node bg-dark">
+            <!--<img src="../../image/l1.png" />-->1
+        </div>
+        <div class="aui-slide-node bg-dark">
+            <!--<img src="../../image/l2.png" />-->2
+        </div>
+        <div class="aui-slide-node bg-dark">
+            <!--<img src="../../image/l3.png" />-->3
+        </div>
+    </div>
+    <div class="aui-slide-page-wrap"><!--分页容器--></div>
+</div>

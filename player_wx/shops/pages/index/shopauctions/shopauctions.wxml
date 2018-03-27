@@ -1,0 +1,141 @@
+<view class='main'>
+    <view class='main-details'>
+        <!--顶部关注  -->
+        <view class='commodity-header'>
+            <view class='header-left'>
+                <view class='header-left-img'>
+                    <image src='../../image/imgError.jpg'></image>
+                </view>
+                <view class='header-left-username'>
+                    <view>
+                        <text>she</text>
+                    </view>
+                    <view>
+                        <text>Lv.4</text>
+                        <text>个人认证</text>
+                    </view>
+                </view>
+            </view>
+            <view class='header-right'>
+                <view class='header-right-left'>
+                    <icon type="success" size="20" />
+                </view>
+                <view class='header-right-right'>
+                    <icon type="success" size="20" />
+                </view>
+            </view>
+        </view>
+        <!--顶部轮播  -->
+        <view class='commodity-shuffling'>
+            <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}">
+                <block wx:for="{{movies}}" wx:for-index="index">
+                    <swiper-item>
+                        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <!--商品详情  -->
+
+        <view class='commodity-detail'>
+            <view class='commodity-detail-top'>
+                <view class='commodity-detail-top-left'>
+                    <view class='commodity-detail-top-left-img'>
+                        <image src='../../image/imgError.jpg'></image>
+                    </view>
+                </view>
+                <view class='commodity-detail-top-right'>
+                    <view class='commodity-detail-top-right-top'>
+                        <text>哦gj路</text>
+                    </view>
+                    <view class='commodity-detail-top-right-bottom'>
+                        <text>
+                            <text class='commodity-detail-top-right-bottom-freight'>￥59,859.00</text>
+                            <text>运费：8.00</text>
+                        </text>
+                    </view>
+                </view>
+            </view>
+
+            <view class='commodity-detail-time'>
+                <view class='commodity-detail-time-left'>
+                    <view class='commodity-detail-time-left-img'>
+                        <image src='../../image/imgError.jpg'></image>
+                    </view>
+                    <view class='detail-time-left-center'>加价</view>
+                    <view class='detail-time-left-right'>￥89</view>
+                </view>
+                <view class='commodity-detail-time-right'>
+                    <view class='detail-time-right-end'>
+                        已截止
+                    </view>
+                </view>
+
+
+            </view>
+
+            <!--暂无出价  -->
+
+            <view class='bid'>
+            暂无出价
+            </view>
+            <!--发布按钮  -->
+            <view class='commodity-submit'>
+ <button class="weui-btn" type="warn">出价</button>
+            </view>
+
+
+            <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+
+            <!--使用animation属性指定需要执行的动画-->
+            <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+                <!--drawer content-->
+                <view class="drawer_title">弹窗标题</view>
+                <view class="drawer_content">
+                    <view class='sell_dialog_content-top'>
+                        <view class='sell_dialog_content-top-img'>
+                            <image src='../../image/imgError.jpg'></image>
+                        </view>
+                        <view class='sell_dialog_content-top-money'>
+                            <view class='money-text'>
+                                <text>￥60.00</text>
+                            </view>
+                            <view class='money-text-bottom'>
+                                <text>
+                                    <text>当前库存</text>
+                                    <text>30</text>
+                                </text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='sell_dialog_content-bottom'>
+                        <view class='sell_dialog_content-bottom-top'>数量:</view>
+                        <view class='shop-quantity'>
+                            <text bindtap="minusCount">-</text>
+                            <input value='{{num}}'></input>
+                            <text bindtap="addCount">+</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="btn_ok" wx:if="{{showModalJion==false}}">
+                    <view bindtap="powerDrawer" data-statu="close" class='give-up'>
+                        <button type='button'>放弃</button>
+                    </view>
+                    <view bindtap="powerDrawernavTo" data-statu="close" class='determine'>
+                        <button type='submit'>确定</button>
+                    </view>
+                </view>
+                <view class="btn_ok" wx:if="{{showModalJion==true}}">
+                    <view bindtap="powerDrawerJion" data-statu="close" class='give-up'>
+                        <button type='button'>放弃</button>
+                    </view>
+                    <view bindtap="powerDrawerJionOpen" data-statu="close" class='determine'>
+                        <button type='submit'>确定</button>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>

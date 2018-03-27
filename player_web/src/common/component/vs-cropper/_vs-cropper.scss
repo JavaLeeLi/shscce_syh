@@ -1,0 +1,24 @@
+$mod: '.cm_cropper';
+
+#{$mod}{
+
+  @include clearfix;
+
+  .source{
+    float: left;
+    max-width: 70%;
+    max-height: 300px;
+
+    img{
+      height: 100%;
+    }
+  }
+
+  .preview{
+    float: left;
+    margin-left: 15px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+  }
+}

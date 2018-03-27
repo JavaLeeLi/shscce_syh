@@ -1,0 +1,40 @@
+.containers {
+    background-color: white;
+    font-size: 14px;
+}
+.main{
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+}
+.main-list{
+    padding: 10px;
+    width: 100%;
+    background-color: white;
+}
+.main-list-item{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.address-top
+{
+    width: 100%;
+}
+.address-center{
+    width: 100%;
+}
+.address-botton{
+    width: 100%;
+}
+.address-botton-success{
+    display: flex;
+    justify-content: flex-start;
+}
+.success{
+    margin-right: 10px;
+}
+.address-botton-input{
+    background-color: red;
+    width: 16px;
+    height: 16px;
+}

@@ -1,0 +1,37 @@
+page {
+    background-color: #edf0f3;
+}
+
+.focuson {
+    width: 100%;
+    background-color: gray;
+    font-size: 14px;
+}
+
+.focuson-top {
+    width: 100%;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+.top-img {
+    width: 20%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.top-img image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+.focuson-right{
+    width: 70%;
+    text-align: start;
+    padding-top: 5px;
+}
+.right-top{
+    display: flex;
+    justify-content: space-between;
+}

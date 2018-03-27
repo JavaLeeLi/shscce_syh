@@ -1,0 +1,42 @@
+<!-- 发布 -->
+<view class='containers' style='height:{{infoheight}}px'>
+    <!--测试  -->
+    <view class='main'>
+        <view class='main-top'>
+            <view class='purchase'>
+                <navigator url='../posted/purchase/purchase' class='purchasenav'>
+                    <view>
+                        <view class='purchase-sell-top'>
+                            <image src='../image/buy.png'></image>
+                        </view>
+                        <view class='purchase-sell-bottom'>
+                            <view>求购</view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class='main-bottom'>
+            <view class='sold'>
+                <navigator url='../posted/sold/sold'>
+                    <view class='sold-sell-top'>
+                        <image src='../image/sell.png'></image>
+                    </view>
+                    <view class='sold-sell-botton'>
+                        <view>出售</view>
+                    </view>
+                </navigator>
+            </view>
+            <view class='bidding'>
+                <navigator url='../posted/bidding/bidding'>
+                    <view class='bidding-sell-top'>
+                        <image src='../image/auction.png'></image>
+                    </view>
+                        <view class='bidding-sell-botton'>
+                           <view>竞拍</view>
+                        </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

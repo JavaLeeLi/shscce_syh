@@ -1,0 +1,76 @@
+<view class='containers'>
+    <view class='order-top'>
+        <view class='top-left'>
+            <image src='../../image/index.png'></image>
+        </view>
+        <view class='top-right'>
+            <view class='top-right-name'>
+                <text> 胡正新test1 13212312321</text>
+            </view>
+            <view class='top-right-address'>
+                <text>北京市 东城区 详细地址</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='order-conter'>
+        <view class='order-list-name'>
+            <view class='list-name-img'>
+                <image src='../../image/imgError.jpg'></image>
+            </view>
+            <view class='list-name-right'>
+                <view class='name-right-top'>
+                    <text>儿童卫衣</text>
+                </view>
+                <view class='name-right-conter'>
+                    <text>￥1000.0</text>
+                </view>
+                <view class='name-right-botton'>
+                    <text>￥1</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='order-treatment'>
+        <view class='treatment'>
+            <text>店铺优惠</text>
+            <text>￥0.00</text>
+        </view>
+    </view>
+    <view class='order-postage'>
+        <view class='postage'>
+            <text>邮费</text>
+            <text>￥0.00</text>
+        </view>
+    </view>
+
+
+    <view class='order-message'>
+        <view class='messages'>
+            <text>买家留言:</text>
+            <textarea>.。</textarea>
+        </view>
+    </view>
+
+    <view class='order-coupons'>
+        <view class='coupons'>
+            <text>使用优惠券</text>
+            <text>￥0.00</text>
+        </view>
+    </view>
+    <view class='order-total'>
+        <view class='totals'>
+            <text>订单总额</text>
+            <text>￥0.00</text>
+        </view>
+    </view>
+    <view class="carts-footer">
+        <view class='footer-future'>
+            <text>合计</text>
+        </view>
+        <view class='footer-value'>
+            <text>￥120.0</text>
+        </view>
+        <view class="button">结算</view>
+    </view>
+</view>

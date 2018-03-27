@@ -1,0 +1,137 @@
+<view>
+<view wx:if="{{carts!=null}}">
+    <view class='sold-return'>
+        <view class='return'></view>
+        <view class='sold-sell'>
+            <text>购物车</text>
+        </view>
+        <view class='sold-sell-save'>
+            <view class='button-save' bindtap='shopEdit' wx:if='{{save==false?true:false}}'>编辑</view>
+            <view class='button-save' bindtap='shopEdit' wx:if='{{save==true?true:false}}'>完成</view>
+        </view>
+    </view>
+    <view class="weui-cells-center">
+        <view wx:for="{{carts}}" class="carts-item" data-id='{{index}}' wx:key="*this">
+            <label class="weui-cell weui-check__label">
+                <view class='shop-list-che'>
+                    <icon wx:if="{{item.checked}}" type="success_circle" size="20" class="my-check" bindtap='checkUserList' data-checked='{{item.checked}}' data-index='{{index}}' data-id='{{index}}' data-nameshop='checkUserList' />
+                    <icon wx:else type="circle" size="20" class="my-check" bindtap='checkUserList' data-checked='{{item.checked}}' data-index='{{index}}' data-id='{{index}}' data-nameshop='checkUserList' />
+                </view>
+                <view class='shop-user'>
+                    <view class='shop-user-info'>
+                        <view class='user-info-img'>
+                            <image src='../image/imgError.jpg'></image>
+                        </view>
+                        <view class='shop-user-info-right'>
+                            <view class='user-info-name'>
+                                <text>{{item.name}}</text>
+                            </view>
+                            <view class='user-info-grade'>
+                                <text>
+                                    <text>Lv.0</text>
+                                    <text>未认证</text>
+                                </text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='shop-arrow' wx:if='{{selectedit==false?true:false}}'>
+                    <image src='../image/arrow.png'></image>
+                </view>
+                <view class='shop-arrow' wx:else>
+                    <image src='../image/redclose.png'></image>
+                </view>
+            </label>
+            <!--商品列表  -->
+            <view wx:for="{{carts[index].listitem}}" wx:for-item="cell" wx:for-index="cellindex" wx:key="*this">
+                <view class='shop-list'>
+                    <view class='shop-list-che'>
+                        <icon wx:if="{{cell.checked}}" type="success_circle" data-type='success_circle' size="20" bindtap="bindCheckbox" data-index='{{cellindex}}' class="my-check" data-id='{{index}}' data-checked='{{cell.checked}}' />
+                        <icon wx:else type="circle" size="20" bindtap="bindCheckbox" class="my-check" data-index='{{cellindex}}' data-id='{{index}}' data-checked='{{cell.checked}}' />
+                    </view>
+                    <view class='shop-list-info'>
+                        <view class='user-list-img'>
+                            <image src="{{cell.image}}"></image>
+                        </view>
+                        <view class='shop-list-info-right' wx:if='{{selectedit==false?true:false}}'>
+                            <view class='shop-list-name'>
+                                <text>儿童卫衣</text>
+                            </view>
+
+                            <view class='shop-list-center'>
+                                <view>卫衣卫衣卫衣卫衣卫衣</view>
+                                <view class='shop-list-center-right'>
+                                    <text>x</text>{{cell.num}}</view>
+                            </view>
+                            <view class='shop-list-botton'>
+                                <view>全品</view>
+                                <view class='shop-list-botton-right'>
+                                    <text>￥</text>{{cell.price}}</view>
+                            </view>
+                        </view>
+                        <view class='shop-list-info-right' wx:if='{{selectedit==true?true:false}}'>
+
+                            <view class='shop-list-name'>
+                                <text>儿童卫衣</text>
+                            </view>
+                            <view class='shop-list-center'>
+                                <view class="stepper">
+                                    <view class='jian'>
+                                        <!-- 减号 -->
+                                        <image src='../image/minus.png' class="{{minusStatuses[index]}}" data-shopid="{{index}}" data-value='{{cell.num}}' data-id="{{cellindex}}" bindtap="bindMinus" data-checked='{{cell.checked}}'></image>
+                                    </view>
+                                    <view class='values'>
+                                        <!-- 数值 -->
+                                        <input type="number" bindchange="bindManual" value="{{cell.num}}" />
+                                    </view>
+                                    <view class='jia'>
+                                        <!-- 加号 -->
+                                        <image src='../image/plus.png' class="normal" data-id="{{cellindex}}" data-value='{{cell.num}}' data-shopid='{{index}}' bindtap="bindPlus" data-checked='{{cell.checked}}'></image>
+                                    </view>
+
+                                </view>
+                                <view class='shop-list-center-right'>
+                                    <text>x</text>{{cell.num}}</view>
+                            </view>
+
+                            <view class='shop-list-botton'>
+                                <view>全品</view>
+                                <view class='shop-list-botton-right'>
+                                    <text>￥</text>{{cell.price}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--  结算-->
+    <view class="carts-footer">
+        <view bindtap="bindSelectAll" class='carts-left' data-name='selectAll'>
+            <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20" />
+            <icon wx:else type="circle" size="20" />
+            <text>全选</text>
+        </view>
+        <view>
+            <view class='totalnumber'>{{total}}</view>
+            <view class='shop-freight'>不含运费</view>
+        </view>
+        <view wx:if='{{selectedit==false?true:false}}' class="button" bindtap='saveClearing'>结算</view>
+        <view wx:else class="button" bindtap='emptying'>清空</view>
+    </view>
+</view>
+    <!--购物车空的  -->
+
+    <view wx:else  class='shop-em' style='height:{{infoheight}}px'>
+        <view class='shop-em-top'>
+            <view class='shop-em-img'>
+                <image src='../image/shoppingCar-d.png'></image>
+            </view>
+        </view>
+        <view class='shop-em-top'>
+            <view>
+                你的购物车空空如也
+            </view>
+        </view>
+    </view>
+</view>

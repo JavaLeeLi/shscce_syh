@@ -1,0 +1,60 @@
+
+    <template name="classshop">
+        <view class='class-shop-list'>
+            <navigator url='../index/shopdetails/shopdetails'>
+                <view class='class-shop-list-item'>
+                    <view class='class-shop-list-item-top'>
+                        <view class='class-shop-list-item-top-left'>
+                            <view class='class-shop-list-item-top-left-box'>
+                                <image src='../image/chushou.png'></image>
+                            </view>
+                        </view>
+                        <view class='class-shop-list-item-top-right'>
+                            <view class='class-shop-list-item-top-right-left'>
+                                <view class='class-shop-list-item-top-right-left-top'>
+                                    <text>测试商品发布</text>
+                                </view>
+                                <view class='class-shop-list-item-top-right-left-botton'>
+                                    <view class='class-shop-list-item-top-right-left-botton-left'>
+                                        <text>￥280.00</text>
+                                    </view>
+                                    <view class='class-shop-list-item-top-right-left-botton-right'>
+                                        <text>
+                                            <text>邮费:</text>
+                                            <text>￥5.0</text>
+                                        </text>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class='class-shop-list-item-top-right-right'>
+                                <view class='class-shop-list-item-top-right-right-img'>
+                                    <image src='../image/imgError.jpg'></image>
+                                </view>
+                                <view class='class-shop-list-item-top-right-right-box'>
+                                    <view class='class-shop-list-item-top-right-right-box-top'>
+                                        <text>she</text>
+                                    </view>
+                                    <view class='class-shop-list-item-top-right-right-box-botton'>
+                                        <text>Lv 4</text>
+                                        <text>未认证</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <!--中间  -->
+                    <view class='class-shop-list-item-center'>
+                        <view></view>
+                    </view>
+                    <!--底部  -->
+                    <scroll-view class='class-shop-list-item-botton' scroll-x="{{true}}">
+                    <view class='class-shop-img'>
+                        <view class='class-shop-list-item-bottom-img' wx:for="{{item}}">
+                            <image src="{{item.pic}}"></image>
+                        </view>
+                        </view>
+                    </scroll-view>
+                </view>
+            </navigator>
+        </view>
+    </template>

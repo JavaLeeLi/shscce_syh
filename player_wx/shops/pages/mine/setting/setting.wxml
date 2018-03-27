@@ -1,0 +1,34 @@
+<!--pages/mine/setting/setting.wxml-->
+<view style='height:{{heightInfo}}px' class='main'>
+    <view class='setting-top'>
+        <view class='setting-center'>
+            <view class='setting-center-left'>
+                修改登录密码
+            </view>
+            <view class='setting-center-right'>
+                <view class='setting-center-right-img'>
+                    <image src='../../image/arrow.png'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class='setting-top'>
+        <view class='setting-center'>
+            <view class='setting-center-left'>
+                关于上邮汇
+            </view>
+            <view class='setting-center-right'>
+                <view class='setting-center-right-img'>
+                    <image src='../../image/arrow.png'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+
+    <view class='set-btn'>
+        <button type='warn'>退出登录</button>
+    </view>
+</view>

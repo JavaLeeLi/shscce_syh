@@ -1,0 +1,504 @@
+/**index.wxss**/
+
+.container {
+    width: 100%;
+}
+
+.home {
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+}
+
+.home-top {
+    display: flex;
+    width: 100%;
+    height: 2.2rem;
+    background-color: black;
+    overflow: hidden;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-top-left {
+    width: 10%;
+    display: flex;
+}
+
+.home-top-left image {
+    max-width: 100%;
+    display: block;
+    width: 32px;
+    height: 30px;
+}
+
+.home-top-center {
+    width: 70%;
+    display: flex;
+    background-color: gray;
+    border-radius: 5px;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    align-items: center;
+}
+
+.home-top-center-icon {
+    margin-top: 3px;
+}
+
+.home-top-search {
+    position: relative;
+    top: 8px;
+}
+
+.home-top-center input {
+    color: white;
+}
+
+.home-top-right {
+    width: 15%;
+    display: flex;
+}
+
+.home-top-right image {
+    max-width: 100%;
+    width: 32px;
+    height: 30px;
+    justify-content: center;
+}
+
+.rolling {
+    width: 100%;
+    height: 200px;
+}
+
+.rolling image {
+    height: 200px;
+    width: 100%;
+}
+
+.home-class-bkg {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.home-class-top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.home-class-top .home-class-list:last-child {
+    border-right: none;
+}
+
+.home-class-list {
+    display: flex;
+    width: 23%;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid black;
+}
+
+.home-class-list image {
+    width: 50px;
+    height: 50px;
+}
+
+.home-grid-list-hr {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin: 10px;
+}
+
+.home-content {
+    width: 100%;
+    background-color: #f7f7f7;
+}
+
+.content-top {
+    width: 100%;
+    height: 40px;
+    background-color: #f7f7f7;
+}
+
+.content-top-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.content-hr {
+    width: 20%;
+    height: 1px;
+    background-color: black;
+}
+
+.content-kuai {
+    width: 7px;
+    height: 7px;
+    background-color: black;
+    transform: rotate(45deg);
+    margin: 0 10px;
+}
+
+.content-conter {
+    width: 100%;
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.conter-top {
+    display: flex;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.recommend-box-scroll {
+    white-space: nowrap;
+    display: flex;
+}
+
+.hotGoodList {
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 7px 7px 5px #888;
+    margin-right: 10px;
+}
+
+.hotGoodList image {
+    width: 100%;
+    height: 130px;
+}
+
+.recommend-paice {
+    color: red;
+}
+
+.recommend-user {
+    display: flex;
+}
+
+.recommend-user-left image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
+.home-record {
+    width: 100%;
+    display: flex;
+    background-color: gray;
+}
+
+.record-left {
+    width: 40%;
+    padding: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.record-right {
+    width: 60%;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    z-index: 500;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid black;
+    height: 60px;
+}
+
+.navbar__slider {
+    position: absolute;
+    display: block;
+    content: " ";
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    background-color: red;
+    transition: transform 0.3s;
+}
+.navbar__title {
+    display: inline-block;
+    font-size: 15px;
+    max-width: 8em;
+    text-align: center;
+}
+
+.navbar__item {
+    position: relative;
+    display: block;
+    flex: 1;
+    padding: 10rpx 0;
+    text-align: center;
+    font-size: 0;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+
+.navbar__item_on {
+    color: red;
+}
+
+.home-shop {
+    width: 100%;
+    height: 100%;
+}
+
+.home-sell {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 0 10px 10px;
+}
+
+.sell-item {
+    width: 100%;
+}
+
+.sell-top {
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sell-top-left {
+    width: 15%;
+}
+
+.sell-top-left-box {
+    width: 40px;
+    text-align: center;
+    height: 100%;
+    padding: 10px 0 0;
+    background-color: red;
+}
+
+.sell-top-left-box image {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.sell-top-left-box::after {
+    content: ' ';
+    border: 20px solid white;
+    border-bottom: transparent;
+    border-top-left-radius: 60%;
+    border-top-right-radius: 30%;
+    position: relative;
+    top: 15px;
+}
+
+.sell-top-right {
+    width: 85%;
+    display: flex;
+    align-items: center;
+}
+
+.top-right-botton {
+    display: flex;
+}
+
+.top-right-left {
+    width: 53%;
+    padding-right: 10px;
+    font-size: 16px;
+}
+
+.top-right-right {
+    width: 47%;
+    display: flex;
+    align-items: center;
+}
+
+.top-right-right-img image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.sell-botton {
+    width: 100%;
+    display: flex;
+    margin-top: 15px;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.sell-botton-img {
+    position: relative;
+    width: 30%;
+    height: 5rem;
+    margin-right: 2%;
+    border: 2px solid #9e9e9e;
+    border-radius: 5px;
+    margin-left: 5%;
+}
+
+.sell-botton-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.home-sell-bgk {
+    background-color: gray;
+    width: 100%;
+}
+
+.home-sell-bgk:last-child {
+    margin-bottom: 100px;
+}
+
+.contentHeights {
+    width: 100%;
+    height: 100%;
+}
+
+/*拍卖商品  */
+
+.auction-center {
+    background-color: white;
+    padding: 10px 15px;
+}
+
+.auction-center-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.auction-center-top-botton {
+    color: red;
+}
+
+.auction-botton {
+    background-color: black;
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.auction-botton-img {
+    background-color: black;
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+}
+
+/*拍卖商品  */
+
+.recommend_scroll_x_box {
+    height: 265rpx;
+    white-space: nowrap;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.recommend_hot_box {
+    width: 230rpx;
+    height: 245rpx;
+    margin-right: 44rpx;
+    display: inline-block;
+}
+
+.recommend_hot_box-img {
+    width: 120px;
+}
+
+.recommend_hot_image {
+    width: 100%;
+    height: 100px;
+    border: 2px solid #9e9e9e;
+}
+
+.recommend_hot_box-money {
+    color: white;
+    text-align: center;
+}
+
+/*滚动数据  */
+
+.swiper_container {
+    height: 55rpx;
+    width: 80vw;
+}
+
+.swiper_item {
+    font-size: 25rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 2px;
+}
+
+.swiper_item-list {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/*截止  */
+
+.float-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+}
+
+.float-right view {
+    background-color: red;
+    height: 31px;
+    margin-right: 10px;
+}
+
+.float-right text {
+    width: 100%;
+    padding-right: 25px;
+}

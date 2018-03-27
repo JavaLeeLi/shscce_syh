@@ -1,0 +1,10 @@
+<div class="list-group">
+    <a ng-repeat="menu in vm.subMenus" ui-sref="{{menu.name}}"
+       ui-sref="{{menu.name}}"
+       class="list-group-item"
+       ng-class="{'active':vm.state.includes(menu.name)}">
+        <i class="fa fa-tachometer fa-2x" aria-hidden="true"></i>
+        <span ng-bind="menu.text" class="left-menu-text"></span>
+    </a>
+</div>
+

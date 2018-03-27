@@ -1,0 +1,40 @@
+<!-- BEGIN HEADER -->
+
+<!-- END HEADER -->
+<div style="position: relative" ng-class="{'left-close':vm.isClose}">
+    <div ui-view="header" class="vs-fade-in"></div>
+
+    <div class="left-menu">
+        <div ui-view="left" class="vs-fade-in "></div>
+        <div class="switch-angle">
+            <div ng-click="vm.isClose = true" ng-show="!vm.isClose">
+                <i class="fa fa-angle-double-left fa-lg" aria-hidden="true"></i>
+            </div>
+            <div ng-click="vm.isClose = false" ng-show="vm.isClose">
+                <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div ui-view="main" class="vs-fade-in page-wrapper"></div>
+</div>
+
+
+
+
+
+
+<!--<div class="container">-->
+    <!--<div class="row">-->
+        <!--<div class="col-xs-12 col-sm-3 col-md-3 " >-->
+            <!--<div ui-view="left" class="vs-fade-in" ></div>-->
+        <!--</div>-->
+        <!--<div class=" col-xs-12 col-sm-3 col-md-9">-->
+            <!--<div ui-view="main" class="vs-fade-in" ></div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!-- BEGIN FOOTER -->
+<!--<div ui-view="footer"></div>-->
+<!-- END FOOTER -->
+

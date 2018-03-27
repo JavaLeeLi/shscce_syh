@@ -1,0 +1,239 @@
+.main {
+    background-color: #cdcdb4;
+    font-size: 14px;
+    width: 100%;
+}
+
+.commodity-header {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    width: 70%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.header-left-img {
+    display: flex;
+    align-items: center;
+}
+
+.header-left-img image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.header-right {
+    width: 30%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.header-right-right {
+    margin-left: 40%;
+}
+
+.swiper {
+    height: 400rpx;
+    width: 100%;
+}
+
+.swiper image {
+    height: 100%;
+    width: 100%;
+}
+
+.commodity-shuffling {
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+}
+
+.commodity-detail {
+    width: 100%;
+}
+
+.commodity-detail-top {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.commodity-detail-top-left-img {
+    margin-right: 10px;
+}
+
+.commodity-detail-top-left-img image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.commodity-detail-top-right-bottom-freight {
+    color: red;
+    font-size: 18px;
+}
+
+.commodity-detail-time {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.commodity-detail-time-left {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    align-items: center;
+}
+
+.commodity-detail-time-right {
+    display: flex;
+    position: fixed;
+    right: 5px;
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+    align-items: center;
+}
+
+.commodity-detail-time-left-img {
+    margin-right: 10px;
+}
+
+.commodity-detail-time-left-img image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+.bid{
+    background-color: gray;
+    height: 300px;
+    text-align: center;
+}
+/*  定位*/
+
+.commodity-submit {
+    position: fixed;
+    bottom: 200px;
+    width: 100%;
+    align-items: center;
+    border-top: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.weui-btn{
+    width: 100%;
+}
+
+.btn {
+    width: 80%;
+    padding: 20rpx 0;
+    border-radius: 10rpx;
+    text-align: center;
+    margin: 40rpx 10%;
+    background: #000;
+    color: #fff;
+}
+
+/*mask*/
+
+.drawer_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+}
+
+/*content*/
+
+.drawer_box {
+    width: 650rpx;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 1001;
+    background: #fafafa;
+    margin: -150px 50rpx 0 50rpx;
+    border-radius: 3px;
+}
+
+.drawer_title {
+    padding: 15px;
+    font: 20px "microsoft yahei";
+    text-align: center;
+}
+
+.drawer_content {
+    height: 210px;
+    overflow-y: scroll; /*超出父盒子高度可滚动*/
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+}
+
+.sell_dialog_content-top {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.sell_dialog_content-top-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.sell_dialog_content-top-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.money-text {
+    color: red;
+    font-size: 20px;
+}
+
+.sell_dialog_content-bottom {
+    padding: 15px 10px;
+}
+
+.shop-quantity {
+    display: flex;
+    text-align: center;
+}
+
+.btn_ok {
+    padding: 10px;
+    font: 20px "microsoft yahei";
+    text-align: center;
+    border-top: 1px solid #e8e8ea;
+    color: #3cc51f;
+    display: flex;
+    width: 100%;
+}
+
+.give-up {
+    width: 50%;
+}
+
+.determine {
+    width: 50%;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="App" lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <!--360 浏览器就会在读取到这个标签后，立即切换对应的极速核。 另外为了保险起见再加入-->
+  <meta name="renderer" content="webkit">
+  <!--通过百度手机打开网页时，百度可能会对你的网页进行转码，脱下你的衣服，往你的身上贴狗皮膏药的广告，为此可在 head 内添加-->
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <!--这样写可以达到的效果是如果安装了 Google Chrome Frame，则使用 GCF 来渲染页面，如果没有安装 GCF，则使用最高版本的 IE 内核进行渲染-->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="keywords" content="电商">
+  <meta name="description" content="电商系统">
+  <meta name="author" content="visionet">
+  <meta http-equiv="Cache-Control" content="max-age=2592000"/>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="format-detection" content="telephone=no,email=no,address=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" >
+  <meta name="apple-mobile-web-app-title" content="{{APPNAME}}">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" >
+  <base href="<%= ENV.RESOURCE_BASE %>">
+
+  <style>.spinner{width:60px;height:60px;position:relative;margin:250px auto;}.double-bounce1,.double-bounce2{width:100%;height:100%;border-radius:50%;background-color: #1bb391;opacity:0.6;position:absolute;top:0;left:0;-webkit-animation:sk-bounce 2.0s infinite ease-in-out;animation:sk-bounce 2.0s infinite ease-in-out;}.double-bounce2{-webkit-animation-delay:-1.0s;animation-delay:-1.0s;}@-webkit-keyframes sk-bounce{0%,100%{-webkit-transform:scale(0.0)}50%{-webkit-transform:scale(1.0)}}@keyframes sk-bounce{0%,100%{transform:scale(0.0);-webkit-transform:scale(0.0);}50%{transform:scale(1.0);-webkit-transform:scale(1.0);}}</style>
+
+  <!-- 该设置ios9中无效 -->
+  <!--<link rel="apple-touch-startup-image" href="img/splash.png">-->
+  <link rel="apple-touch-icon-precomposed" href="img/icon.png" >
+  <link href="img/favicon.ico" rel="icon" type="image/x-icon" >
+  <link href="assets/img/favicon.png" rel="icon" type="image/png" >
+  <title ng-bind="APPNAME"></title>
+
+  <!-- 速度有点慢 -->
+  <!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css">-->
+  <link href="assets/lib/font-awesome.min.css" rel="stylesheet" >
+  <link href="assets/lib/aui.css" rel="stylesheet" >
+  <link href="assets/css/lib.css" rel="stylesheet" >
+  <link href="assets/css/app.css" rel="stylesheet" >
+
+</head>
+<body>
+
+<div class="spinner">
+  <div class="double-bounce1"></div>
+  <div class="double-bounce2"></div>
+</div>
+
+<div ui-view></div>
+
+<!--<a class="scroll-to-top" vs-go-top>
+  <i class="fa fa-arrow-circle-o-up"></i>
+</a>-->
+
+<script>
+  //根据屏幕宽度，动态改变更元素单font-size值
+  (function (doc, win) {
+    win.addEventListener(('orientationchange' in window ? 'orientationchange' : 'resize'), recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+
+    function recalc() {
+      var docEl = doc.documentElement;
+      var clientWidth = docEl.clientWidth;
+      if (!clientWidth) return;
+      docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+    }
+  })(document, window);
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587329-2', 'auto');
+  ga('require', 'linkid');
+  ga('send', 'pageview');
+
+</script>
+
+<script src="assets/lib/jquery.min.js"></script>
+<script src="assets/lib/angular.min.js"></script>
+<script src="assets/js/lib.js"></script>
+<script src="assets/js/template.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

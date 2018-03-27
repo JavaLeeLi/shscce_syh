@@ -1,0 +1,187 @@
+.containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.order-top {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid black;
+    background-color: white;
+}
+
+.top-left {
+    margin: 10px;
+}
+
+.top-left image {
+    width: 40px;
+    height: 40px;
+}
+
+.top-right {
+    font-size: 14px;
+    padding-top: 5px;
+    line-height: 30px;
+}
+
+.order-top .top-right::after {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-width: 2px 2px 0 0;
+    background-color: white;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.order-conter {
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.order-list-name {
+    width: 100%;
+    display: flex;
+}
+
+.list-name-img {
+    display: flex;
+    margin: 10px;
+    padding-bottom: 10px;
+}
+
+.list-name-img image {
+    width: 70px;
+    height: 70px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.list-name-right {
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.name-right-conter {
+    color: red;
+}
+
+.name-right-botton {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.order-treatment {
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.treatment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.order-postage {
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.postage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.order-message {
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.messages {
+    padding: 10px;
+    height: 80px;
+}
+
+.order-coupons {
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.coupons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.order-total {
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.totals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.carts-footer {
+    position: fixed;
+    bottom: 200px;
+    
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.footer-future{
+    margin-left:100px;
+    margin-top: 10px; 
+}
+.footer-value{
+    margin-top: 10px; 
+}
+/*复选框*/
+
+.carts-footer icon {
+    margin-left: 20rpx;
+}
+
+/*全选字样*/
+
+.carts-footer text {
+    font-size: 30rpx;
+    margin-left: 8rpx;
+    line-height: 10rpx;
+}
+
+/*立即结算按钮*/
+
+.carts-footer .button {
+    line-height: 80rpx;
+    text-align: center;
+    width: 220rpx;
+    height: 80rpx;
+    background-color: red;
+    color: white;
+    font-size: 36rpx;
+    border-radius: 0;
+    border: 0;
+}

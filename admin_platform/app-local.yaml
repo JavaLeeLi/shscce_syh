@@ -1,0 +1,54 @@
+---
+# 默认配置
+default: &default
+#  build:
+#    app_js:
+#      - '{source}/**/*.js'
+#    lib_js:
+#      - lib/ngQuickDate/ng-quick-date.js
+#      - node_modules/lodash/lodash.js
+#      - node_modules/angular-animate/angular-animate.js
+#      - node_modules/angular-ui-router/release/angular-ui-router.js
+#      - node_modules/angular-resource/angular-resource.js
+#      - node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js
+#      - node_modules/angular-bootstrap-confirm/dist/angular-bootstrap-confirm.js
+#      - node_modules/angular-ui-tree/dist/angular-ui-tree.js
+#      - node_modules/ng-file-upload/dist/ng-file-upload-all.js
+#      - node_modules/textangular/dist/textAngular-rangy.min.js
+#      - node_modules/textangular/dist/textAngular-sanitize.min.js
+#      - node_modules/textangular/dist/textAngularSetup.js
+#      - node_modules/textangular/dist/textAngular.js
+#      - node_modules/toastr/toastr.js
+#      - node_modules/ui-select/dist/select.js
+#      - node_modules/video.js/dist/video.js
+#      - node_modules/angular-local-storage/dist/angular-local-storage.js
+#      - node_modules/cropper/dist/cropper.js
+#      - node_modules/sweetalert/dist/sweetalert-min.js
+#      - node_modules/angular-mocks/angular-mocks.js
+#      - lib/app.js
+
+
+  vs_env:
+    RESOURCE_BASE: /
+#    HTML5MODE: false
+#    MODULES:
+#      - 'ui.router'
+#      - templates
+#      - 'ui.bootstrap'
+#      - 'ui.tree'
+#      - ngResource
+#      - 'mwl.confirm'
+#      - ngFileUpload
+#      - 'ui.select'
+#      - textAngular
+#      - LocalStorageModule
+#      - ngAnimate
+#      - ngQuickDate
+#      - ngMockE2E
+#
+#  appendJs: |
+#    window.appModule.run(function ($httpBackend) {
+#      //未被匹配的url自动过滤，直接发请求到后台
+#      $httpBackend.whenGET(/.*/).passThrough();
+#      $httpBackend.whenPOST(/.*/).passThrough();
+#    })

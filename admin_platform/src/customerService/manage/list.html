@@ -1,0 +1,58 @@
+
+<div class="col-xs-10 col-xs-offset-1 mb30">
+    <h3 class="pull-left">平台客服</h3>
+    <div class="pull-right mt25">
+        <a class="link-a"><i class="fa fa-plus-circle fa-lg mr5" aria-hidden="true"></i>添加平台客服</a>
+    </div>
+    <table class="table table-bordered text-center mbn">
+        <thead>
+        <tr>
+            <td width="25%">客服QQ号</td>
+            <td width="25%">客服类型</td>
+            <td width="25%">显示名称</td>
+            <td width="25%">操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in vm.customers|filter:{category:'platform'}">
+            <td><span ng-bind="item.qq"></span></td>
+            <td><span ng-bind="item.type"></span></td>
+            <td><span ng-bind="item.name"></span></td>
+            <td>
+                <a href="" class="link-a" >查看</a>
+                <a href="" class="link-a" >编辑</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p class="form-control-static pull-right">*最多设置2位QQ平台客服</p>
+</div>
+
+<div class="col-xs-10 col-xs-offset-1 mb30">
+    <h3 class="pull-left">服务咨询客服</h3>
+    <div class="pull-right mt25">
+        <a class="link-a"><i class="fa fa-plus-circle fa-lg mr5" aria-hidden="true"></i>添加服务咨询客服</a>
+    </div>
+    <table class="table table-bordered text-center mbn">
+        <thead>
+        <tr>
+            <td width="25%">客服QQ号</td>
+            <td width="25%">客服类型</td>
+            <td width="25%">显示名称</td>
+            <td width="25%">操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in vm.customers|filter:{category:'consult'}">
+            <td><span ng-bind="item.qq"></span></td>
+            <td><span ng-bind="item.type"></span></td>
+            <td><span ng-bind="item.name"></span></td>
+            <td>
+                <a href="" class="link-a" >查看</a>
+                <a href="" class="link-a" >编辑</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p class="form-control-static pull-right">*最多设置2位QQ平台客服</p>
+</div>

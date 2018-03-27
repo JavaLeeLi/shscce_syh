@@ -1,0 +1,80 @@
+<!--我的钱包  -->
+
+<view class='main'>
+
+    <view class='balance'>
+
+        <view class='balance-top'>
+            <text>余额充值</text>
+        </view>
+        <view class='balance-center'>
+            <text class='balance-center-text'>
+                <text>#</text>
+                <text>300.00</text>
+            </text>
+        </view>
+        <view class='balance-botton'>
+            <text>查看详情</text>
+        </view>
+    </view>
+
+    <view class='operation'>
+        <view class='operation-top'>
+            <button type='default'>充值</button>
+            <button type='default'>体现</button>
+        </view>
+    </view>
+
+    <!--银行卡  -->
+
+    <view class='wallet-card'>
+        <view class='wallet-card-item'>
+            <view class='card-item-top'>
+                <text>招商银行</text>
+            </view>
+            <view class='card-item-center'>
+                <text>储蓄卡</text>
+            </view>
+            <view class='card-item-botton'>
+                <view class='item-botton-top'>
+                    <text>卡号：</text>
+                </view>
+                <view class='item-botton'>
+                    <text>6600 **** **** 4957</text>
+                </view>
+            </view>
+
+        </view>
+
+        <view class='third-party-payment'>
+            <view class='party-payment-img'>
+                <image src='../../../image/zhifubao.png'></image>
+            </view>
+            <view class='party-payment-botton'>
+                <view>账号</view>
+                <view>24783247832</view>
+            </view>
+
+        </view>
+        <view class='wallet-card-item'>
+            <view class='card-item-top'>
+                <text>招商银行</text>
+            </view>
+            <view class='card-item-center'>
+                <text>储蓄卡</text>
+            </view>
+            <view class='card-item-botton'>
+                <view class='item-botton-top'>
+                    <text>卡号：</text>
+                </view>
+                <view class='item-botton'>
+                    <text>6600 **** **** 4957</text>
+                </view>
+            </view>
+
+        </view>
+        <view>
+        <button type='default'>新增绑定支付宝</button>
+        </view>
+    </view>
+</view>

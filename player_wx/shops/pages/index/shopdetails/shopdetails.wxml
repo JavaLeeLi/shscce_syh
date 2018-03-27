@@ -1,0 +1,323 @@
+<view class='main'>
+    <view class='main-details'>
+        <!--顶部关注  -->
+        <view class='commodity-header'>
+            <view class='header-left'>
+                <view class='header-left-img'>
+                    <image src='../../image/imgError.jpg'></image>
+                </view>
+                <view class='header-left-username'>
+                    <view>
+                        <text>she</text>
+                    </view>
+                    <view>
+                        <text>Lv.4</text>
+                        <text>个人认证</text>
+                    </view>
+                </view>
+            </view>
+            <view class='header-right'>
+                <view class='header-right-left'>
+                    <image src='../../image/email.png'></image>
+                </view>
+                <view class='header-right-right' bindtap='showCollect' wx:if='{{showCollect==false?true:fase}}'>
+                    <image src='../../image/collects.png'></image>
+                </view>
+                                <view class='header-right-right' bindtap='isShowCollect' wx:else>
+                    <image src='../../image/collectsred.png'></image>
+                </view>
+            </view>
+        </view>
+        <!--顶部轮播  -->
+        <view class='commodity-shuffling'>
+            <swiper class="swiper" indicator-dots="{{false}}" autoplay="{{false}}">
+                <block wx:for="{{movies}}" wx:for-index="index">
+                    <swiper-item>
+                        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <!--商品详情  -->
+
+        <view class='commodity-detail'>
+            <view class='commodity-detail-top'>
+                <view class='commodity-detail-top-left'>
+                    <view class='commodity-detail-top-left-img'>
+                        <image src='../../image/imgError.jpg'></image>
+                    </view>
+                </view>
+                <view class='commodity-detail-top-right'>
+                    <view class='commodity-detail-top-right-top'>
+                        <text>哦gj路</text>
+                    </view>
+                    <view class='commodity-detail-top-right-bottom'>
+                        <text>
+                            <text class='commodity-detail-top-right-bottom-freight'>￥59,859.00</text>
+                            <text>运费：8.00</text>
+                        </text>
+                    </view>
+                    <view class='commodity-detail-top-right-bottom'>
+                        <text>￥59,859.00</text>
+                    </view>
+                </view>
+            </view>
+
+            <!--地址  -->
+            <view class='commodity-detail-address'>
+                <view class='detail-address-left'>
+                    配送：
+                    <text>浙江嘉兴</text>
+                    <text>至</text>
+                    <text>上海嘉定区</text>
+                </view>
+                <view class='detail-address-right'>
+                    <text>48小时内发货</text>
+                </view>
+            </view>
+
+
+
+            <!--商品详情  -->
+
+            <view class='commodity-detail-content'>
+                <view class='commodity-detail-content-title'>
+                    <text>商品详情</text>
+                </view>
+                <view class='commodity-detail-content-title-bottom'>
+                    <text>骨子里路</text>
+                </view>
+                <!--商品套餐  -->
+
+                <view class='commodity-detail-content1'>
+                    <view class='content-h'>组合购买更优惠</view>
+                    <view class='package-list'>
+                        <view class='package-list-item'>
+                            <view class='package-list-item-top'>
+                                <view>
+                                    <text class='package-list-item-top-text'>套餐一</text>
+                                    <text class='package-list-item-top-text'> 优惠500元</text>
+                                    <text class='package-list-item-top-text'>
+                                        <text>现价</text>
+                                        <text class='package-list-item-top-text-money'>500000.00</text>
+                                    </text>
+                                </view>
+                            </view>
+                            <view class='package-list-item-content'>
+                                <view class='package-list-item-content-list'>
+                                    <view class='package-list-item-content-item'>
+                                        <view class='package-list-item-content-item-img'>
+                                            <image src='../../image/imgError.jpg'></image>
+
+                                        </view>
+                                        <view class='shop-add'>
+                                            <view class='demoSpan1'></view>
+                                        </view>
+                                        <view class='package-list-item-content-item-img'>
+                                            <image src='../../image/imgError.jpg'></image>
+
+                                        </view>
+
+                                        <view class='shop-add'>
+                                            <view class='demoSpan1'></view>
+                                        </view>
+                                        <view class='package-list-item-content-item-img'>
+                                            <image src='../../image/imgError.jpg'></image>
+                                        </view>
+                                        <view class='button-top'>
+                                            <view class='button-shop'>购买</view>
+                                        </view>
+                                    </view>
+
+                                </view>
+
+                            </view>
+                        </view>
+
+
+                    </view>
+                    <view class='package-list'>
+                        <view class='package-list-item'>
+                            <view class='package-list-item-top'>
+                                <view>
+                                    <text class='package-list-item-top-text'>套餐一</text>
+                                    <text class='package-list-item-top-text'> 优惠500元</text>
+                                    <text class='package-list-item-top-text'>
+                                        <text>现价</text>
+                                        <text class='package-list-item-top-text-money'>500000.00</text>
+                                    </text>
+                                </view>
+                            </view>
+                            <view class='package-list-item-content'>
+                                <view class='package-list-item-content-list'>
+                                    <view class='package-list-item-content-item'>
+                                        <view class='package-list-item-content-item-img'>
+                                            <image src='../../image/imgError.jpg'></image>
+
+                                        </view>
+                                        <view class='shop-add'>
+                                            <view class='demoSpan1'></view>
+                                        </view>
+                                        <view class='package-list-item-content-item-img'>
+                                            <image src='../../image/imgError.jpg'></image>
+
+                                        </view>
+
+                                        <view class='shop-add'>
+                                            <view class='demoSpan1'></view>
+                                        </view>
+                                        <view class='package-list-item-content-item-img'>
+                                            <image src='../../image/imgError.jpg'></image>
+                                        </view>
+                                        <view class='button-top'>
+                                            <view class='button-shop'>购买</view>
+                                        </view>
+                                    </view>
+
+                                </view>
+
+                            </view>
+                        </view>
+
+
+                    </view>
+
+
+                </view>
+
+            </view>
+
+            <!--推荐商品  -->
+            <!--官方推荐商品  -->
+            <view class='home-content'>
+                <view class='content-top'>
+                    <view class='content-top-list'>
+                        <view class='content-hr'></view>
+                        <view class='content-kuai'></view>
+                        <view>
+                            <text>猜你喜欢</text>
+                        </view>
+                        <view class='content-kuai'></view>
+                        <view class='content-hr'></view>
+                    </view>
+                </view>
+                <!--官方推荐商品显示  -->
+                <view class='content-conter'>
+                    <view class='conter-top'>
+                        <scroll-view scroll-x="true" class='recommend-box-scroll' style='height:260px;'>
+                            <block wx:for="{{hotGoodList}}" wx:key="hotGoodListId">
+                                <view class='hotGoodList'>
+                                    <navigator>
+                                        <image src='{{item.naviItemUrl}}'></image>
+                                    </navigator>
+                                    <view class='recommend-text'>
+                                        <text>{{item.goodsName}}</text>
+                                    </view>
+                                    <view class='recommend-paice'>
+                                        <text>{{item.paice}}</text>
+                                    </view>
+                                    <view class='recommend-user'>
+                                        <view class='recommend-user-left'>
+                                            <navigator>
+                                                <image src='{{item.tou}}' class='recommend-user-image'></image>
+                                            </navigator>
+                                        </view>
+                                        <view class='recommend-user-info'>
+                                            <view class="recommend-user-jibie">
+                                                <text>{{item.jibie}}</text>
+                                            </view>
+                                            <view class='recommend-user-info-level'>
+                                                <text>{{item. dengji }} {{item.renzhegn}}
+                                                </text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </block>
+                        </scroll-view>
+                    </view>
+                </view>
+
+
+
+            </view>
+            <!--发布按钮  -->
+            <view class='commodity-submit'>
+                <view class='commodity-submit-left'>
+                    <view class='commodity-submit-left-icon'>
+                        <image src='../../image/collect.png'></image>
+                    </view>
+                    <view class='commodity-submit-left-bottom' bindtap="powerDrawerJion" data-statu="open">
+                        加入购物车
+                    </view>
+                </view>
+                <view class='commodity-submit-right' bindtap="powerDrawer" data-statu="open">
+                    <view class='commodity-submit-right-bottom'>
+                        立即购买
+                    </view>
+                </view>
+            </view>
+
+
+            <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+
+            <!--使用animation属性指定需要执行的动画-->
+            <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+                <!--drawer content-->
+                <view class="drawer_title"  bindtap="powerDrawer"data-statu="close" >
+                    <image src='../../image/close.png'></image>
+                </view>
+                <view class="drawer_content">
+                    <view class='sell_dialog_content-top'>
+                        <view class='sell_dialog_content-top-img'>
+                            <image src='../../image/imgError.jpg'></image>
+                        </view>
+                        <view class='sell_dialog_content-top-money'>
+                            <view class='money-text'>
+                                <text>￥60.00</text>
+                            </view>
+                            <view class='money-text-bottom'>
+                                <text>
+                                    <text>当前库存</text>
+                                    <text>30</text>
+                                </text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='sell_dialog_content-bottom'>
+                        <view class='sell_dialog_content-bottom-top'>数量:</view>
+                        <view class='shop-quantity'>
+                            <!-- <text bindtap="minusCount">-</text> -->
+                            <view class='shop-quantity-jian' bindtap="minusCount">
+                                <image src='../../image/jian.png'></image>
+                            </view>
+                            <input value='{{num}}'></input>
+                            <!-- <text bindtap="addCount">+</text> -->
+                            <view class='shop-quantity-jian' bindtap="addCount">
+                                <image src='../../image/jia.png'></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="btn_ok" wx:if="{{showModalJion==false}}">
+                    <view bindtap="powerDrawer" data-statu="close" class='give-up'>
+                        <view>放弃</view>
+                    </view>
+                    <view bindtap="powerDrawernavTo" data-statu="close" class='determine'>
+                        <view>确定</view>
+                    </view>
+                </view>
+                <view class="btn_ok" wx:if="{{showModalJion==true}}">
+                    <view bindtap="powerDrawerJion" data-statu="close" class='give-up'>
+                        <view>放弃</view>
+                    </view>
+                    <view bindtap="powerDrawerJionOpen" data-statu="close" class='determine'>
+                        <view>确定</view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>

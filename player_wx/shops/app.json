@@ -1,0 +1,85 @@
+{
+    "pages": [
+            "pages/index/shopdetails/shopdetails",
+        "pages/mine/mine",
+        "pages/mine/setting/setting",
+        "pages/shoppingcart/shoppingcart",
+        "pages/posted/posted",
+        "pages/classification/classification",
+        "pages/template/template",
+        "pages/404/404",
+        "pages/index/index",
+        "pages/index/take/take",
+ 
+        "pages/login/login",
+        "pages/login/regist/regist",
+        "pages/shoppingcart/submitorder/submitorder",
+        "pages/shoppingcart/checkdetails/checkdetails",
+        "pages/mine/myorder/myorder",
+        "pages/mine/servicecenter/servicecenter",
+        "pages/posted/sold/sold",
+        "pages/posted/purchase/purchase",
+        "pages/classification/classdetails/classdetails",
+        "pages/classification/screening/screening",
+        "pages/index/directmessages/directmessages",
+        "pages/index/notice/notice",
+        "pages/index/shopsupply/shopsupply",
+        "pages/index/shopsearch/shopsearch",
+        "pages/index/shopauctions/shopauctions",
+        "pages/shoppingcart/order/order",
+        "pages/mine/certification/certification",
+        "pages/mine/mycertification/mycertification",
+        "pages/mine/servicecenter/purse/purse",
+        "pages/mine/servicecenter/appointment/appointment",
+        "pages/mine/servicecenter/more/more",
+        "pages/mine/focuson/focuson",
+        "pages/mine/collect/collect",
+        "pages/mine/newaddress/newaddress",
+        "pages/mine/address/address",
+        "pages/mine/roughdraft/roughdraft",
+        "pages/mine/coupons/coupons",
+        "pages/logs/logs",
+        "pages/posted/bidding/bidding"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "white",
+        "navigationBarTitleText": "首页",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "red",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "pages/image/home-d.png",
+                "selectedIconPath": "pages/image/home.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/classification/classification",
+                "iconPath": "pages/image/type-d.png",
+                "selectedIconPath": "pages/image/type.png",
+                "text": "分类"
+            },
+            {
+                "pagePath": "pages/posted/posted",
+                "iconPath": "pages/image/release.png",
+                "selectedIconPath": "pages/image/release.png",
+                "text": "发布"
+            },
+            {
+                "pagePath": "pages/shoppingcart/shoppingcart",
+                "iconPath": "pages/image/shoppingCar-d.png",
+                "selectedIconPath": "pages/image/shoppingCar-d.png",
+                "text": "购物车"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "iconPath": "pages/image/my-d.png",
+                "selectedIconPath": "pages/image/my.png",
+                "text": "我的"
+            }
+        ]
+    }
+}

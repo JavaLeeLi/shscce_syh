@@ -1,0 +1,112 @@
+<!--<ol class="breadcrumb">-->
+<!--<li>商品</li>-->
+<!--<li class="active">商品管理</li>-->
+<!--</ol>-->
+<ul class="nav nav-tabs mb20" ng-init="vm.tab = 'all'">
+    <li role="presentation" ng-class="{'active':vm.tab == 'all'}">
+        <a ng-click="vm.switch('all')">所有记录</a>
+    </li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'stay'}"><a ng-click="vm.switch('stay')">待仲裁</a></li>
+</ul>
+<div class="row search-bar">
+    <form class="form-inline">
+        <div class="form-group col-md-3">
+            <label >订单号</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3">
+            <label >店铺名称</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3" >
+            <label >投诉日期</label>
+            <div class="input-group fixed-width">
+                <input type="text"
+                       id="submission"
+                       class="form-control "
+                       uib-datepicker-popup ="yyyy-MM-dd"
+                       ng-model="vm.queryParams.submitted_at_from"
+                       placeholder="---日期---"
+                       is-open="vm.opened1"
+                       max-date="vm.queryParams.submitted_at_to"  />
+                <span class="input-group-btn">
+                         <button type="button" class="btn btn-default" ng-click="vm.opened1 = !vm.opened1">
+                             <i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </div>
+        </div>
+        <div class="form-group col-md-3 text-left">
+            <label class="">至</label>
+            <div class="input-group fixed-width">
+                <input type="text"
+                       class="form-control"
+                       uib-datepicker-popup ="yyyy-MM-dd"
+                       ng-model="vm.queryParams.submitted_at_to"
+                       is-open="vm.opened2"
+                       placeholder="---日期---"
+                       min-date="vm.queryParams.submitted_at_from"  />
+                <span class="input-group-btn">
+                         <button type="button" class="btn btn-default" ng-click="vm.opened2 = !vm.opened2">
+                             <i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </div>
+        </div>
+
+        <div class="form-group col-md-3">
+            <label >投诉会员</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3" ng-hide="vm.tab=='stay'">
+            <label >状态</label>
+            <select class="form-control fixed-width"
+                    ng-options="status.id as status.name for status in vm.status">
+            </select>
+        </div>
+        <div class="form-group col-md-3 text-center">
+            <button type="submit" class="btn btn-info">搜索</button>
+            <button type="submit" class="btn btn-default">重置</button>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <div class="table-responsive col-xs-12">
+        <table class="table table-hover ">
+            <thead class="text-center">
+            <tr>
+                <td width="15%" class="p-h-0">订单号</td>
+                <td width="10%" class="p-h-0">店铺</td>
+                <td width="15%" class="p-h-0">投诉会员</td>
+                <td width="20%" class="p-h-0">投诉原因</td>
+                <td width="15%" class="p-h-0">投诉日期</td>
+                <td width="15%" class="p-h-0">状态</td>
+                <td width="10%" class="p-h-0">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center">
+                <td>销售中</td>
+                <td>手机</td>
+                <td>官方直营店</td>
+                <td>123123123</td>
+                <td>10</td>
+                <td>2017-08-08</td>
+                <td>
+                    <a href="" class="link-a">违规下架</a>
+                    <a href="" class="link-a">审核</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" class="empty-row">没有找到符合条件的数据</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <uib-pagination boundary-links="true" items-per-page="vm.tableParams.count()"
+                        total-items="vm.totalElements"
+                        ng-model="vm.queryPage" ng-change="vm.pageChange(vm.queryPage)"
+                        max-size="10" class="pagination-sm pull-right"></uib-pagination>
+    </div>
+</div>

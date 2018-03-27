@@ -1,0 +1,142 @@
+<view class='main'>
+    <view class='class-index-top'>
+        <view class='class-index-top-bgf'>
+            <text>我的订单</text>
+        </view>
+    </view>
+    <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+                <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                <input type="text" class="weui-search-bar__input" placeholder="请输入搜索内容" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                    <icon type="clear" size="14"></icon>
+                </view>
+            </view>
+            <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                <icon class="weui-icon-search" type="search" size="14"></icon>
+                <view class="weui-search-bar__text">请输入搜索内容</view>
+            </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <!--优惠券  -->
+
+    <view class="body">
+        <view class="nav bc_white">
+            <view class="{{selected?'red':'default'}}" bindtap="selected">我的买单</view>
+            <view class="{{selected1?'red':'default'}}" bindtap="selected1">我的卖单</view>
+        </view>
+        <view class="{{selected?'show':'hidden'}}">
+            <view class='containers'>
+                <view class="navbar">
+                    <view class='user-type-tab'>
+                        <block wx:for="{{tabs}}" wx:key="*this">
+                            <view class='user-tab-type-item-icon' id='{{index}}' bindtap="navTabClick">
+                                <view class='item-img'>
+                                    <image src='{{item.src}}'></image>
+                                </view>
+                                <view>
+                                    <text>{{item.name}}</text>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+                <view>
+                    <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" style="height:{{contentHeight}}px">
+                        <swiper-item>
+                            <view class='order-list'>
+                                <view class='order-list-item'>
+                                    <view class='work-order-left'>
+                                        <image src='../../image/index.png'></image>
+                                        <view>
+                                            <text>09月28日</text>
+                                            <text>15.41</text>
+                                        </view>
+                                    </view>
+                                    <view class='work-order-center'>
+                                        <image src='../../image/index.png'></image>
+                                    </view>
+
+                                    <view class='work-order-right'>
+                                        <view class='order-right-top'>
+                                            <text>一个</text>
+                                        </view>
+                                        <view class='order-right-center'>
+                                            <view class='right-center-left'>
+                                                <text>待支付</text>
+                                            </view>
+                                            <view class='right-center-right'>
+                                                <text>￥12.00</text>
+                                            </view>
+                                        </view>
+                                        <view class='order-right-botton'>
+                                            <text>￥100.0</text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </swiper-item>
+                    </swiper>
+                </view>
+            </view>
+        </view>
+        <view class="{{selected1?'show':'hidden'}}">
+            <view class='containers'>
+                <view class="navbar">
+                    <view class='user-type-tab'>
+                        <block wx:for="{{tabssale}}" wx:key="*this">
+                            <view class='user-tab-type-item-icon' id='{{index}}' bindtap="navTabClick">
+                                <view class='item-img'>
+                                    <image src='{{item.src}}'></image>
+                                </view>
+                                <view>
+                                    <text>{{item.name}}</text>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+                <view>
+                    <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" style="height:{{contentHeight}}px">
+                        <swiper-item>
+                            <view class='order-list'>
+                                <view class='order-list-item'>
+                                    <view class='work-order-left'>
+                                        <image src='../../image/index.png'></image>
+                                        <view>
+                                            <text>09月28日</text>
+                                            <text>15.41</text>
+                                        </view>
+                                    </view>
+                                    <view class='work-order-center'>
+                                        <image src='../../image/index.png'></image>
+                                    </view>
+
+                                    <view class='work-order-right'>
+                                        <view class='order-right-top'>
+                                            <text>一个</text>
+                                        </view>
+                                        <view class='order-right-center'>
+                                            <view class='right-center-left'>
+                                                <text>待支付</text>
+                                            </view>
+                                            <view class='right-center-right'>
+                                                <text>￥12.00</text>
+                                            </view>
+                                        </view>
+                                        <view class='order-right-botton'>
+                                            <text>￥100.0</text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </swiper-item>
+                    </swiper>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

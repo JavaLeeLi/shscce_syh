@@ -1,0 +1,40 @@
+.service-list {
+    width: 100%;
+    font-size: 14px;
+}
+
+.service-list-item {
+    overflow: hidden;
+    border: 1px solid black;
+    box-shadow: 0 0 8px 0 #888;
+    margin-top: 10px;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.service-list-item-content {
+    height: 150px;
+    overflow-y: hidden;
+}
+
+.item-content-img {
+    width: 100%;
+    height: 100%;
+}
+
+.service-list-item-explain {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-foot {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    margin-bottom: 200px;
+}
+.service-foot button{
+    padding: 10px;
+}

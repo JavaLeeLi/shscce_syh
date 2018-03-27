@@ -1,0 +1,46 @@
+<!--服务中心  -->
+<view class='service-list'>
+    <view class='service-list-item'>
+        <view class='service-list-item-content'>
+            <text>收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 </text>
+            <image class='item-content-img' src='../../image/imgError.jpg'></image>
+        </view>
+        <view class='service-list-item-explain'>
+            <view class='item-explain-left'>
+                <text>鉴评封装</text>
+            </view>
+            <view class='item-explain-right'>
+                <text>查看更多内容</text>
+            </view>
+        </view>
+
+
+    </view>
+
+    <view class='service-list-item'>
+        <view class='service-list-item-content'>
+            <text>收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 </text>
+            <image class='item-content-img' src='../../image/imgError.jpg'></image>
+            <text>收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准 收费标准</text>
+        </view>
+        <view class='service-list-item-explain'>
+            <view class='item-explain-left'>
+                <text>鉴评封装</text>
+            </view>
+            <view class='item-explain-right'>
+                <text>查看更多内容</text>
+            </view>
+        </view>
+
+
+    </view>
+
+
+    <!--服务预约  -->
+
+        <view bindtap='showServiceAppointment'  class='service-foot'>
+            <button type="warn">服务预约</button>
+        </view>
+
+
+</view>

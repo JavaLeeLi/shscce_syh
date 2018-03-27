@@ -1,0 +1,36 @@
+<!--关注  -->
+
+<view class='focuson'>
+    <view class='focuson-top'>
+        <view class='top-img'>
+            <image src='../../image/imgError.jpg'></image>
+        </view>
+        <view class='focuson-right'>
+
+            <view class='right-top'>
+                <view>你好世界</view>
+                <view>信息</view>
+            </view>
+            <view class='right-booton'>
+                <text>好朋友</text>
+            </view>
+        </view>
+
+    </view>
+    <view class='focuson-top'>
+        <view class='top-img'>
+            <image src='../../image/imgError.jpg'></image>
+        </view>
+        <view class='focuson-right'>
+
+            <view class='right-top'>
+                <view>你好世界</view>
+                <view>信息</view>
+            </view>
+            <view class='right-booton'>
+                <text>好朋友</text>
+            </view>
+        </view>
+
+    </view>
+</view>

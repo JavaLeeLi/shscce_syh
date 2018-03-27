@@ -1,0 +1,34 @@
+<!--收藏  -->
+<view class='coolect'>
+    <view class='collect-top'>
+
+        <view class='top-left'>
+            <image src='../../image/imgError.jpg'></image>
+        </view>
+        <view class='top-right'>
+            <view>
+                <text>猫</text>
+            </view>
+            <view>好盆友</view>
+            <view class='right-botton'>
+                <text>#90.0</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='collect-top'>
+
+        <view class='top-left'>
+            <image src='../../image/imgError.jpg'></image>
+        </view>
+        <view class='top-right'>
+            <view>
+                <text>猫</text>
+            </view>
+            <view>好盆友</view>
+            <view class='right-botton'>
+                <text>#90.0</text>
+            </view>
+        </view>
+    </view>
+</view>

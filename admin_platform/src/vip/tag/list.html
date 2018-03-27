@@ -1,0 +1,55 @@
+<!--<ul class="nav nav-tabs mb20">-->
+    <!--<li role="presentation" class="active"><a href="#">会员标签</a></li>-->
+
+<!--</ul>-->
+<div class="row search-bar">
+    <form class="form-inline">
+        <div class="form-group col-md-3">
+            <label >标签名称</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3 text-center">
+            <button type="submit" class="btn btn-info">搜索</button>
+            <button type="submit" class="btn btn-default">重置</button>
+        </div>
+    </form>
+    <div class="col-xs-6">
+        <button class="btn btn-info pull-right mr50"
+                ui-sref="vip.tag.add">新增</button>
+    </div>
+</div>
+<div class="row">
+
+    <div class="table-responsive col-xs-12">
+        <table class="table table-hover ">
+            <thead class="text-center">
+            <tr>
+                <td width="40%" class="p-h-0">标签名称</td>
+                <td width="30%" class="p-h-0">会员数</td>
+                <td width="30%" class="p-h-0">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center">
+                <td>购物狂</td>
+                <td>2</td>
+                <td>
+                    <a class="link-a">编辑</a>
+                    <a class="link-a">删除</a>
+                </td>
+            </tr>
+            </tbody>
+            <tr>
+                <td colspan="3" class="empty-row">没有找到符合条件的数据</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <uib-pagination boundary-links="true" items-per-page="vm.tableParams.count()"
+                        total-items="vm.totalElements"
+                        ng-model="vm.queryPage" ng-change="vm.pageChange(vm.queryPage)"
+                        max-size="10" class="pagination-sm pull-right"></uib-pagination>
+    </div>
+</div>

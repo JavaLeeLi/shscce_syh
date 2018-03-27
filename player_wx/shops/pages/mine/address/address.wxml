@@ -1,0 +1,31 @@
+<view class='containers'>
+    <!--地址  -->
+    <view class='main'>
+    <view class='main-list'>
+    <view class='main-list-item'>
+        <view class='address-top'>
+            <view class='address-top-left'>
+                <text class='top-left-name'> 胡征信</text>
+                <text class='top-left-phone'>2432432434</text>
+            </view>
+        </view>
+        <view class='address-center'>
+            <view>陕西省 西安市 户县 详细地址备注</view>
+        </view>
+        <view class='address-botton'>
+            <view class='address-botton-success'>
+           <icon type="success" size="23" class='success'></icon>
+                <text>默认地址</text>
+            </view>
+        </view>
+    </view>
+</view>
+</view>
+
+    <view>
+        <button type='default'>新增地址</button>
+    </view>
+
+
+
+</view>

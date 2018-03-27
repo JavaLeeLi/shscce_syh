@@ -1,0 +1,62 @@
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <img alt="Brand" >
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li ng-class="{'active':vm.state.includes('home')}"
+                vn-navbar-submenu="vm.subMenus.home">
+                <a ui-sref="home" >首页</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('goods')}"
+                vn-navbar-submenu="vm.subMenus.goods">
+                <a ui-sref="goods.manage">商品</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('shop')}"
+                vn-navbar-submenu="vm.subMenus.shop">
+                <a ui-sref="shop.manage">店铺</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('deal')}"
+                vn-navbar-submenu="vm.subMenus.deal">
+                <a ui-sref="deal.order">交易</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('customerService')}"
+                vn-navbar-submenu="vm.subMenus.customerService">
+                <a ui-sref="customerService.manage">客服</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('vip')}"
+                vn-navbar-submenu="vm.subMenus.vip">
+                <a ui-sref="vip.manage">会员</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('distribution')}"
+                vn-navbar-submenu="vm.subMenus.distribution">
+                <a ui-sref="distribution.goods">分销</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('finance')}"
+                vn-navbar-submenu="vm.subMenus.finance">
+                <a ui-sref="finance.overview">财务</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('marketing')}"
+                vn-navbar-submenu="vm.subMenus.marketing">
+                <a ui-sref="marketing.central">营销</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('service')}"
+                vn-navbar-submenu="vm.subMenus.service">
+                <a ui-sref="service.appraisal-introduction">服务</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('stats')}"
+                vn-navbar-submenu="vm.subMenus.stats">
+                <a ui-sref="stats.manage">统计</a>
+            </li>
+            <li ng-class="{'active':vm.state.includes('system')}"
+                vn-navbar-submenu="vm.subMenus.system">
+                <a ui-sref="system.homePage">系统</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>安全退出</a></li>
+        </ul>
+    </div><!-- /.container -->
+</nav>

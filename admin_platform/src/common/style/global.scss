@@ -1,0 +1,46 @@
+$theme-style: 'rounded';
+$theme-type: 'material-design';
+
+html, body, div{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.cancelannimate *.ng-hide-add, .cancelannimate *.ng-hide-remove {
+    transition: all linear 0s !important;
+}
+
+[ui-view], ui-view {
+    display: block;
+}
+
+[ui-view = 'header']{
+    margin-bottom: 50px;
+    //position: relative;
+}
+.bg-gray-1{
+    background: #fbfbfb;
+}
+
+.switch.checked {
+    background: #1899ca  !important;
+    border-color: #1899ca  !important;
+}
+
+
+
+@import "theme/default";
+@import "variables";
+@import "layout/variables";
+
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+@import "mixin/**/*.scss";
+@import "plugins/**/*.scss";
+@import "base/**/*.scss";
+@import "component/**/*.scss";
+
+

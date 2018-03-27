@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="userinfo">
+        <block>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src='../image/imgError.jpg' background-size="cover"></image>
+        </block>
+    </view>
+
+    <view class='regist-center'>
+        <view class='regist-center-item'>
+            <view class='regist-center-item-left'>
+                <view class='regist-center-item-left-img'>
+                    <image src='../image/phone.png'></image>
+                </view>
+            </view>
+            <view class='regist-center-item-right'>
+                <input placeholder='手机' placeholder-style='color:white' class='regist-center-item-right-input'></input>
+            </view>
+        </view>
+    </view>
+
+    <view class='regist-center'>
+        <view class='regist-center-item'>
+            <view class='regist-center-item-left'>
+                <view class='regist-center-item-left-img'>
+                    <image src='../image/lock.png'></image>
+                </view>
+            </view>
+            <view class='regist-center-item-right'>
+                <input placeholder='密码' placeholder-style='color:white'></input>
+            </view>
+        </view>
+    </view>
+
+
+    <view class='regist-confirm'>
+
+        <view>
+            <checkbox></checkbox>
+        </view>
+        <view class='regist-confirm-login'>
+            <view>自动登录</view>
+            <view>忘记密码</view>
+        </view>
+    </view>
+
+    <view class='btn'>
+        <view>
+            <button type='warn'>登录</button>
+        </view>
+    </view>
+
+    <view>
+        <view>立即注册</view>
+    </view>
+
+    <view>
+        <view>使用其他账号登录</view>
+        <view class='wx-img'>
+            <image src='../image/wx.png'></image>
+        </view>
+    </view>
+
+</view>

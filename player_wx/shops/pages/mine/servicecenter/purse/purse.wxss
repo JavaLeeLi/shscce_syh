@@ -1,0 +1,73 @@
+.main {
+    font-size: 14px;
+}
+
+.balance {
+    padding: 10px;
+    background-color: gray;
+    height: 150px;
+}
+
+.balance .balance-botton {
+    position: absolute;
+    right: 10px;
+}
+
+.balance-center {
+    text-align: center;
+}
+
+.balance-center-text {
+    font-size: 40px;
+    text-align: center;
+}
+
+.operation {
+    width: 100%;
+}
+
+.operation-top {
+    display: flex;
+    justify-content: space-between;
+}
+.wallet-card{
+    padding: 10px;
+    background-color: #9A9691;
+}
+.wallet-card-item{
+    padding: 10px;
+    background-color: white;
+    box-shadow:  0 3px 5px 2px black;
+    min-height: 100%;
+    margin-bottom: 10px;
+    height: 70px;
+    text-align: start;
+    padding-top: 20px;
+    
+}
+.card-item-botton{
+    display: flex;
+    justify-content: flex-start;
+}
+.third-party-payment{
+    padding: 10px;
+    display: flex;
+    height: 80px;
+    background-color: white;
+    box-shadow:  0 3px 5px 2px black;
+    min-height: 100%;
+    margin-bottom: 10px;
+    
+
+}
+.party-payment-botton{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left:10px; 
+}
+.party-payment-img image{
+    padding-top: 10px;
+    width: 100px;
+    height: 40px;
+}

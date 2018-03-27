@@ -1,0 +1,133 @@
+<!--私信  -->
+
+<view class='main'>
+    <view class='sold-return'>
+        <view class='return'></view>
+        <view class='sold-sell'>
+            <text>{{sendmsg}}</text>
+        </view>
+        <view class='sold-sell-save'>
+            <view class='button-save' bindtap='shopEdit' wx:if='{{save==false?true:false}}'>
+                <view class='signadd'>
+                    <view class="demoSpan1"></view>
+                </view>
+
+            </view>
+            <view class='button-save' bindtap='shopEdit' wx:if='{{save==true?true:false}}'>
+            </view>
+        </view>
+    </view>
+    <view wx:if='{{showmsg==true?true:false}}'>
+        <view class='msg'>
+            <view class='msg-left'>
+                <view class='msg-left-img'>
+                    <image src='../../image/imgError.jpg'></image>
+                </view>
+            </view>
+            <view class='msg-right'>
+                <view class='msg-right-top'>
+                    <view class='msg-right-top-name'>
+                        测试账套
+                    </view>
+                    <view class='msg-right-top-time'>
+                        2017-09-80
+                    </view>
+                </view>
+                <view class=' msg-right-bottom '>
+                    这发的都是什么鬼airbnb
+                </view>
+            </view>
+        </view>
+        <view class='msg'>
+            <view class='msg-left'>
+                <view class='msg-left-img'>
+                    <image src='../../image/imgError.jpg'></image>
+                </view>
+            </view>
+            <view class='msg-right'>
+                <view class='msg-right-top'>
+                    <view class='msg-right-top-name'>
+                        测试账套
+                    </view>
+                    <view class='msg-right-top-time'>
+                        2017-09-80
+                    </view>
+                </view>
+                <view class=' msg-right-bottom '>
+                    这发的都是什么鬼airbnb
+                </view>
+            </view>
+        </view>
+        <view class='msg'>
+            <view class='msg-left'>
+                <view class='msg-left-img'>
+                    <image src='../../image/imgError.jpg'></image>
+                </view>
+            </view>
+            <view class='msg-right'>
+                <view class='msg-right-top'>
+                    <view class='msg-right-top-name'>
+                        测试账套
+                    </view>
+                    <view class='msg-right-top-time'>
+                        2017-09-80
+                    </view>
+                </view>
+                <view class=' msg-right-bottom '>
+                    这发的都是什么鬼airbnb
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!--私信  -->
+
+
+    <view wx:if='{{showmsg==false?true:false}}'>
+
+        <view class='msg-email'>
+            <view class='msg-left'>
+                <view class='msg-left-img'>
+                    <image src='../../image/imgError.jpg'></image>
+                </view>
+            </view>
+            <view class='msg-right'>
+                <view class='msg-right-top'>
+                    <view class='msg-right-top-name'>
+                        测试账套
+                    </view>
+                    <view class='msg-right-top-img'>
+                        <image src='../../image/email.png'></image>
+                    </view>
+                </view>
+                <view class=' msg-right-bottom '>
+                    这发的都是什么鬼airbnb
+                </view>
+            </view>
+        </view>
+
+        <view class='msg-email'>
+            <view class='msg-left'>
+                <view class='msg-left-img'>
+                    <image src='../../image/imgError.jpg'></image>
+                </view>
+            </view>
+            <view class='msg-right'>
+                <view class='msg-right-top'>
+                    <view class='msg-right-top-name'>
+                        测试账套
+                    </view>
+                    <view class='msg-right-top-img'>
+                        <image src='../../image/email.png'></image>
+                    </view>
+                </view>
+                <view class=' msg-right-bottom '>
+                    这发的都是什么鬼airbnb
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+
+</view>

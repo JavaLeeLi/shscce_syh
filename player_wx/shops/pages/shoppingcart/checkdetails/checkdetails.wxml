@@ -1,0 +1,119 @@
+<!--pages/shoppingcart/checkdetails/checkdetails.wxml-->
+<view class='main'>
+    <!--买单流程  -->
+    <view class='order-details'>
+        <view class='orderList-status'>
+            <view class='orderList-status-item'>
+                <view class='orderList-status-item-img'>
+                    <image src='../../image/zhifu.png'></image>
+                </view>
+                <view class='orderList-status-item-detail'>
+                    <view class='orderList-status-item-detail-zhifu'>
+                        支付
+                    </view>
+                    <view class='orderList-status-item-detail-img'>
+                        <image src='../../image/zhifuarrow.png'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='orderList-status-item'>
+                <view class='orderList-status-item-img'>
+                    <image src='../../image/zhifu.png'></image>
+                </view>
+                <view class='orderList-status-item-detail'>
+                    <view class='orderList-status-item-detail-zhifu'>
+                        发货
+                    </view>
+                    <view class='orderList-status-item-detail-img'>
+                        <image src='../../image/zhifuarrow.png'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='orderList-status-item'>
+                <view class='orderList-status-item-img'>
+                    <image src='../../image/zhifu.png'></image>
+                </view>
+                <view class='orderList-status-item-detail'>
+                    <view class='orderList-status-item-detail-zhifu'>
+                        收货
+                    </view>
+                    <view class='orderList-status-item-detail-img'>
+                        <image src='../../image/zhifuarrow.png'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='orderList-status-item'>
+                <view class='orderList-status-item-img'>
+                    <image src='../../image/zhifu.png'></image>
+                </view>
+                <view class='orderList-status-item-detail'>
+                    <view class='orderList-status-item-detail-zhifu'>
+                        评价
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <!--地址  -->
+        <view class='order-address'>
+        <view class='order-address-top'>
+            <view class='order-address-img'>
+                <image src='../../image/index.png'></image>
+            </view>
+            </view>
+            <view class='order-address-center'>
+                <view class='order-address-center-left'>
+                    <view>{{address}}</view>
+                    <view>{{address}}</view>
+                </view>
+                <view class='order-address-center-right'>
+                    <image src='../../image/arrow.png'></image>
+                </view>
+            </view>
+        </view>
+
+        <!--留言  -->
+        <view class='order-message'>
+            <view class='order-shop'>
+                <view class='order-shop-le'>
+                    <view class='order-shop-left'>
+                        <image src='../../image/imgError.jpg'></image>
+                    </view>
+                </view>
+                <view class='order-shop-right'>
+                    <view class='order-shop-right-top'>
+                        <view>店铺商品</view>
+                        <view>￥123.00</view>
+                    </view>
+                    <view class='order-shop-right-end'>
+                        X1
+                    </view>
+                </view>
+            </view>
+
+            <view class='order-postage'>
+                <view class='order-postage-top'>
+                    <view class='order-postage-left'>邮费</view>
+                    <view class='order-postage-right'>￥12</view>
+                </view>
+            </view>
+
+            <view class='order-postage'>
+                <view class='order-postage-top'>
+                    <view class='order-postage-left'>订单总额</view>
+                    <view class='order-postage-right'>￥12</view>
+                </view>
+            </view>
+
+            <view class='order-postage'>
+                <view class='order-postage-top'>
+                    <view class='order-postage-left'>买家留言</view>
+                    <view class='order-postage-right'>
+                    <input placeholder='留言'></input>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>

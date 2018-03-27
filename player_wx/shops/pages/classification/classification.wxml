@@ -1,0 +1,394 @@
+<!-- 分类  -->
+
+<view class='main'>
+    <!--头部  -->
+    <view>
+        <view class='class-index-top'>
+            <view class='class-index-top-bgf'>
+                <text>官方商城</text>
+            </view>
+        </view>
+        <!--搜索  -->
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="请输入搜索内容" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">请输入搜索内容</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+
+
+        <view class='bannerLists'>
+            <!--顶部轮播图-->
+            <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style='height:200px;'>
+                <block wx:for="{{imgBannerUrls}}" wx:key="imgBannerUrlsId">
+                    <swiper-item>
+                        <navigator url="{{item.bannerClickUrl}}" hover-class="navigator-hover" data-id='{{item.bannerID}}'>
+                            <image src="{{item.bannerImgUrl}}" class="slide-image" />
+                        </navigator>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+
+        <!--分类  -->
+        <view class="navbar">
+            <block wx:for="{{tabs}}" wx:key="*this">
+                <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+                    <view class="navbar__title">{{item.name}}</view>
+                </view>
+            </block>
+            <view class="navbar__slider" style="width: {{sliderWidth}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+
+        <!--切换内容  -->
+        <!--内容  -->
+        <view>
+            <!--切换内容  -->
+            <view class='home-grid' wx:if="{{activeIndex==0}}">
+                <view class='home-grid-row'>
+                    <view class='home-grid-row-col'>
+                        <!--循环数据  -->
+                        <block wx:for='{{imgBannerUrls}}'>
+                            <view class='home-grid-row-col-show'>
+                                <navigator url='../classification/screening/screening'>
+                                    <image src='{{item.bannerImgUrl}}'></image>
+                                    <view>
+                                        <text>{{item.name}}</text>
+                                    </view>
+                                </navigator>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <!--切换内容  -->
+            <view class='home-grid' wx:if="{{activeIndex==1}}">
+                <view class='home-grid-row'>
+                    <view class='home-grid-row-col'>
+                        <block wx:for='{{imgBannerUrls}}'>
+                            <view class='home-grid-row-col-show'>
+                                <navigator url='../classification/screening/screening'>
+                                    <image src='{{item.bannerImgUrl}}'></image>
+                                    <view>
+                                        <text>{{item.name}}</text>
+                                    </view>
+                                </navigator>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 限时拍卖 -->
+        <view class='content-top'>
+            <view class='content-top-list'>
+                <view class='content-hr'></view>
+                <view class='content-kuai'></view>
+                <view>
+                    <text>限时拍卖</text>
+                </view>
+                <view class='content-kuai'></view>
+                <view class='content-hr'></view>
+            </view>
+        </view>
+        <!--拍卖商品显示  -->
+        <view class='home-auction'>
+            <view class='auction-center'>
+                <view class='auction-center-top'>
+                    <text>拍卖倒计时:</text>
+                    <text class='auction-center-top-botton'>已截止</text>
+                </view>
+            </view>
+            <view class='auction-botton'>
+                <view class='auction-botton-img'>
+                    <scroll-view class="recommend_scroll_x_box" scroll-x="true">
+                        <view class="recommend_hot_box" wx:for="{{hotGoodList}}">
+                            <view class='recommend_hot_box-img'>
+                                <navigator url='../index/shopauctions/shopauctions' class='classnav'>
+                                    <image src="{{item.naviItemUrl}}" class="recommend_hot_image"></image>
+                                    <view class='recommend_hot_box-money'>￥{{item.paice}}</view>
+                                </navigator>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--交易记录  -->
+    <view class='transaction-record'>
+        <view class='transaction-record-left'>
+            <view class='transaction-record-left-icon'>
+                <view class='transaction-record-left-icon-hand'>
+                    <image src='../image/hand.png'></image>
+                </view>
+            </view>
+            <view class='transaction-record-left-icon-show'>
+                <text>最近成交记录:</text>
+            </view>
+        </view>
+        <view class='transaction-record-right'>
+
+            <view class='transaction-record-right-text'>
+                <!--顶部轮播图-->
+                <swiper indicator-dots="{{false}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                    <block wx:for="{{imgBannerUrls}}" wx:key="imgBannerUrlsId">
+                        <swiper-item>
+                            <navigator url="../classification/classdetails/classdetails" hover-class="navigator-hover" data-id='{{item.bannerID}}'>
+                                <text>{{item.name}}</text>
+                            </navigator>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+    </view>
+    <view class='class-shop'>
+        <!-- <import src="../template/template.wxml" />
+        <template is="classshop" data="{{item}}" /> -->
+
+        <view class='class-shop-list'>
+            <view class='class-shop-list-item'>
+                <view class='class-shop-list-item-top'>
+                    <view class='class-shop-list-item-top-left'>
+                        <view class='class-shop-list-item-top-left-box'>
+                            <image src='../image/chushou.png'></image>
+                        </view>
+                    </view>
+                    <view class='class-shop-list-item-top-right'>
+                        <view class='class-shop-list-item-top-right-left'>
+                            <view class='class-shop-list-item-top-right-left-top'>
+                                <text>测试商品发布</text>
+                            </view>
+                            <view class='class-shop-list-item-top-right-left-botton'>
+                                <view class='class-shop-list-item-top-right-left-botton-left'>
+                                    <text>￥280.00</text>
+                                </view>
+                                <view class='class-shop-list-item-top-right-left-botton-right'>
+<view>邮费:￥8</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class='class-shop-list-item-top-right-right'>
+                            <view class='class-shop-list-item-top-right-right-img'>
+                                <image src='../image/imgError.jpg'></image>
+                            </view>
+                            <view class='class-shop-list-item-top-right-right-box'>
+                                <view class='class-shop-list-item-top-right-right-box-top'>
+                                    <text>she</text>
+                                </view>
+                                <view class='class-shop-list-item-top-right-right-box-botton'>
+                                    <text>Lv 4</text>
+                                    <text>未认证</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <!--中间  -->
+                <view class='class-shop-list-item-center'>
+                    <view class='class-shop-list-item-center-text'>
+                        <text>已截止</text>
+                    </view>
+                </view>
+                <!--底部  -->
+                <view class='class-shop-list-item-botton'>
+                    <view class='class-shop-list-item-bottom-img'>
+                        <image src='../image/imgError.jpg'></image>
+                    </view>
+                    <view class='class-shop-list-item-bottom-img'>
+                        <image src='../image/imgError.jpg'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='class-shop-list'>
+            <view class='class-shop-list-item'>
+                <view class='class-shop-list-item-top'>
+
+                    <view class='class-shop-list-item-top-left'>
+                        <view class='class-shop-list-item-top-left-box'>
+                            <image src='../image/chushou.png'></image>
+                        </view>
+                    </view>
+                    <view class='class-shop-list-item-top-right'>
+                        <view class='class-shop-list-item-top-right-left'>
+                            <view class='class-shop-list-item-top-right-left-top'>
+                                <text>测试商品发布</text>
+                            </view>
+                            <view class='class-shop-list-item-top-right-left-botton'>
+                                <view class='class-shop-list-item-top-right-left-botton-left'>
+                                    <text>￥280.00</text>
+                                </view>
+                                <view class='class-shop-list-item-top-right-left-botton-right'>
+                                    <text>
+                                        <text>邮费:</text>
+                                        <text>￥5.0</text>
+                                    </text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class='class-shop-list-item-top-right-right'>
+                            <view class='class-shop-list-item-top-right-right-img'>
+                                <image src='../image/imgError.jpg'></image>
+                            </view>
+                            <view class='class-shop-list-item-top-right-right-box'>
+                                <view class='class-shop-list-item-top-right-right-box-top'>
+                                    <text>she</text>
+                                </view>
+                                <view class='class-shop-list-item-top-right-right-box-botton'>
+                                    <text>Lv 4</text>
+                                    <text>未认证</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <!--中间  -->
+                <view class='class-shop-list-item-center'>
+                    <view></view>
+                </view>
+                <!--底部  -->
+                <view class='class-shop-list-item-botton'>
+                    <view class='class-shop-list-item-bottom-img'>
+                        <image src='../image/imgError.jpg'></image>
+                    </view>
+                    <view class='class-shop-list-item-bottom-img'>
+                        <image src='../image/imgError.jpg'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--拍卖  -->
+        <view class='class-shop-list'>
+            <view class='class-shop-list-item'>
+                <view class='class-shop-list-item-top'>
+                    <view class='class-shop-list-item-top-left'>
+                        <view class='.class-shop-list-item-top-left-box-paimai'>
+                            <image src='../image/paimai.png'></image>
+                        </view>
+                    </view>
+                    <view class='class-shop-list-item-top-right'>
+                        <view class='class-shop-list-item-top-right-left'>
+                            <view class='class-shop-list-item-top-right-left-top'>
+                                <text>测试商品发布</text>
+                            </view>
+                            <view class='class-shop-list-item-top-right-left-botton'>
+                                <view class='class-shop-list-item-top-right-left-botton-left'>
+                                    <text>￥280.00</text>
+                                </view>
+                                <view class='class-shop-list-item-top-right-left-botton-right'>
+                                    <text>
+                                        <text>邮费:</text>
+                                        <text>￥5.0</text>
+                                    </text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class='class-shop-list-item-top-right-right'>
+                            <view class='class-shop-list-item-top-right-right-img'>
+                                <image src='../image/imgError.jpg'></image>
+                            </view>
+                            <view class='class-shop-list-item-top-right-right-box'>
+                                <view class='class-shop-list-item-top-right-right-box-top'>
+                                    <text>she</text>
+                                </view>
+                                <view class='class-shop-list-item-top-right-right-box-botton'>
+                                    <text>Lv 4</text>
+                                    <text>未认证</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <!--中间  -->
+                <view class='class-shop-list-item-center'>
+                    <view class='class-shop-list-item-center-text'>
+                        <text>已截止</text>
+                    </view>
+                </view>
+                <!--底部  -->
+                <view class='class-shop-list-item-botton'>
+                    <view class='class-shop-list-item-bottom-img'>
+                        <image src='../image/imgError.jpg'></image>
+                    </view>
+                    <view class='class-shop-list-item-bottom-img'>
+                        <image src='../image/imgError.jpg'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--购买  -->
+        <view class='class-shop-list'>
+            <view class='class-shop-list-item'>
+                <view class='class-shop-list-item-top'>
+                    <view class='class-shop-list-item-top-left'>
+                        <view class='class-shop-list-item-top-left-box-sell'>
+                            <image src='../image/goumai.png'></image>
+                        </view>
+                    </view>
+                    <view class='class-shop-list-item-top-right'>
+                        <view class='class-shop-list-item-top-right-left'>
+                            <view class='class-shop-list-item-top-right-left-top'>
+                                <text>测试商品发布</text>
+                            </view>
+                            <view class='class-shop-list-item-top-right-left-botton'>
+                                <view class='class-shop-list-item-top-right-left-botton-left'>
+                                    <text>￥280.00</text>
+                                </view>
+                                <view class='class-shop-list-item-top-right-left-botton-right'>
+                                    <text>
+                                        <text>邮费:</text>
+                                        <text>￥5.0</text>
+                                    </text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class='class-shop-list-item-top-right-right'>
+                            <view class='class-shop-list-item-top-right-right-img'>
+                                <image src='../image/imgError.jpg'></image>
+                            </view>
+                            <view class='class-shop-list-item-top-right-right-box'>
+                                <view class='class-shop-list-item-top-right-right-box-top'>
+                                    <text>she</text>
+                                </view>
+                                <view class='class-shop-list-item-top-right-right-box-botton'>
+                                    <text>Lv 4</text>
+                                    <text>未认证</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <!--中间  -->
+                <view class='class-shop-list-item-center'>
+                    <view class='class-shop-list-item-center-text'>
+                        <text>已截止</text>
+                    </view>
+                </view>
+                <!--底部  -->
+                <view class='class-shop-list-item-botton'>
+                    <view class='class-shop-list-item-bottom-img'>
+                        <image src='../image/imgError.jpg'></image>
+                    </view>
+                    <view class='class-shop-list-item-bottom-img'>
+                        <image src='../image/imgError.jpg'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--显示商品  -->
+
+
+</view>

@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="userinfo">
+        <block>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src='../../image/imgError.jpg' background-size="cover"></image>
+        </block>
+    </view>
+
+    <view class='regist-center'>
+        <view class='regist-center-item'>
+            <view class='regist-center-item-left'>
+                <view class='regist-center-item-left-img'>
+                    <image src='../../image/phone.png'></image>
+                </view>
+            </view>
+            <view class='regist-center-item-right'>
+                <input placeholder='手机' placeholder-style='color:white'></input>
+            </view>
+        </view>
+    </view>
+    <view class='regist-center'>
+        <view class='regist-center-item'>
+            <view class='regist-center-item-left'>
+                <view class='regist-center-item-left-img'>
+                    <image src='../../image/auth.png'></image>
+                </view>
+            </view>
+            <view class='code-center-item'>
+                <view class='code-center-item-left'>
+                    <input placeholder='验证码' placeholder-style='color:white'></input>
+                </view>
+                <view class='code-center-item-right'>发送验证码</view>
+            </view>
+        </view>
+
+
+    </view>
+    <view class='regist-center'>
+        <view class='regist-center-item'>
+            <view class='regist-center-item-left'>
+                <view class='regist-center-item-left-img'>
+                    <image src='../../image/lock.png'></image>
+                </view>
+            </view>
+            <view class='regist-center-item-right'>
+                <input placeholder='密码' placeholder-style='color:white'></input>
+            </view>
+        </view>
+    </view>
+
+
+    <view class='regist-confirm'>
+
+        <view>
+            <checkbox></checkbox>
+        </view>
+        <view>同意遵守《上邮汇用户注册协议》</view>
+    </view>
+
+    <view class='btn'>
+    <view>
+        <button type='warn'>注册</button>
+        </view>
+    </view>
+
+    <view>
+    <view>返回登录</view>
+    </view>
+</view>

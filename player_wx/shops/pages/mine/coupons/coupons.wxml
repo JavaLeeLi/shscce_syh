@@ -1,0 +1,51 @@
+<!--优惠券  -->
+<view class='containers'>
+    <view class="navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+                <view class="navbar__title">{{item.name}}</view>
+            </view>
+        </block>
+        <view class="navbar__slider" style="width: {{sliderWidth}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset+8}}px);"></view>
+    </view>
+
+    <view>
+        <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" style="height:{{contentHeight}}px">
+            <swiper-item>
+                <view class='coupons'>
+                    <view class='coupons-top'>
+                        <view class='coupons-top-left'>
+                            <view class='top-left'>
+                                <view class='top-left-value'>
+                                    <text>
+
+                                        <text>￥</text>
+                                        <text class='top-left-value-font'>50</text>
+                                    </text>
+
+                                </view>
+                                <view class='top-left-botton'>
+                                    <text>满100元使用</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class='coupons-top-right'>
+                            <view class='coupons-top-right-use'>
+                                <view class='top-right-use-top'>
+                                    <text>仅限使用</text>
+                                </view>
+                                <view class='top-right-use-botton'>
+                                    有限期
+                                    <text>2017-08-01 - 2017-10-01</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view>
+
+    </view>
+</view>

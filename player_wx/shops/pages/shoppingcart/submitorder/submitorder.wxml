@@ -1,0 +1,87 @@
+<!--pages/shoppingcart/checkdetails/checkdetails.wxml-->
+<view class='main'>
+    <!--买单流程  -->
+    <view class='order-details'>
+        <!--地址  -->
+        <view class='order-address'>
+            <view class='order-address-top'>
+                <view class='order-address-img'>
+                    <image src='../../image/index.png'></image>
+                </view>
+            </view>
+            <view class='order-address-center'>
+                <view class='order-address-center-left'>
+                    <view>{{address}}</view>
+                    <view>{{address}}</view>
+                </view>
+                <view class='order-address-center-right'>
+                    <image src='../../image/arrow.png'></image>
+                </view>
+            </view>
+        </view>
+
+        <!--留言  -->
+        <view class='order-message'>
+            <view class='order-shop'>
+                <view class='order-shop-le'>
+                    <view class='order-shop-left'>
+                        <image src='../../image/imgError.jpg'></image>
+                    </view>
+                </view>
+                <view class='order-shop-right'>
+                    <view class='order-shop-right-top'>
+                        <view>店铺商品</view>
+                        <view>￥123.00</view>
+                    </view>
+                    <view class='order-shop-right-end'>
+                        X1
+                    </view>
+                </view>
+            </view>
+
+            <view class='order-postage'>
+                <view class='order-postage-top'>
+                    <view class='order-postage-left'>邮费</view>
+                    <view class='order-postage-right'>￥12</view>
+                </view>
+            </view>
+
+            <view class='order-postage'>
+                <view class='order-postage-top'>
+                    <view class='order-postage-left'>订单总额</view>
+                    <view class='order-postage-right'>￥12</view>
+                </view>
+            </view>
+
+            <view class='order-postage'>
+                <view class='order-postage-top'>
+                    <view class='order-postage-left'>买家留言</view>
+                    <view class='order-postage-right'>
+                        <input placeholder='留言'></input>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+    <!--合计  -->
+
+    <view>
+        <view class='order-tot'>
+            <view class='order-tot-left'>
+                <view class='order-tot-left-top'></view>
+                <view class='order-tot-left-center'>
+                    <view class='order-tot-left-center-left'>
+                        <view>合计</view>
+                    </view>
+                    <view class='order-tot-left-center-right'>
+                        <view>￥89</view>
+                    </view>
+                </view>
+            </view>
+            <view class='order-tot-right'>
+                <view>提交订单</view>
+            </view>
+        </view>
+    </view>
+</view>

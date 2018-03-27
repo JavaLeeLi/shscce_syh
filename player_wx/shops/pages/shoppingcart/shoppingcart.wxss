@@ -1,0 +1,326 @@
+.shop-user {
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.weui-cells-center{
+    height: 100%;
+}
+.shop-user-info {
+    width: 60%;
+    display: flex;
+}
+.shop-arrow{
+    width: 15px;
+    height: 15px;
+}
+.shop-arrow image{
+    width: 100%;
+    height: 100%;
+}
+
+.user-info-img {
+    margin-left: 6px;
+}
+
+.user-info-img image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.shop-user-info-right {
+    margin-left: 10px;
+}
+/* 
+.shop-user-info .shop-user-info-right::after {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-width: 2px 2px 0 0;
+    background-color: white;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -4px;
+} */
+
+.user-info {
+    border: 1px solid black;
+    margin: 2px;
+}
+
+.shop-list {
+    width: 100%;
+    display: flex;
+    border: 1px solid #F2F2F2;
+}
+.shop-list-che{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+.shop-list-info {
+    width: 100%;
+    display: flex;
+}
+
+.user-list-img {
+    width: 30%;
+}
+
+.user-list-img image {
+    width: 80px;
+    height: 80px;
+}
+
+.shop-list-info-right {
+    width: 70%;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.shop-list-name {
+    display: flex;
+}
+
+.shop-list-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.stepper{
+    display: flex;
+   
+}
+.shop-list-center-right{
+    margin-left: 5px;
+}
+.shop-list-botton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.shop-list-botton-right{
+    color: red;
+}
+.cart_container {
+  display: flex;
+  flex-direction: row;
+}
+.scroll {
+  margin-bottom: 120rpx;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sku {
+  margin-top: 60rpx;
+  margin-left: 100rpx;
+}
+.sku-price {
+  color: red;
+  position: relative;
+  margin-top: 70rpx;
+}
+.price {
+  color: red;
+  position: relative;
+}
+.title {
+  font-size: 38rpx;
+  margin-top: 40rpx;
+}
+.small_text {
+  font-size: 28rpx;
+  margin-right: 40rpx;
+  margin-left: 10rpx;
+}
+.item-select {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 90rpx;
+  margin-left: 20rpx;
+}
+.item-allselect {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+}
+.item-image {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+}
+.bottom_line {
+  width: 100%;
+  height: 2rpx;
+  background: lightgray;
+}
+.bottom_total {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  height: 35%;
+  line-height: 120rpx;
+  background: white;
+}
+.button-red {
+  background-color: #f44336; /* 红色 */
+}
+button {
+  position: fixed;
+  right: 0;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 30rpx;
+  border-radius: 0rpx;
+  width: 30%;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+/*底部按钮*/
+.carts-footer {
+  width: 100%;
+  height: 55px;
+  position: fixed;
+  bottom:100px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+ .carts-left{
+     display: flex;
+     align-items: center;
+ }
+/*复选框*/
+ .carts-left icon {
+  margin-left: 20rpx;
+  text-align: center;
+}
+ 
+/*全选字样*/
+ .carts-left text {
+  font-size: 30rpx;
+  margin-left: 8rpx;
+  line-height: 10rpx;
+}
+ 
+/*立即结算按钮*/
+.carts-footer .button {
+  line-height: 55px;
+  text-align: center;
+  width:220rpx;
+  height: 55px;
+  background-color: red;
+  color: white;
+  font-size: 36rpx;
+  border-radius: 0;
+  border: 0;
+}
+.sold-return {
+    width: 100%;
+    display: flex;
+    height: 2.25rem;
+    background-color: black;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.button-save {
+    width: 90px;
+    height: 2.25rem;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.sold-sell {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.return {
+    width: 100%;
+}
+.sold-sell-save {
+    width: 100%;
+}
+.jian{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.jian image{
+    width: 20px;
+    height: 20px;
+}
+
+.jia{
+    width: 30px;
+    height: 30px;  
+     display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.jia image{
+    width: 20px;
+    height: 20px;
+}
+.stepper{
+    display: flex;
+    flex-flow:  row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.values{
+    width: 30px;
+    background-color: #eee;
+    text-align: center;
+}
+.totalnumber{
+    color: red;
+}
+.shop-freight{
+    font-size: 12px;
+}
+.carts-item:last-child{
+    margin-bottom: 200px;
+}
+
+.shop-em-top{
+    display: flex;
+    justify-content: center;
+}
+.shop-em-img{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+.shop-em-img image{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}

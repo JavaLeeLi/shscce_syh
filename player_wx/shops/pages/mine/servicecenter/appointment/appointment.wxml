@@ -1,0 +1,233 @@
+<!-- 求购 -->
+
+<view class='home-shop'>
+    <!--分类  -->
+    <view class="navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+                <view class="navbar__title">{{item.name}}</view>
+            </view>
+        </block>
+        <view class="navbar__slider" style="width: {{sliderWidth}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset+8}}px);"></view>
+    </view>
+    <!--切换  -->
+    <view>
+        <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" style="height:{{contentHeight}}px">
+            <swiper-item>
+<view class='container'>
+    <!--表单  -->
+    <view class='sold-conter'>
+        <view class='shoping-name'>
+            <view class='shoping-name-botton'>
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__bd">
+                            <input class="weui-input" placeholder="请输入您的姓名" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--表单  -->
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请填写手机号" bindtap="powerDrawer" data-statu="open" value='{{showValue}}' />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">预约时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                        <view class="weui-input">{{date}}</view>
+                    </picker>
+                </view>
+            </view>
+            <!-- <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">结拍时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                        <view class="weui-input">{{date}}</view>
+                    </picker>
+                </view>
+            </view> -->
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">商品信息</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请填写商品信息" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">数量</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="数量" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">体积</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="体积" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">历史原因</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="历史原因" />
+                </view>
+            </view>
+
+
+
+        </view>
+
+
+        <!--文本域  -->
+        <view class='sold-textarea'>
+            <view class='sold-textarea-weui'>
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell">
+                        <view class="weui-cell__bd">
+                            <textarea class="weui-textarea" placeholder="请填写备注说明" style="height: 3.3em" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--图片  -->
+        <view class='save-btn'>
+            <view class='sold-button'>
+                <view class="page__bd page__bd_spacing">
+                   <view class='save-btn-cancel'>取消</view>
+                </view>
+            </view>
+            <view class='sold-button'>
+                <view class="page__bd page__bd_spacing">
+                    <view class='save-btn-confirm'>确认</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--mask-->
+    <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+
+    <!--显示分类  -->
+    <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+        <view class='main'>
+            <view class="navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+                        <view class="navbar__title">{{item.name}}</view>
+                    </view>
+                </block>
+                <view class="navbar__slider" style="width: {{sliderWidth}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset+8}}px);"></view>
+            </view>
+            <view style="height:{{contentHeight}}px">
+                <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" style="height:{{contentHeight}}px">
+                    <swiper-item>
+                        <!--切换内容  -->
+                        <view class='home-grid'>
+                            <view class='home-grid-row'>
+                                <view class='home-grid-row-col'>
+                                    <view bindtap='showValue' class='home-grid-row-col-show' data-name='股票' data-statu="close">
+                                        <image src='../../../image/imgError.jpg'></image>
+                                        <view data-=''>
+                                            <text>股票</text>
+                                        </view>
+
+                                    </view>
+
+                                    <view class='home-grid-row-col-show'>
+                                        <navigator>
+                                            <image src='../../../image/imgError.jpg'></image>
+                                            <view>
+                                                <text>股票</text>
+                                            </view>
+                                        </navigator>
+                                    </view>
+
+
+
+                                    <view class='home-grid-row-col-show'>
+                                        <navigator>
+                                            <image src='../../../image/imgError.jpg'></image>
+                                            <view>
+                                                <text>股票</text>
+                                            </view>
+                                        </navigator>
+                                    </view>
+                                    <view class='home-grid-row-col-show'>
+                                        <navigator>
+                                            <image src='../../../image/imgError.jpg'></image>
+                                            <view></view>
+                                        </navigator>
+                                    </view>
+                                    <view class='home-grid-row-col-show'>
+                                        <navigator>
+                                            <image src='../../../image/imgError.jpg'></image>
+                                            <view>
+                                                <text>股票</text>
+                                            </view>
+                                        </navigator>
+                                    </view>
+
+
+                                    <view class='home-grid-row-col-show'>
+                                        <navigator>
+                                            <image src='../../../image/imgError.jpg'></image>
+                                            <view>
+                                                <text>股票</text>
+                                            </view>
+                                        </navigator>
+                                    </view>
+
+
+                                    <view class='home-grid-row-col-show'>
+                                        <navigator>
+                                            <image src='../../../image/imgError.jpg'></image>
+                                            <view>
+                                                <text>股票</text>
+                                            </view>
+                                        </navigator>
+                                    </view>
+
+                                    <view class='home-grid-row-col-show'>
+                                        <navigator>
+                                            <image src='../../../image/imgError.jpg'></image>
+                                            <view>
+                                                <text>股票</text>
+                                            </view>
+                                        </navigator>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view>
+        <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
+    </view>
+</view>
+            </swiper-item>
+
+        </swiper>
+    </view>
+
+</view>

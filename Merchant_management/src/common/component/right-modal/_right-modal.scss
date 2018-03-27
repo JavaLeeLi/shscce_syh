@@ -1,0 +1,44 @@
+$header-height: 40px;
+
+.right-modal .modal-container{
+
+  transition: right 0.3s;
+  z-index: 10500;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -33%;
+  width: 33%;
+  background: #fff;
+  overflow-y: auto;
+
+  @media (max-width: $screen-sm-min) {
+    right: -100%;
+    width: 100%;
+  }
+
+  .header{
+    padding: 0px 20px;
+    height: $header-height;
+    line-height: $header-height;
+    border-bottom: solid 2px #a1b1bc;;
+    background: #1071BD;
+    color: #fff;
+
+    .close{
+      color: #fff;
+      line-height: $header-height;
+      text-shadow: none;
+      opacity: 1;
+    }
+  }
+
+  .body{
+    padding: 10px;
+
+  }
+
+}
+.right-modal.in .modal-container{
+  right: 0;
+}

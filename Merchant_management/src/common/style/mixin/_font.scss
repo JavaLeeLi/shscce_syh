@@ -1,0 +1,22 @@
+$component-font:(
+    0:(color:red),
+    1:(size:16px,color:#333),
+    2:(size:14px,color:#666),
+    3:(size:12px,color:#999)
+);
+
+@function fontSize($level){
+    @each $key,$value in $component-font{
+        @if $level == $key{
+            @return map_get($value,size);
+        }
+    }
+}
+
+@function fontColor($level){
+    @each $key,$value in $component-font{
+        @if $level == $key {
+            @return map_get($value,color);
+        }
+    }
+}

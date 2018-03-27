@@ -1,0 +1,112 @@
+<ul class="nav nav-pills mb20" ng-init="vm.tab = 'sale'">
+    <li role="presentation" ng-class="{'active':vm.tab == 'sale'}"><a ng-click="vm.switch('sale')">销售中</a></li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'audit'}"><a ng-click="vm.switch('audit')">待审核</a></li>
+    <!--<li role="presentation"><a>发布商品</a></li>-->
+    <li role="presentation" ng-class="{'active':vm.tab == 'warehouse'}"><a ng-click="vm.switch('warehouse')">仓库中</a></li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'draft'}"><a ng-click="vm.switch('draft')">草稿箱</a></li>
+</ul>
+
+<hr>
+<div class="row search-bar">
+    <form class="form-inline">
+        <div class="form-group col-md-4">
+            <label >商品名称</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-4" ng-show="vm.tab != 'audit'">
+            <label >商品编码</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-4" ng-show="vm.tab != 'audit'">
+            <label >商品分类</label>
+            <select class="form-control search-select" ng-model="selectedSite" ng-options="x.site for x in sites">
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label >二级分类</label>
+            <select class="form-control search-select" ng-model="selectedSite" ng-options="x.site for x in sites">
+            </select>
+        </div>
+        <div class="form-group col-md-6" ng-show="vm.tab != 'audit'">
+            <label >发布日期</label>
+            <input type="text" class="form-control">
+            <label class="pl10">至</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-2 ">
+            <button type="submit" class="btn btn-info">搜索</button>
+        </div>
+
+    </form>
+</div>
+<hr>
+
+<div class="row">
+    <div class="table-responsive col-xs-12">
+        <table class="table table-hover text-center" >
+            <thead>
+            <tr>
+                <td width="5%">选择</td>
+                <td width="30%">商品</td>
+                <td width="8%" ng-show="vm.tab != 'audit'">分类</td>
+                <td width="7%" ng-show="vm.tab != 'audit'">库存</td>
+                <td width="20%" ng-show="vm.tab != 'audit'">商品编码</td>
+                <td width="10%" ng-show="vm.tab != 'audit'">发布时间</td>
+                <td width="10%" ng-show="vm.tab == 'audit'">审核状态</td>
+                <td width="20%">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in allitem[currentPage-1]">
+                <td ><input type="checkbox" ng-model="parentScrollable"></td>
+                <td >
+                    <div><img alt="古钱币" src="" ></div>
+                    <div>
+                        <p>{{user.id}}</p>
+                        <p class="price">￥5000.00</p>
+                    </div>
+                </td>
+                <td ng-show="vm.tab != 'audit'">{{user.username}}</td>
+                <td ng-show="vm.tab != 'audit'">{{user.gender}}</td>
+                <td ng-show="vm.tab != 'audit'">{{user.code}}</td>
+                <td ng-show="vm.tab != 'audit'">{{user.dt}}</td>
+                <td ng-show="vm.tab == 'audit'" ng-class="{'price':user.status == '未通过'}">{{user.status}}</td>
+                <td >
+                    <span class="cz">编辑</span>
+                    <a mwl-confirm on-confirm="vm.delete($index)" title="确定删除吗?" confirm-text="确定" cancel-text="取消" placement="left">
+                        <span class="cz">删除</span>
+                    </a>
+                    <span class="cz" ng-show="vm.tab == 'sale' ||  vm.tab == 'audit'">下架</span>
+                    <span class="cz" ng-show="vm.tab == 'warehouse' || vm.tab == 'draft'">上架</span>
+                    <span class="cz" ng-show="vm.tab != 'audit'">推广</span>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-1 pt20">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">全选
+            </label>
+        </div>
+    </div>
+    <div class="col-xs-5 pt20">
+        <button class="btn-sm btn btn-default" ng-show="vm.tab == 'sale'">违规下架</button>
+        <button class="btn-sm btn btn-default" ng-show="vm.tab == 'warehouse' || vm.tab == 'draft'">全部上架</button>
+        <button class="btn-sm btn btn-default" ng-show="vm.tab == 'audit'">全部删除</button>
+        <button class="btn btn-default btn-sm">导出查询结果</button>
+    </div>
+    <div class="col-md-2 text-right pt25" style="">
+        {{currentPage}}/{{totalPage}}页，共{{totalItems}}条记录
+    </div>
+    <div class="col-xs-4">
+        <uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage"  num-pages="totalPage" items-per-page="itemsPage" class="pagination-sm"></uib-pagination>
+    </div>
+</div>
+
+
+

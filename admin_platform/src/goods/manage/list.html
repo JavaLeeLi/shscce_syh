@@ -1,0 +1,106 @@
+<!--<ol class="breadcrumb">-->
+    <!--<li>商品</li>-->
+    <!--<li class="active">商品管理</li>-->
+<!--</ol>-->
+<ul class="nav nav-tabs mb20" ng-init="vm.tab = 'all'">
+    <li role="presentation" ng-class="{'active':vm.tab == 'all'}"><a ng-click="vm.switch('all')">所有商品</a></li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'on'}"><a ng-click="vm.switch('on')">销售中</a></li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'stay'}"><a ng-click="vm.switch('stay')">待审核</a></li>
+</ul>
+<div class="row search-bar">
+    <form class="form-inline">
+        <div class="form-group col-md-3">
+            <label >商品分类</label>
+            <select ng-model="class" class="form-control fixed-width"
+                    ng-options="class.id as class.name for class in vm.class"></select>
+        </div>
+        <div class="form-group col-md-3">
+            <label >二级分类</label>
+            <select ng-model="class" class="form-control fixed-width"
+                    ng-options="class.id as class.name for class in vm.class"></select>
+        </div>
+        <div class="form-group col-md-3">
+            <label >商品名称</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3">
+            <label >商品编码</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3">
+            <label >所属店铺</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3 text-center">
+            <button type="submit" class="btn btn-info">搜索</button>
+            <button type="submit" class="btn btn-default">重置</button>
+        </div>
+
+    </form>
+</div>
+
+<div class="row">
+    <div class="table-responsive col-xs-12">
+        <table class="table table-hover ">
+            <thead class="text-center">
+                <tr>
+                    <td width="5%" class="p-h-0">选择</td>
+                    <td width="25%" class="p-h-0">商品</td>
+                    <td width="5%" class="p-h-0">分类</td>
+                    <td width="10%" class="p-h-0">所属店铺</td>
+                    <td width="10%" class="p-h-0">商品编码</td>
+                    <td width="5%" class="p-h-0">状态</td>
+                    <td width="10%" class="p-h-0">发布时间</td>
+                    <td width="10%" class="p-h-0">操作</td>
+                </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center">
+                <td >
+                    <div class="checkbox  text-center">
+                    <label>
+                        <input type="checkbox">
+                    </label>
+                </div>
+                </td>
+                <td class="text-left">
+                    eees
+                </td>
+                <td>苹果</td>
+                <td>销售中</td>
+                <td>手机</td>
+                <td>官方直营店</td>
+                <td>2017-08-08</td>
+                <td>
+                    <a href="" class="link-a">查看</a>
+                    <a href="" class="link-a">审核</a>
+                    <a href="" class="link-a">下架</a>
+                    <a href="" class="link-a">下架原因</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="10" class="empty-row">没有找到符合条件的数据</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-1 pt20">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">全选
+            </label>
+        </div>
+    </div>
+    <div class="col-xs-4 pt20">
+        <button class="btn-sm btn btn-default ">全部下架</button>
+        <button class="btn btn-default btn-sm">导出查询结果</button>
+    </div>
+    <div class="col-xs-6">
+        <uib-pagination boundary-links="true" items-per-page="vm.tableParams.count()"
+                        total-items="vm.totalElements"
+                        ng-model="vm.queryPage" ng-change="vm.pageChange(vm.queryPage)"
+                        max-size="10" class="pagination-sm pull-right"></uib-pagination>
+    </div>
+</div>

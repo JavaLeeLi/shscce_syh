@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="table-responsive col-xs-12">
+        <table class="table table-hover ">
+            <thead class="text-center">
+            <tr>
+                <td width="60%" class="p-h-0">线上支付</td>
+                <td width="30%" class="p-h-0">开/关</td>
+                <td width="10%" class="p-h-0">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center">
+                <td>支付宝</td>
+                <td>
+                    <switch id="enabled" name="enabled" ng-model="enabled"></switch>
+                </td>
+                <td>
+                    <a href="" class="link-a">编辑</a>
+                </td>
+            </tr>
+            <tr class="text-center">
+                <td>支付宝APP</td>
+                <td>
+                    <switch id="enabled" name="enabled" ng-model="enabled"></switch>
+                </td>
+                <td>
+                    <a href="" class="link-a">编辑</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" class="empty-row">没有找到符合条件的数据</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <uib-pagination boundary-links="true" items-per-page="vm.tableParams.count()"
+                        total-items="vm.totalElements"
+                        ng-model="vm.queryPage" ng-change="vm.pageChange(vm.queryPage)"
+                        max-size="10" class="pagination-sm pull-right"></uib-pagination>
+    </div>
+</div>

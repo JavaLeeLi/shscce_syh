@@ -1,0 +1,22 @@
+.ta-toolbar{
+  background: linear-gradient(to right,$brand-primary,$brand-info);
+
+  &.btn-toolbar{
+    margin-left: 0px;
+  }
+
+  & .btn{
+    background-color: transparent !important;
+    color: #fff !important;
+
+    &.active{
+      color: $brand-info !important;
+    }
+
+    .dropdown-menu{
+      color: #000;
+      min-width: 50px;
+      text-align: center;
+    }
+  }
+}

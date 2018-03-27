@@ -1,0 +1,16 @@
+<view class="wrap"> 
+    <button bindtap="setClear">clear</button>
+    <view class="containerBox" style="">
+       <view wx:for="{{allContentList}}">
+            <view wx:if="{{item.to == message_to}}"  class="message-text" style="">{{item.content}}</view>
+
+            <view   wx:if="{{item.to != message_to}}" class="message-sent-text">{{item.content}}</view>
+       </view>
+    </view>
+    <form bindsubmit="formSubmit">
+    <view class="handleBox">
+        <input  class="input_submit" name="sendinput" placeholder="输入聊天的内容" value="{{inputTemp}}" bindinput="bindKeyInput"/>
+        <button type="default" class="btn_submit" size="mini" bindtap="submit" formType="submit">发送</button>
+    </view>
+    </form>
+</view>

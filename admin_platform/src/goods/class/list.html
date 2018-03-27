@@ -1,0 +1,61 @@
+<ul class="nav nav-tabs mb20">
+    <li role="presentation" class="active"><a href="#">分类管理</a></li>
+    <!--<li role="presentation"><a href="#">新增</a></li>-->
+
+</ul>
+<div class="row mb20">
+    <div class="col-xs-6">
+        <!--<button class="btn btn-info mh10" ui-sref="goods.class.add">新增</button>-->
+        <a ng-click="vm.closeAll()"><i class="fa fa-plus-circle fa-lg mh10" aria-hidden="true"></i>折叠</a>
+        <a ng-click="vm.openAll()"><i class="fa fa-minus-circle fa-lg mh10" aria-hidden="true"></i>展开</a>
+    </div>
+    <div class="col-xs-6">
+        <button class="btn btn-info pull-right mr50" ui-sref="goods.class.add">新增</button>
+    </div>
+</div>
+<div class="div-header">
+    <div class="col-xs-4 ">分类名称</div>
+    <div class="col-xs-2 ">排序</div>
+    <div class="col-xs-3 ">是否免审核</div>
+    <div class="col-xs-3 ">操作</div>
+</div>
+<div  class="div-table" ng-repeat="node in vm.nodes" ng-init="node.isOpen = true">
+    <div class="col-xs-12 table-row">
+        <div class="col-xs-3 col-xs-offset-1 ">
+            <a ng-click="node.isOpen = true" ng-hide="node.isOpen"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></a>
+            <a ng-click="node.isOpen = false" ng-show="node.isOpen"><i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i></a>
+            <span ng-bind="node.title"></span>
+        </div>
+        <div class="col-xs-2 text-center">
+            <input type="number" class="form-control" ng-model="node.sort">
+        </div>
+        <div class="col-xs-3 text-center">
+            <switch  ng-model="node.isFree" on="是" off="否" ng-change="vm.switch(node)"></switch>
+        </div>
+        <div class="col-xs-3 text-center">
+            <a href="" class="link-a">新增下级</a>
+            <a href="" class="link-a">编辑</a>
+            <a href="" class="link-a">删除</a>
+        </div>
+    </div>
+    <div class="col-xs-12 table-row"
+         ng-repeat="sub in node.sub_nodes" ng-show="node.isOpen">
+        <div class="col-xs-3 col-xs-offset-1 ">
+            <span>└───</span>
+            <span ng-bind="sub.title"></span>
+        </div>
+        <div class="col-xs-2 text-center">
+            <input type="number" class="form-control" ng-model="sub.sort">
+        </div>
+        <div class="col-xs-3 text-center">
+            <switch ng-model="sub.isFree" on="是" off="否" ng-change="vm.switchSub(node,sub)"></switch>
+        </div>
+        <div class="col-xs-3 text-center">
+            <a href="" class="link-a">编辑</a>
+            <a href="" class="link-a">删除</a>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 empty-row">
+    没有找到符合条件的数据
+</div>

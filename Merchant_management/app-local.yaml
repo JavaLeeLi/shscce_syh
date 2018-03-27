@@ -1,0 +1,12 @@
+---
+# 默认配置
+default: &default
+
+  vs_env:
+    RESOURCE_BASE: /
+
+  deploy: &deploy
+      ssh_host: 'test.datiannf.com'
+      ssh_port: '2381'
+      ssh_user: 'deploy'
+      ssh_privateKey: '/Users/Lily/.ssh/id_rsa'

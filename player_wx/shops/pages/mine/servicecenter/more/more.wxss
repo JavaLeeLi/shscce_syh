@@ -1,0 +1,48 @@
+.more {
+    width: 100%;
+    font-size: 14px;
+}
+
+.more-top {
+    width: 100%;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+.more-top-left {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.more-top-right {
+    width: 60%;
+}
+
+.more-top-right-input {
+    font-size: 20px;
+}
+
+.more-center {
+    width: 100%;
+    background-color: gray;
+}
+
+.more-center-text {
+    padding: 5px;
+}
+
+.more-bottom {
+    position: fixed;
+    bottom: 0rpx;
+}
+
+.more-bottom-botton {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+     margin-bottom: 46px;
+}

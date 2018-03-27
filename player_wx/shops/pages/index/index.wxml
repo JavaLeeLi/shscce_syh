@@ -1,0 +1,905 @@
+<!--index.wxml-->
+<!--首页  -->
+<view class="container">
+    <view class='home'>
+        <!-- 搜索框 -->
+        <view class='home-top'>
+            <view class='home-top-left' bindtap='mailJump'>
+                <image src='../image/notice.png'></image>
+            </view>
+            <view class='home-top-center'>
+                <view class='home-top-center-icon'>
+                    <icon class='home-top-search' type="search" size="20"></icon>
+                </view>
+                <view>
+                    <input placeholder='请输入搜索内容' placeholder-style='color:white;'></input>
+                </view>
+            </view>
+            <view class='home-top-right'>
+                <navigator url='../index/directmessages/directmessages'>
+                    <image src='../image/mailbox.png'></image>
+                </navigator>
+            </view>
+
+        </view>
+
+        <!--轮播图  -->
+        <view class='rolling'>
+            <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style='height:200px;'>
+                <block wx:for="{{imgBannerUrls}}" wx:key="imgBannerUrlsId">
+                    <swiper-item>
+                        <navigator url="{{item.bannerClickUrl}}" hover-class="navigator-hover" data-id='{{item.bannerID}}'>
+                            <image src="{{item.bannerImgUrl}}" class="slide-image" />
+                        </navigator>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+
+        <!--首页分类  -->
+
+
+        <view class='home-class'>
+            <view class='home-class-bkg'>
+                <view class='home-class-top'>
+                    <block wx:for="{{ imgHomeLists}}" wx:for-index="index" wx:for-item="item" wx:if='{{index<4}}'>
+                        <view class='home-class-list' id='{{index}}'>
+                            <view class='home-class-border'>
+                                <navigator data-id='{{index}}'>
+                                    <view>
+                                        <image src='{{item.naviItemUrl}}'></image>
+                                    </view>
+                                    <view>
+                                        <text>{{item.naviItemName}}</text>
+                                    </view>
+                                </navigator>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+                <view class='home-grid-list-hr'></view>
+                <view class='home-class-top'>
+                    <block wx:for="{{ imgHomeLists}}" wx:for-index="index" wx:for-item="item" wx:if='{{index > 3}}'>
+                        <view class='home-class-list' id='{{index}}'>
+                            <navigator>
+                                <view>
+                                    <image src='{{item.naviItemUrl}}'></image>
+                                </view>
+                                <view>
+                                    <text>{{item.naviItemName}}</text>
+                                </view>
+                            </navigator>
+                        </view>
+                    </block>
+                </view>
+
+            </view>
+        </view>
+        <!--官方推荐商品  -->
+        <view class='home-content'>
+            <view class='content-top'>
+                <view class='content-top-list'>
+                    <view class='content-hr'></view>
+                    <view class='content-kuai'></view>
+                    <view>
+                        <text>官方推荐商品</text>
+                    </view>
+                    <view class='content-kuai'></view>
+                    <view class='content-hr'></view>
+                </view>
+
+
+
+            </view>
+            <!--官方推荐商品显示  -->
+            <view class='content-conter'>
+                <view class='conter-top'>
+                    <scroll-view scroll-x="true" class='recommend-box-scroll' style='height:260px;'>
+                        <block wx:for="{{hotGoodList}}" wx:key="hotGoodListId">
+                            <view class='hotGoodList'>
+                                <navigator url='../index/shopdetails/shopdetails'>
+                                    <image src='{{item.naviItemUrl}}'></image>
+                                </navigator>
+                                <view class='recommend-text'>
+                                    <text>{{item.goodsName}}</text>
+                                </view>
+                                <view class='recommend-paice'>
+                                    <text>{{item.paice}}</text>
+                                </view>
+                                <view class='recommend-user'>
+                                    <view class='recommend-user-left'>
+                                        <navigator>
+                                            <image src='{{item.tou}}' class='recommend-user-image'></image>
+                                        </navigator>
+                                    </view>
+                                    <view class='recommend-user-info'>
+                                        <view class="recommend-user-jibie">
+                                            <text>{{item.jibie}}</text>
+                                        </view>
+                                        <view class='recommend-user-info-level'>
+                                            <text>{{item. dengji }} {{item.renzhegn}}
+                                            </text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </scroll-view>
+                </view>
+            </view>
+            <!-- 限时拍卖 -->
+            <view class='content-top'>
+                <view class='content-top-list'>
+                    <view class='content-hr'></view>
+                    <view class='content-kuai'></view>
+                    <view>
+                        <text>限时拍卖</text>
+                    </view>
+                    <view class='content-kuai'></view>
+                    <view class='content-hr'></view>
+                </view>
+
+
+
+            </view>
+
+
+            <!--拍卖商品显示  -->
+
+            <view class='home-auction'>
+                <view class='auction-center'>
+                    <view class='auction-center-top'>
+                        <text>拍卖倒计时:</text>
+                        <text class='auction-center-top-botton'>已截止</text>
+                    </view>
+                </view>
+                <view class='auction-botton'>
+                    <view class='auction-botton-img'>
+                        <scroll-view class="recommend_scroll_x_box" scroll-x="true">
+                            <view class="recommend_hot_box" wx:for="{{hotGoodList}}">
+                                <view class='recommend_hot_box-img'>
+                                    <navigator url='../index/shopauctions/shopauctions'>
+                                        <image src="{{item.naviItemUrl}}" class="recommend_hot_image"></image>
+                                        <view class='recommend_hot_box-money'>￥{{item.paice}}</view>
+                                    </navigator>
+                                </view>
+                            </view>
+                        </scroll-view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+        <!--最近成交记录  -->
+        <view class='home-record'>
+            <view class='record-left'>
+                <view class='record-left-hand'>
+                    <icon type="success" size="10" color="green" />
+                </view>
+                <view class='record-left-text'>
+                    <text>最近成交记录:</text>
+                </view>
+            </view>
+            <view class='record-right'>
+                <swiper class="swiper_container" vertical="{{false}}" autoplay="true" circular="true" interval="2000">
+                    <block wx:for="{{imgBannerUrls}}">
+                        <swiper-item>
+                            <view class='swiper_item-list'>
+                                <view class="swiper_item">{{item.name}}</view>
+                            </view>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+
+        </view>
+        <!--全部购买  -->
+        <view class='home-shop'>
+            <!--分类  -->
+            <view class="navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+                        <view class="navbar__title">{{item.name}}</view>
+                    </view>
+                </block>
+                <view class="navbar__slider" style="width: {{sliderWidth}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <!--切换  -->
+            <view>
+                <!-- <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" style="height:{{contentHeight}}px"> -->
+                <view wx:if='{{activeIndex==0?true:false}}'>
+                    <!--全部  -->
+                    <view class='home-sell-bgk'>
+                        <view class='home-sell'>
+                            <view class='sell-item'>
+                                <view class='sell-top'>
+                                    <view class='sell-top-left'>
+                                        <view class='sell-top-left-box'>
+                                            <image src='../image/goumai.png'></image>
+                                        </view>
+                                    </view>
+                                    <view class='sell-top-right'>
+                                        <view class='top-right-left'>
+                                            <text>测试商品发布</text>
+                                            <view class='top-right-botton'>
+                                                <view>
+                                                    <text>￥280.00</text>
+                                                </view>
+                                                <view>
+                                                    <text>
+                                                        <text>邮费:</text>
+                                                        <text>￥5.0</text>
+                                                    </text>
+                                                </view>
+                                            </view>
+                                        </view>
+                                        <view class='top-right-right'>
+                                            <view class='top-right-right-img'>
+                                                <image src='../image/imgError.jpg'></image>
+
+                                            </view>
+                                            <view>
+                                                <view>
+                                                    <text>she</text>
+                                                </view>
+                                                <view>
+                                                    <text>
+                                                        <text>Lv 4</text>
+                                                        <text>未认证</text>
+                                                    </text>
+                                                </view>
+                                            </view>
+
+
+                                        </view>
+
+                                    </view>
+
+                                </view>
+                                <view class='sell-botton'>
+                                    <view class='sell-botton-img'>
+                                        <image src='../image/imgError.jpg'></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class='home-sell'>
+                            <view class='sell-item'>
+                                <view class='sell-top'>
+
+                                    <view class='sell-top-left'>
+                                        <view class='sell-top-left-box'>
+                                            <image src='../image/chushou.png'></image>
+                                        </view>
+                                    </view>
+                                    <view class='sell-top-right'>
+                                        <view class='top-right-left'>
+                                            <text>测试商品发布</text>
+                                            <view class='top-right-botton'>
+
+                                                <view>
+                                                    <text>￥280.00</text>
+                                                </view>
+                                                <view>
+                                                    <text>
+                                                        <text>邮费:</text>
+                                                        <text>￥5.0</text>
+                                                    </text>
+                                                </view>
+                                            </view>
+                                        </view>
+                                        <view class='top-right-right'>
+                                            <view class='top-right-right-img'>
+                                                <image src='../image/imgError.jpg'></image>
+                                            </view>
+                                            <view>
+                                                <view>
+                                                    <text>she</text>
+                                                </view>
+                                                <view>
+                                                    <text>
+                                                        <text>Lv 4</text>
+                                                        <text>未认证</text>
+                                                    </text>
+                                                </view>
+                                            </view>
+
+
+                                        </view>
+
+                                    </view>
+
+                                </view>
+                                <view class='sell-botton'>
+                                    <view class='sell-botton-img'>
+                                        <image src='../image/imgError.jpg'></image>
+                                    </view>
+                                </view>
+                            </view>
+
+                        </view>
+                        <view class='home-sell'>
+                            <view class='sell-item'>
+                                <view class='sell-top'>
+                                    <view class='sell-top-left'>
+                                        <view class='sell-top-left-box'>
+                                            <image src='../image/goumai.png'></image>
+                                        </view>
+                                    </view>
+                                    <view class='sell-top-right'>
+                                        <view class='top-right-left'>
+                                            <text>测试商品发布</text>
+                                            <view class='top-right-botton'>
+                                                <view>
+                                                    <text>￥280.00</text>
+                                                </view>
+                                                <view>
+                                                    <text>
+                                                        <text>邮费:</text>
+                                                        <text>￥5.0</text>
+                                                    </text>
+                                                </view>
+                                            </view>
+                                        </view>
+                                        <view class='top-right-right'>
+                                            <view class='top-right-right-img'>
+                                                <image src='../image/imgError.jpg'></image>
+                                            </view>
+                                            <view>
+                                                <view>
+                                                    <text>she</text>
+                                                </view>
+                                                <view>
+                                                    <text>
+                                                        <text>Lv 4</text>
+                                                        <text>未认证</text>
+                                                    </text>
+                                                </view>
+                                            </view>
+
+
+                                        </view>
+
+                                    </view>
+
+                                </view>
+                                <view class='sell-botton'>
+                                    <view class='sell-botton-img'>
+                                        <image src='../image/imgError.jpg'></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class='home-sell'>
+                            <view class='sell-item'>
+                                <view class='sell-top'>
+
+                                    <view class='sell-top-left'>
+                                        <view class='sell-top-left-box'>
+                                            <image src='../image/chushou.png'></image>
+                                        </view>
+                                    </view>
+                                    <view class='sell-top-right'>
+                                        <view class='top-right-left'>
+                                            <text>测试商品发布</text>
+                                            <view class='top-right-botton'>
+
+                                                <view>
+                                                    <text>￥280.00</text>
+                                                </view>
+                                                <view>
+                                                    <text>
+                                                        <text>邮费:</text>
+                                                        <text>￥5.0</text>
+                                                    </text>
+                                                </view>
+                                            </view>
+                                        </view>
+                                        <view class='top-right-right'>
+                                            <view class='top-right-right-img'>
+                                                <image src='../image/imgError.jpg'></image>
+                                            </view>
+                                            <view>
+                                                <view>
+                                                    <text>she</text>
+                                                </view>
+                                                <view>
+                                                    <text>
+                                                        <text>Lv 4</text>
+                                                        <text>未认证</text>
+                                                    </text>
+                                                </view>
+                                            </view>
+
+
+                                        </view>
+
+                                    </view>
+
+                                </view>
+                                <view class='sell-botton'>
+                                    <view class='sell-botton-img'>
+                                        <image src='../image/imgError.jpg'></image>
+                                    </view>
+                                </view>
+                            </view>
+
+                        </view>
+
+                    </view>
+                </view>
+                <view wx:if='{{activeIndex==1?true:false}}'>
+                    <!--出售  -->
+                    <view class='home-sell-bgk'>
+                        <view class='home-sell'>
+                            <navigator url='../index/shopdetails/shopdetails'>
+                                <view class='sell-item'>
+                                    <view class='sell-top'>
+                                        <view class='sell-top-left'>
+                                            <view class='sell-top-left-box'>
+                                                <image src='../image/chushou.png'></image>
+                                            </view>
+                                        </view>
+                                        <view class='sell-top-right'>
+                                            <view class='top-right-left'>
+                                                <text>测试商品发布</text>
+                                                <view class='top-right-botton'>
+                                                    <view>
+                                                        <text>￥280.00</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>邮费:</text>
+                                                            <text>￥5.0</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+                                            </view>
+                                            <view class='top-right-right'>
+                                                <view class='top-right-right-img'>
+                                                    <image src='../image/imgError.jpg'></image>
+                                                </view>
+                                                <view>
+                                                    <view>
+                                                        <text>she</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>Lv 4</text>
+                                                            <text>未认证</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+
+
+                                            </view>
+
+                                        </view>
+
+                                    </view>
+                                    <view class='sell-botton'>
+                                        <view class='sell-botton-img'>
+                                            <image src='../image/imgError.jpg'></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </view>
+                        <view class='home-sell'>
+                            <navigator url='../index/shopdetails/shopdetails'>
+                                <view class='sell-item'>
+                                    <view class='sell-top'>
+
+                                        <view class='sell-top-left'>
+                                            <view class='sell-top-left-box'>
+                                                <image src='../image/chushou.png'></image>
+                                            </view>
+                                        </view>
+                                        <view class='sell-top-right'>
+                                            <view class='top-right-left'>
+                                                <text>测试商品发布</text>
+                                                <view class='top-right-botton'>
+
+                                                    <view>
+                                                        <text>￥280.00</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>邮费:</text>
+                                                            <text>￥5.0</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+                                            </view>
+                                            <view class='top-right-right'>
+                                                <view class='top-right-right-img'>
+                                                    <image src='../image/imgError.jpg'></image>
+                                                </view>
+                                                <view>
+                                                    <view>
+                                                        <text>she</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>Lv 4</text>
+                                                            <text>未认证</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+
+
+                                            </view>
+
+                                        </view>
+
+                                    </view>
+                                    <view class='sell-botton'>
+                                        <view class='sell-botton-img'>
+                                            <image src='../image/imgError.jpg'></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+                <view wx:if='{{activeIndex==2?true:false}}'>
+                    <!--拍卖  -->
+                    <view class='home-sell-bgk'>
+                        <view class='home-sell'>
+                            <navigator url='../index/shopauctions/shopauctions'>
+                                <view class='sell-item'>
+                                    <view class='sell-top'>
+                                        <view class='sell-top-left'>
+                                            <view class='sell-top-left-box'>
+                                                <image src='../image/paimai.png'></image>
+                                            </view>
+                                        </view>
+                                        <view class='sell-top-right'>
+                                            <view class='top-right-left'>
+                                                <text>测试商品发布</text>
+                                                <view class='top-right-botton'>
+                                                    <view>
+                                                        <text>￥280.00</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>邮费:</text>
+                                                            <text>￥5.0</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+                                            </view>
+                                            <view class='top-right-right'>
+                                                <view class='top-right-right-img'>
+                                                    <image src='../image/imgError.jpg'></image>
+                                                </view>
+                                                <view>
+                                                    <view>
+                                                        <text>she</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>Lv 4</text>
+                                                            <text>未认证</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+
+
+                                            </view>
+
+                                        </view>
+
+                                    </view>
+                                    <view class='sell-botton'>
+                                        <view class='sell-botton-img'>
+                                            <image src='../image/imgError.jpg'></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </view>
+                        <navigator url='../index/shopauctions/shopauctions'>
+                            <view class='home-sell'>
+
+                                <view class='sell-item'>
+                                    <view class='sell-top'>
+                                        <view class='sell-top-left'>
+                                            <view class='sell-top-left-box'>
+                                                <image src='../image/paimai.png'></image>
+                                            </view>
+                                        </view>
+                                        <view class='sell-top-right'>
+                                            <view class='top-right-left'>
+                                                <text>测试商品发布</text>
+                                                <view class='top-right-botton'>
+                                                    <view>
+                                                        <text>￥280.00</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>邮费:</text>
+                                                            <text>￥5.0</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+                                            </view>
+                                            <view class='top-right-right'>
+                                                <view class='top-right-right-img'>
+                                                    <image src='../image/imgError.jpg'></image>
+                                                </view>
+                                                <view>
+                                                    <view>
+                                                        <text>she</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>Lv 4</text>
+                                                            <text>未认证</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+
+
+                                            </view>
+
+                                        </view>
+
+                                    </view>
+                                    <!--截止时间  -->
+                                    <view class='float-right'>
+                                        <view>
+                                            <block wx:if="{{total_micro_second<=0}}">已截止</block>
+                                            <block wx:if="{{clock!='已截止'}}">{{clock}}{{micro_second}}</block>
+                                        </view>
+                                    </view>
+                                    <view class='sell-botton'>
+                                        <view class='sell-botton-img'>
+                                            <image src='../image/imgError.jpg'></image>
+                                        </view>
+                                    </view>
+                                </view>
+
+
+                            </view>
+                        </navigator>
+                    </view>
+                </view>
+                <view wx:if='{{activeIndex==3?true:false}}'>
+                    <!--拍卖  -->
+                    <view class='home-sell-bgk'>
+                        <view class='home-sell'>
+                            <navigator url='../index/shopsupply/shopsupply'>
+                                <view class='sell-item'>
+                                    <view class='sell-top'>
+                                        <view class='sell-top-left'>
+                                            <view class='sell-top-left-box'>
+                                                <image src='../image/goumai.png'></image>
+                                            </view>
+                                        </view>
+                                        <view class='sell-top-right'>
+                                            <view class='top-right-left'>
+                                                <text>测试商品发布</text>
+                                                <view class='top-right-botton'>
+                                                    <view>
+                                                        <text>￥280.00</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>邮费:</text>
+                                                            <text>￥5.0</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+                                            </view>
+                                            <view class='top-right-right'>
+                                                <view class='top-right-right-img'>
+                                                    <image src='../image/imgError.jpg'></image>
+                                                </view>
+                                                <view>
+                                                    <view>
+                                                        <text>she</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>Lv 4</text>
+                                                            <text>未认证</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+
+
+                                            </view>
+
+                                        </view>
+
+                                    </view>
+                                    <view class='sell-botton'>
+                                        <view class='sell-botton-img'>
+                                            <image src='../image/imgError.jpg'></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </view>
+                        <view class='home-sell'>
+                            <navigator url='../index/shopsupply/shopsupply'>
+                                <view class='sell-item'>
+                                    <view class='sell-top'>
+                                        <view class='sell-top-left'>
+                                            <view class='sell-top-left-box'>
+                                                <image src='../image/goumai.png'></image>
+                                            </view>
+                                        </view>
+                                        <view class='sell-top-right'>
+                                            <view class='top-right-left'>
+                                                <text>测试商品发布</text>
+                                                <view class='top-right-botton'>
+                                                    <view>
+                                                        <text>￥280.00</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>邮费:</text>
+                                                            <text>￥5.0</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+                                            </view>
+                                            <view class='top-right-right'>
+                                                <view class='top-right-right-img'>
+                                                    <image src='../image/imgError.jpg'></image>
+                                                </view>
+                                                <view>
+                                                    <view>
+                                                        <text>she</text>
+                                                    </view>
+                                                    <view>
+                                                        <text>
+                                                            <text>Lv 4</text>
+                                                            <text>未认证</text>
+                                                        </text>
+                                                    </view>
+                                                </view>
+
+
+                                            </view>
+
+                                        </view>
+
+                                    </view>
+                                    <view class='sell-botton'>
+                                        <view class='sell-botton-img'>
+                                            <image src='../image/imgError.jpg'></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </navigator>
+
+                        </view>
+                    </view>
+                </view>
+                <!-- </swiper> -->
+            </view>
+
+        </view>
+
+        <!--显示图片  -->
+        <!-- <view class='home-sell-bgk'>
+            <view class='home-sell'>
+                <view class='sell-item'>
+
+                    <view class='sell-top'>
+
+                        <view class='sell-top-left'>
+                            <view class='sell-top-left-box'>
+                                <image src='../image/chushou.png'></image>
+                            </view>
+                        </view>
+                        <view class='sell-top-right'>
+                            <view class='top-right-left'>
+                                <text>测试商品发布</text>
+                                <view class='top-right-botton'>
+
+                                    <view>
+                                        <text>￥280.00</text>
+                                    </view>
+                                    <view>
+                                        <text>
+                                            <text>邮费:</text>
+                                            <text>￥5.0</text>
+                                        </text>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class='top-right-right'>
+                                <view class='top-right-right-img'>
+                                    <image src='../image/imgError.jpg'></image>
+                                </view>
+                                <view>
+                                    <view>
+                                        <text>she</text>
+                                    </view>
+                                    <view>
+                                        <text>
+                                            <text>Lv 4</text>
+                                            <text>未认证</text>
+                                        </text>
+                                    </view>
+                                </view>
+
+
+                            </view>
+
+                        </view>
+
+                    </view>
+                    <view class='sell-botton'>
+                        <view class='sell-botton-img'>
+                            <image src='../image/imgError.jpg'></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='home-sell'>
+                <view class='sell-item'>
+                    <view class='sell-top'>
+
+                        <view class='sell-top-left'>
+                            <view class='sell-top-left-box'>
+                                <image src='../image/chushou.png'></image>
+                            </view>
+                        </view>
+                        <view class='sell-top-right'>
+                            <view class='top-right-left'>
+                                <text>测试商品发布</text>
+                                <view class='top-right-botton'>
+
+                                    <view>
+                                        <text>￥280.00</text>
+                                    </view>
+                                    <view>
+                                        <text>
+                                            <text>邮费:</text>
+                                            <text>￥5.0</text>
+                                        </text>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class='top-right-right'>
+                                <view class='top-right-right-img'>
+                                    <image src='../image/imgError.jpg'></image>
+                                </view>
+                                <view>
+                                    <view>
+                                        <text>she</text>
+                                    </view>
+                                    <view>
+                                        <text>
+                                            <text>Lv 4</text>
+                                            <text>未认证</text>
+                                        </text>
+                                    </view>
+                                </view>
+
+
+                            </view>
+
+                        </view>
+
+                    </view>
+                    <view class='sell-botton'>
+                        <view class='sell-botton-img'>
+                            <image src='../image/imgError.jpg'></image>
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+        </view> -->
+
+
+
+    </view>
+</view>

@@ -1,0 +1,54 @@
+$direction: (top: t,right: r,bottom: b,left: l);
+
+@mixin box－util($box-name,$box-name-abbr,$from,$to,$interval){
+
+  @for $num from $from through $to{
+    $num: $num * $interval;
+
+    .#{$box-name-abbr}-#{$num}{
+      #{$box-name}: $num + 0px !important;
+    }
+
+    .#{$box-name-abbr}-h-#{$num}{
+      #{$box-name}-left: $num + 0px !important;
+      #{$box-name}-right: $num + 0px !important;
+    }
+
+    .#{$box-name-abbr}-v-#{$num}{
+      #{$box-name}-top: $num + 0px !important;
+      #{$box-name}-bottom: $num + 0px !important;
+    }
+
+    @each $dir, $dir-abbr in $direction{
+      .#{$box-name-abbr}-#{$dir-abbr}-#{$num}{
+        #{$box-name}-#{$dir}: $num + 0px !important;
+      }
+    }
+  }
+}
+
+@mixin border-color-util($box-name-abbr,$color,$color-name){
+  .#{$box-name-abbr}-#{$color-name}{
+    border-width: 1px;
+    border-style: solid;
+    border-color: $color;
+  }
+
+  .#{$box-name-abbr}-h-#{$color-name}{
+    border-right: 1px solid $color;
+    border-left: 1px solid $color;
+  }
+
+  .#{$box-name-abbr}-v-#{$color-name}{
+    border-top: 1px solid $color;
+    border-bottom: 1px solid $color;
+  }
+
+  @each $dir, $dir-abbr in $direction{
+    .#{$box-name-abbr}-#{$dir-abbr}-#{$color-name}{
+      border-#{$dir}-width: 1px;
+      border-#{$dir}-style: solid;
+      border-#{$dir}-color: $color;
+    }
+  }
+}

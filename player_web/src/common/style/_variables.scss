@@ -1,0 +1,40 @@
+// Override Bootstrap
+
+$icon-font-path: '../fonts/';
+$border-radius-base: 0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;
+
+$link-hover-decoration: none;
+$icon-font-path: '../fonts/';
+$link-hover-decoration: none;
+$panel-border-radius: none;
+$panel-body-padding: 20px;
+$panel-heading-padding: 20px;
+$panel-border-radius: 0;
+
+//== Tabs
+$nav-tabs-border-color:                     #eee !default;
+$nav-tabs-active-link-hover-border-color:   #eee !default;
+$nav-tabs-justified-link-border-color:            #eee !default;
+
+$nav-tabs-link-hover-border-color:          #eee !default;
+
+$nav-tabs-active-link-hover-bg:             #fff !default;
+$nav-tabs-active-link-hover-color:          #111 !default;
+
+$nav-tabs-justified-link-border-color:            #ddd !default;
+$nav-tabs-justified-active-link-border-color:     #fff !default;
+
+
+// Custom
+
+$theme-style: 						'square' !default;
+$theme-type:  						'default' !default;
+$general-img-path:                  '../img/' !default;
+$icon-size-normal:					14px !default;
+
+
+$pagination-active-bg:                #2599CF !default;
+$pagination-active-border:             #2599CF !default;
+

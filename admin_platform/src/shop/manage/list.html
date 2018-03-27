@@ -1,0 +1,76 @@
+<!--<ol class="breadcrumb">-->
+<!--<li>商品</li>-->
+<!--<li class="active">商品管理</li>-->
+<!--</ol>-->
+<ul class="nav nav-tabs mb20" ng-init="vm.tab = 'all'">
+    <li role="presentation" ng-class="{'active':vm.tab == 'all'}"><a ng-click="vm.switch('all')">店铺管理</a></li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'audit'}"><a ng-click="vm.switch('audit')">店铺审核</a></li>
+</ul>
+<div class="row search-bar">
+    <form class="form-inline">
+        <div class="form-group col-md-3">
+            <label >店铺名称</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3">
+            <label >店铺等级</label>
+            <select class="form-control fixed-width"
+                    ng-options="status.id as status.name for status in vm.status">
+            </select>
+        </div>
+        <div class="form-group col-md-3" ng-show="vm.tab == 'all'">
+            <label >店铺状态</label>
+            <select class="form-control fixed-width"
+                    ng-options="status.id as status.name for status in vm.status">
+            </select>
+        </div>
+        <div class="form-group col-md-3 text-center">
+            <button type="submit" class="btn btn-info">搜索</button>
+            <button type="submit" class="btn btn-default">重置</button>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <div class="table-responsive col-xs-12">
+        <table class="table table-hover ">
+            <thead class="text-center">
+            <tr>
+                <td width="15%" class="p-h-0">店铺名称</td>
+                <td width="15%" class="p-h-0">店铺账号</td>
+                <td width="15%" class="p-h-0">等级</td>
+                <td width="15%" class="p-h-0">有效期</td>
+                <td width="10%" class="p-h-0">状态</td>
+                <td width="10%" class="p-h-0">余额</td>
+                <td width="15%" class="p-h-0">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center">
+                <td>苹果</td>
+                <td>销售中</td>
+                <td>手机</td>
+                <td>官方直营店</td>
+                <td>123123123</td>
+                <td>10</td>
+                <td>
+                    <a href="" class="link-a">查看</a>
+                    <a href="" class="link-a">编辑</a>
+                    <a href="" class="link-a">冻结</a>
+                </td>
+            </tr>
+            </tbody>
+            <tr>
+                <td colspan="7" class="empty-row">没有找到符合条件的数据</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <uib-pagination boundary-links="true" items-per-page="vm.tableParams.count()"
+                        total-items="vm.totalElements"
+                        ng-model="vm.queryPage" ng-change="vm.pageChange(vm.queryPage)"
+                        max-size="10" class="pagination-sm pull-right"></uib-pagination>
+    </div>
+</div>

@@ -1,0 +1,515 @@
+ @import "../template/template.wxss"; 
+.main{
+    font-size: 12px;
+}
+.class-index-top {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+}
+
+.class-index-top-bfg {
+    height: 52px;
+    line-height: 52px;
+}
+
+.class-index-top text {
+    font-size: 20px;
+    color: white;
+}
+
+.bannerLists {
+    width: 100%;
+    background-color: white;
+    height: 100%;
+}
+
+.bannerLists image {
+    width: 100%;
+    height: 200px;
+}
+
+.weui-search-bar {
+    position: relative;
+    padding: 6px 10px;
+    height: 52px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    box-sizing: border-box;
+    background-color: black;
+    border-top: 1rpx solid #d7d6dc;
+    border-bottom: 1rpx solid #d7d6dc;
+}
+
+.weui-icon-search_in-box {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.weui-icon-search {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.weui-search-bar__input {
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+}
+
+.weui-search-bar__text {
+    position: absolute;
+    top: 4px;
+    left: 26px;
+    font-size: 14px;
+}
+
+.weui-search-bar__form {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: auto;
+    flex: auto;
+    border-radius: 5px;
+    background: #d7d6dc;
+    border: 1rpx solid #e6e6ea;
+}
+
+.weui-search-bar__label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    border-radius: 3px;
+    text-align: center;
+    color: #9b9b9b;
+    background: #d7d6dc;
+    line-height: 28px;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    z-index: 500;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid black;
+    height: 60px;
+}
+
+.navbar__slider {
+    position: absolute;
+    display: block;
+    content: " ";
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: red;
+    transition: transform 0.3s;
+}
+
+.navbar__title {
+    display: inline-block;
+    font-size: 15px;
+    max-width: 8em;
+    text-align: center;
+}
+
+.navbar__item {
+    position: relative;
+    display: block;
+    flex: 1;
+    padding: 10rpx 0;
+    text-align: center;
+    font-size: 0;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+
+.navbar__item_on {
+    color: red;
+}
+
+.home-grid {
+    width: 100%;
+    background-color: white;
+}
+
+.home-grid-row {
+    margin: 5px 10px 10px;
+}
+
+/* 换行 */
+
+.home-grid-row-col {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.home-grid-row-col-show {
+    display: block;
+    background-color: #ddd;
+    width: 23%;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.home-grid-row-col-show image {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+/*交易记录  */
+
+.transaction-record {
+    width: 100%;
+    background-color: gainsboro;
+    height: 52px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.transaction-record-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    font-size: 14px;
+    line-height: 52px;
+}
+
+.transaction-record-left-icon-hand {
+    width: 20px;
+    height: 20px;
+}
+
+.transaction-record-left-icon-hand image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.transaction-record-right {
+    display: flex;
+    width: 60%;
+    font-size: 14px;
+    line-height: 52px;
+}
+
+.transaction-record-right-text {
+    height: 52px;
+    background-color: gainsboro;
+    width: 100%;
+}
+
+.transaction-record-right-text swiper {
+    height: 52px;
+    width: 100%;
+}
+
+.class-shop {
+    width: 100%;
+    background-color: gainsboro;
+}
+.class-shop:last-child{
+    margin-bottom: 100px;
+}
+
+.class-shop-list {
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 0 10px 10px;
+}
+
+.class-shop-list-item-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.class-shop-list-item-top-left {
+    width: 15%;
+    margin: 10px;
+}
+
+.class-shop-list-item-top-left-box {
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    padding: 10px 0 0;
+    background-color: red;
+}
+
+.class-shop-list-item-top-left-box-paimai {
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    padding: 10px 0 0;
+    background-color: black;
+}
+
+.class-shop-list-item-top-left-box-sell {
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    padding: 10px 0 0;
+    background-color: blue;
+}
+
+.class-shop-list-item-top-left-box image {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.class-shop-list-item-top-left-box-sell image {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.class-shop-list-item-top-left-box-paimai image {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.class-shop-list-item-top-left-box::after {
+    content: ' ';
+    border: 20px solid white;
+    border-bottom: transparent;
+    border-top-left-radius: 60%;
+    border-top-right-radius: 30%;
+    position: relative;
+    top: 15px;
+}
+
+.class-shop-list-item-top-left-box-paimai::after {
+    content: ' ';
+    border: 20px solid white;
+    border-bottom: transparent;
+    border-top-left-radius: 60%;
+    border-top-right-radius: 30%;
+    position: relative;
+    top: 15px;
+}
+
+.class-shop-list-item-top-left-box-sell::after {
+    content: ' ';
+    border: 20px solid white;
+    border-bottom: transparent;
+    border-top-left-radius: 60%;
+    border-top-right-radius: 30%;
+    position: relative;
+    top: 15px;
+}
+
+.class-shop-list-item-top-right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.class-shop-list-item-top-right-left {
+    width: 53%;
+    padding-right: 10px;
+    font-size: 16px;
+}
+
+.class-shop-list-item-top-right-right {
+    width: 47%;
+    display: flex;
+    align-items: center;
+}
+
+.class-shop-list-item-top-right-left-top {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.class-shop-list-item-top-right-left-botton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.class-shop-list-item-top-right-left-bootom-left {
+    display: inline-block;
+    color: red;
+}
+
+.class-shop-list-item-top-right-left-bootom-right {
+    display: inline-block;
+}
+
+.class-shop-list-item-top-right-right-img image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.class-shop-list-item-top-right-right-box {
+    font-size: 12px;
+    color: #9e9e9e;
+}
+
+.class-shop-list-item-botton {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+}
+
+.class-shop-list-item-bottom-img {
+    width: 30%;
+}
+
+.class-shop-list-item-bottom-img image {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    border: 2px solid #9e9e9e;
+    border-radius: 5px;
+}
+
+.class-shop-list-item-center {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.class-shop-list-item-center-text {
+    background-color: red;
+    color: white;
+    margin-top: 3px;
+    display: inline-block;
+}
+
+.indexs {
+    height: 300px;
+}
+
+/*限时拍卖  */
+
+.content-top {
+    width: 100%;
+    height: 40px;
+    background-color: #f7f7f7;
+}
+
+.content-top-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.content-hr {
+    width: 20%;
+    height: 1px;
+    background-color: black;
+}
+
+.content-kuai {
+    width: 7px;
+    height: 7px;
+    background-color: black;
+    transform: rotate(45deg);
+    margin: 0 10px;
+}
+
+/*拍卖商品  */
+
+.auction-center {
+    background-color: white;
+    padding: 10px 15px;
+}
+
+.auction-center-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.auction-center-top-botton {
+    color: red;
+}
+
+.auction-botton {
+    background-color: black;
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.auction-botton-img {
+    background-color: black;
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+}
+
+/*拍卖商品  */
+
+.recommend_scroll_x_box {
+    height: 300rpx;
+    white-space: nowrap;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.recommend_hot_box {
+    width: 230rpx;
+    height: 245rpx;
+    margin-right: 44rpx;
+    display: inline-block;
+}
+
+.recommend_hot_box-img {
+    width: 120px;
+}
+
+.recommend_hot_image {
+    width: 100%;
+    height: 100px;
+    border: 2px solid #9e9e9e;
+}
+
+.recommend_hot_box-money {
+    color: white;
+    text-align: center;
+}
+
+.classnav {
+    height: 100%;
+    width: 100%;
+}

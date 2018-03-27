@@ -1,0 +1,103 @@
+<!--优惠券  -->
+<view class='containers'>
+    <view class="navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+                <view class="navbar__title">{{item.name}}</view>
+            </view>
+        </block>
+        <view class="navbar__slider" style="width: {{sliderWidth}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset+8}}px);"></view>
+    </view>
+
+    <view>
+        <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" style="height:{{contentHeight}}px">
+            <swiper-item>
+                <view class='draft'>
+                    <view class='draft-top'>
+                        <view class='draft-top-left'>
+                            <image src='../../image/imgError.jpg'></image>
+                        </view>
+                        <view class='draft-top-right'>
+                            <view class='draft-list-item-top'>
+                                she草稿test4
+                            </view>
+                            <view class='draft-list-item-center'>
+
+                                she草稿test4备注</view>
+                            <view class='draft-list-item-botton'>
+                                ￥40.00
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='draft'>
+                    <view class='draft-top'>
+                        <view class='draft-top-left'>
+                            <image src='../../image/imgError.jpg'></image>
+                        </view>
+                        <view class='draft-top-right'>
+                            <view class='draft-list-item-top'>
+                                she草稿test4
+                            </view>
+                            <view class='draft-list-item-center'>
+
+                                she草稿test4备注</view>
+                            <view class='draft-list-item-botton'>
+                                ￥40.00
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+            </swiper-item>
+            <swiper-item>
+                <view class='draft'>
+                    <view class='draft-top'>
+                        <view class='draft-top-left'>
+                            <image src='../../image/imgError.jpg'></image>
+                        </view>
+                        <view class='draft-top-right'>
+                            <view class='draft-list-item-top'>
+                                she草稿test4
+                            </view>
+                            <view class='draft-list-item-center'>
+
+                                she草稿test4备注</view>
+                            <view class='draft-list-item-botton'>
+                                ￥40.00
+                            </view>
+                        </view>
+                    </view>
+
+                </view>
+
+
+            </swiper-item>
+            <swiper-item>
+                <view class='draft'>
+                    <view class='draft-top'>
+                        <view class='draft-top-left'>
+                            <image src='../../image/imgError.jpg'></image>
+                        </view>
+                        <view class='draft-top-right'>
+                            <view class='draft-list-item-top'>
+                                she草稿test4
+                            </view>
+                            <view class='draft-list-item-center'>
+
+                                she草稿test4备注</view>
+                            <view class='draft-list-item-botton'>
+                                ￥40.00
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+
+            </swiper-item>
+        </swiper>
+    </view>
+    <view>
+
+    </view>
+</view>

@@ -1,0 +1,279 @@
+.class-index-top {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+}
+
+.class-index-top-bfg {
+    height: 52px;
+    line-height: 52px;
+}
+
+.class-index-top text {
+    font-size: 20px;
+    color: white;
+}
+
+.weui-search-bar {
+    position: relative;
+    padding: 6px 10px;
+    height: 52px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    box-sizing: border-box;
+    background-color: black;
+    border-top: 1rpx solid #d7d6dc;
+    border-bottom: 1rpx solid #d7d6dc;
+}
+
+.weui-icon-search_in-box {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.weui-icon-search {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.weui-search-bar__input {
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+}
+
+.weui-search-bar__text {
+    position: absolute;
+    top: 4px;
+    left: 26px;
+    font-size: 14px;
+}
+
+.weui-search-bar__form {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: auto;
+    flex: auto;
+    border-radius: 5px;
+    background: #d7d6dc;
+    border: 1rpx solid #e6e6ea;
+}
+
+.weui-search-bar__label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    border-radius: 3px;
+    text-align: center;
+    color: #9b9b9b;
+    background: #d7d6dc;
+    line-height: 28px;
+}
+
+.containers {
+    font-size: 14px;
+}
+
+.boby {
+    width: 100%;
+    height: 100%;
+}
+
+/* .coupons-top-left::before{
+content: ' ';
+position: absolute;
+right: -100px;
+border-left:16px solid;
+border-right:10px solid transparent;
+border-top:10px solid transparent;
+border-bottom:10px solid transparent;
+} */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-type-tab {
+    width: 100%;
+    display: flex;
+    background-color: #cdc9c9;
+    padding-top: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user-tab-type-item-icon {
+    width: 25%;
+    height: 100%;
+    text-align: center;
+}
+
+.item-img {
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    border-radius: 100%;
+   margin: 0 auto;
+}
+
+.item-img image {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+page {
+    background-color: #edf0f3;
+}
+
+.nav {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.default {
+    line-height: 100rpx;
+    text-align: center;
+    flex: 1;
+    border-right: 1px solid gainsboro;
+    color: #000;
+    font-weight: bold;
+    font-size: 28rpx;
+}
+
+.red {
+    line-height: 100rpx;
+    text-align: center;
+    color: #fc5558;
+    flex: 1;
+    border-right: 1px solid gainsboro;
+    font-weight: bold;
+    font-size: 28rpx;
+    border-bottom: 5rpx solid #fc5558;
+}
+
+.show {
+    display: block;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+    text-align: center;
+}
+
+.order-left {
+    margin-left: 10px;
+    border-left: 5px solid red;
+}
+
+.order-left text {
+    margin-left: 5px;
+}
+
+.my-order-right {
+    margin-right: 10px;
+}
+
+.order-list {
+    width: 100%;
+    background-color: white;
+}
+
+.order-list-item {
+    display: flex;
+    width: 100%;
+}
+
+.work-order-left {
+    display: block;
+    width: 20%;
+    padding: 5px;
+}
+
+.work-order-left image {
+    width: 30px;
+    height: 30px;
+}
+
+.work-order-center {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.work-order-center image {
+    width: 60px;
+    height: 60px;
+}
+
+.work-order-right {
+    width: 60%;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
+.order-right-top {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.order-right-center {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-right-botton {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.right-center-right {
+    color: red;
+}
+
+/*订单  */
+
+.swiper-tab {
+    width: 100%;
+    border-bottom: 2rpx solid #777;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.swiper-tab-list {
+    font-size: 30rpx;
+    display: inline-block;
+    width: 20%;
+    color: #777;
+}
+
+.on {
+    color: #da7c0c;
+    border-bottom: 5rpx solid #da7c0c;
+}
+
+.swiper-box {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.swiper-box view {
+    text-align: center;
+}

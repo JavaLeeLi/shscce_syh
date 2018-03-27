@@ -1,0 +1,107 @@
+/**index.wxss**/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: gray;
+    font-size: 14px;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+
+.regist-center {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.regist-center-item {
+    display: flex;
+}
+
+.regist-center-item-left {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.regist-center-item-left-img {
+    width: 30px;
+    height: 30px;
+}
+
+.regist-center-item-left-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.regist-center-item-right {
+    width: 70%;
+    border-bottom: 1px solid white;
+}
+
+.regist-center-item-right-input:focus {
+    background-color: yellow;
+}
+
+.code-center-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.code-center-item-left {
+    border-bottom: 1px solid white;
+}
+
+.code-center-item-right {
+    background-color: gainsboro;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.regist-confirm {
+    width: 100%;
+    display: flex;
+    color: white;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn view {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.regist-confirm-login {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wx-img {
+    width: 40px;
+    height: 40px;
+}
+
+.wx-img image {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,150 @@
+
+<!--<ul class="nav nav-tabs mb20">-->
+    <!--<li role="presentation" class="active"><a >会员管理</a></li>-->
+<!--</ul>-->
+<div class="row search-bar">
+    <form class="form-inline">
+        <div class="form-group col-md-3">
+            <label >会员名</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3">
+            <label >微信昵称</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3">
+            <label >手机号码</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3" >
+            <label >认证类型</label>
+            <select class="form-control fixed-width"
+                    ng-options="status.id as status.name for status in vm.status">
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label >会员状态</label>
+            <select class="form-control fixed-width"
+                    ng-options="status.id as status.name for status in vm.status">
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label >会员标签</label>
+            <select class="form-control fixed-width"
+                    ng-options="status.id as status.name for status in vm.status">
+            </select>
+        </div>
+        <div class="form-group col-md-3" >
+            <label >注册日期</label>
+            <p class="input-group fixed-width">
+                <input type="text"
+                       id="submission"
+                       class="form-control "
+                       uib-datepicker-popup ="yyyy-MM-dd"
+                       ng-model="vm.queryParams.submitted_at_from"
+                       placeholder="---日期---"
+                       is-open="vm.opened1"
+                       max-date="vm.queryParams.submitted_at_to"  />
+                <span class="input-group-btn">
+                         <button type="button" class="btn btn-default" ng-click="vm.opened1 = !vm.opened1">
+                             <i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </p>
+
+        </div>
+        <div class="form-group col-md-3 text-left">
+            <label class="">至</label>
+            <p class="input-group fixed-width">
+                <input type="text"
+                       class="form-control"
+                       uib-datepicker-popup ="yyyy-MM-dd"
+                       ng-model="vm.queryParams.submitted_at_to"
+                       is-open="vm.opened2"
+                       placeholder="---日期---"
+                       min-date="vm.queryParams.submitted_at_from"  />
+                <span class="input-group-btn">
+                         <button type="button" class="btn btn-default" ng-click="vm.opened2 = !vm.opened2">
+                             <i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </p>
+        </div>
+        <div class="form-group col-md-12 text-center">
+            <button type="submit" class="btn btn-info">搜索</button>
+            <button type="submit" class="btn btn-default">重置</button>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <div class="table-responsive col-xs-12">
+        <table class="table table-hover ">
+            <thead class="text-center">
+            <tr>
+                <td width="5%" class="p-h-0">选择</td>
+                <td width="8%" class="p-h-0">会员名</td>
+                <td width="8%" class="p-h-0">微信昵称</td>
+                <td width="8%" class="p-h-0">消费额</td>
+                <td width="8%" class="p-h-0">积分</td>
+                <td width="10%" class="p-h-0">手机号码</td>
+                <td width="10%" class="p-h-0">注册时间</td>
+                <td width="5%" class="p-h-0">状态</td>
+                <td width="15%" class="p-h-0">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center">
+                <td >
+                    <div class="checkbox  text-center">
+                        <label>
+                            <input type="checkbox">
+                        </label>
+                    </div>
+                </td>
+                <td>123123123</td>
+                <td>昵称昵称</td>
+                <td>asfsdf</td>
+                <td>123980283</td>
+                <td>123980283</td>
+                <td>2017-08-01</td>
+                <td>正常</td>
+                <td>
+                    <a class="link-a" ng-click="vm.editTag()">编辑标签</a>
+                    <a class="link-a" ng-click="vm.updatePassword(item)">重置密码</a>
+                    <a href="" class="link-a">查看</a>
+                </td>
+            </tr>
+            </tbody>
+            <tr>
+                <td colspan="11" class="empty-row">没有找到符合条件的数据</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <uib-pagination boundary-links="true" items-per-page="vm.tableParams.count()"
+                        total-items="vm.totalElements"
+                        ng-model="vm.queryPage" ng-change="vm.pageChange(vm.queryPage)"
+                        max-size="10" class="pagination-sm pull-right"></uib-pagination>
+    </div>
+</div>
+
+<script type="text/ng-template" id="updatePassword.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">修改密码</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <form action=""  class="form-horizontal">
+            <div class="form-group">
+                <label for="password" class="col-xs-2 col-xs-offset-1 control-label">新密码</label>
+                <div class="col-xs-6">
+                    <input type="password" class="form-control" id="password" ng-model="$ctrl.password">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">保存</button>
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">取消</button>
+    </div>
+</script>

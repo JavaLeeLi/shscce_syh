@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="">
+                <img alt="Logo" src="">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav com_nav">
+                <li ng-class="{'active':header.state.includes('home')}" vn-navbar-submenu="header.subMenus.home"><a ui-sref="home">首页</a></li>
+                <li ng-class="{'active':header.state.includes('commodity')}" vn-navbar-submenu="header.subMenus.commodity"><a ui-sref="commodity">商品管理</a></li>
+                <li ng-class="{'active':header.state.includes('transaction')}" vn-navbar-submenu="header.subMenus.transaction"><a ui-sref="transaction.order">交易管理</a></li>
+                <li ng-class="{'active':header.state.includes('logistics')}" vn-navbar-submenu="header.subMenus.logistics"><a ui-sref="logistics">物流管理</a></li>
+                <li ng-class="{'active':header.state.includes('marketing')}" vn-navbar-submenu="header.subMenus.marketing"><a ui-sref="marketing.coupon">营销管理</a></li>
+                <li ng-class=''><a href="">店铺管理</a></li>
+                <li ng-class=''><a href="">私信管理</a></li>
+                <li ng-class=''><a href="">分销管理</a></li>
+                <li ng-class=''><a href="">统计管理</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">管理员</a></li>
+                <li>
+                    <a class="navbar-brand" href="">
+                        <img alt="退出" src="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

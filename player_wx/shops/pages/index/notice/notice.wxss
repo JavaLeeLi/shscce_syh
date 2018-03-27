@@ -1,0 +1,44 @@
+.swiper-tab{
+  width: 100%; 
+  border-bottom: 2rpx solid #777777; 
+  text-align: center; 
+  line-height: 80rpx;
+}
+.swiper-tab-list{
+  font-size: 30rpx; 
+  display: inline-block; 
+  width: 50%; 
+  color: #777777; 
+}
+.on{
+  color: red; 
+  border-bottom: 5rpx solid #da7c0c;
+}
+.swiper-box{ 
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+ }
+.swiper-box view{ 
+  text-align: center; 
+}
+
+.commodity-detail-center{
+margin-top: 0.5rem;
+}
+.commodity-detail-item {
+    
+    background-color: white;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.commodity-detail-item-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.commodity-detail-matters{
+    margin-top:15px; 
+}

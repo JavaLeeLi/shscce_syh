@@ -1,0 +1,120 @@
+<ul class="nav nav-pills mb20" ng-init="vm.tab = 'all'">
+    <li role="presentation" ng-class="{'active':vm.tab == 'all'}"><a ng-click="vm.switch('all')">所有订单</a></li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'to_pay'}"><a ng-click="vm.switch('to_pay')">待付款</a></li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'to_delivery'}"><a ng-click="vm.switch('to_delivery')">待发货</a></li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'to_receipt'}"><a ng-click="vm.switch('to_receipt')">待收货</a></li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'complete'}"><a ng-click="vm.switch('complete')">已完成</a></li>
+    <li role="presentation" ng-class="{'active':vm.tab == 'close'}"><a ng-click="vm.switch('close')">已关闭</a></li>
+</ul>
+
+<hr>
+<div class="row search-bar">
+    <form class="form-inline">
+        <div class="form-group col-md-4">
+            <label >手机号码</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+            <label >买家账号</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+            <label >买家姓名</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+            <label >订单号</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+            <label >订单类型</label>
+            <select class="form-control search-select" ng-model="vm.selectedSite" ng-options="x.site for x in vm.sites">
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label >付款方式</label>
+            <select class="form-control search-select" ng-model="vm.selectedSite" ng-options="x.site for x in vm.sites">
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label >订单日期</label>
+            <input type="text" class="form-control">
+            <label class="pl10">至</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-2 ">
+            <button type="submit" class="btn btn-info">搜索</button>
+            <!--<button type="submit" class="btn btn-default">重置</button>-->
+        </div>
+
+    </form>
+</div>
+<hr>
+
+<div class="div-header">
+    <div class="col-xs-1">选择</div>
+    <div class="col-xs-4">商品</div>
+    <div class="col-xs-2">订单金额</div>
+    <div class="col-xs-2">买家</div>
+    <div class="col-xs-1">订单状态</div>
+    <div class="col-xs-2">操作</div>
+</div>
+<div class="div-table" ng-repeat="user in allitem[currentPage-1]">
+    <div class="col-xs-12 small-row">
+        <div class="col-xs-6 ">订单号:
+            <span ng-bind="user.code"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span ng-bind="user.dt"></span>
+        </div>
+        <div class="col-xs-6  text-right">
+            <span ng-bind="user.pay_method"></span>
+        </div>
+    </div>
+    <div class="col-xs-12 table-row text-center bg-gray-1">
+        <div class="col-xs-1">
+            <input type="checkbox" ng-model="parentScrollable">
+        </div>
+        <div class="col-xs-4 commodity">
+            <div ><img alt="古钱币" src="" ></div>
+            <div >
+                <p>{{user.id}}</p>
+                <span class="price">￥5000.00</span>
+                <span class="num">{{user.num}}枚</span>
+            </div>
+        </div>
+        <div class="col-xs-2 price">
+            ￥{{user.num*5000}}
+        </div>
+        <div class="col-xs-2">{{user.gender}}</div>
+        <div class="col-xs-1">{{user.order}}</div>
+        <div class="col-xs-2">
+            <span class="cz">查看</span>
+            <span class="cz" ng-show="user.order == '待发货'">发货</span>
+            <span class="cz" ng-show="user.order == '待付款'">改价</span>
+            <span class="cz" ng-show="user.order == '待付款'">取消</span>
+            <span class="cz" ng-show="user.order == '待收货'">修改运单号</span>
+        </div>
+    </div>
+    <div class="col-xs-12 row-shadow"></div>
+</div>
+<div class="row">
+    <div class="col-xs-1 pt20">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">全选
+            </label>
+        </div>
+    </div>
+    <div class="col-xs-5 pt20">
+        <button class="btn-sm btn btn-default">批量发货</button>
+        <button class="btn btn-default btn-sm">导出查询结果</button>
+    </div>
+    <div class="col-md-2 text-right pt25" style="">
+        {{currentPage}}/{{totalPage}}页，共{{totalItems}}条记录
+    </div>
+    <div class="col-xs-4">
+        <uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage"  num-pages="totalPage" items-per-page="itemsPage" class="pagination-sm"></uib-pagination>
+    </div>
+</div>
+
+
+

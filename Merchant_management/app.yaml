@@ -1,0 +1,187 @@
+---
+# 默认配置
+default: &default
+
+  help: |
+    Usage: gulp [task] [options]
+
+    Options:
+    -e <env> 部署环境
+    -r/-r--false 是否对js/css文件追加hash值
+    -m/-m--false 是否压缩css/js文件
+    -w/-w--false 监听文件变化，并自动刷新页面
+    --vs_env 强制覆盖配置文件中的vs_env变量,例如：--vs_env APPNAME=demo&APIURL=demo&....=...
+    -local <name> 在项目根目录上搜索：local-<name>.yaml的自定义文件并覆盖默认配置文件
+    -local--false 强制不读取自定义文件
+
+  source: src
+  target: www
+  #构建相关的参数
+  build: &build
+    app_js:
+      - '{source}/**/*.js'
+      - '!{source}/mock/**/*.*'
+    lib_js:
+      - node_modules/lodash/lodash.js
+      - node_modules/angular-animate/angular-animate.js
+      - node_modules/angular-ui-router/release/angular-ui-router.js
+#      - node_modules/angular-sanitize/angular-sanitize.js
+      - node_modules/angular-resource/angular-resource.js
+      - node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js
+      - node_modules/angular-bootstrap-confirm/dist/angular-bootstrap-confirm.js
+      - node_modules/angular-ui-tree/dist/angular-ui-tree.js
+      - node_modules/ng-file-upload/dist/ng-file-upload-all.js
+      - node_modules/textangular/dist/textAngular-rangy.min.js
+      - node_modules/textangular/dist/textAngular-sanitize.min.js
+      - node_modules/textangular/dist/textAngularSetup.js
+      - node_modules/textangular/dist/textAngular.js
+      - node_modules/toastr/toastr.js
+      - node_modules/ui-select/dist/select.js
+      - node_modules/video.js/dist/video.js
+      - node_modules/angular-local-storage/dist/angular-local-storage.js
+      - node_modules/angular-carousel/dist/angular-carousel.js
+      - node_modules/cropper/dist/cropper.js
+      - node_modules/sweetalert/dist/sweetalert-min.js
+      - lib/app.js
+
+      - node_modules/echarts/dist/echarts.min.js
+    template_js:
+      - '{source}/**/*.html'
+      - '!{source}/index.thtml'
+
+    app_css:
+      - '{source}/app.scss'
+    app_css_watch:
+      - '{source}/**/*.scss'
+      - '!{source}/common/style/**/*.scss'
+      - '{source}/common/style/_variables.scss'
+      - '{source}/common/style/layout/_variables.scss'
+      - '{source}/common/style/theme/_default.scss'
+    lib_css:
+      - node_modules/sweetalert/dist/sweetalert.css
+#      - lib/ngQuickDate/ng-quick-date-plus-default-theme.css
+      - '{source}/common/style/bootstrap.scss'
+      - '{source}/common/style/global.scss'
+      - node_modules/animate.css/animate.css
+      - node_modules/ui-select/dist/select.css
+      - node_modules/toastr/build/toastr.css
+      - node_modules/textangular/dist/textAngular.css
+      - node_modules/video.js/dist/video-js.css
+      - node_modules/angular-carousel/dist/angular-carousel.css
+      - node_modules/cropper/dist/cropper.css
+
+    lib_css_watch:
+      - '{source}/common/style/**/*.scss'
+
+  #清理相关的工作
+  clean:
+    - '{target}/**/*.htm'
+    - '{target}/assets/js'
+    - '{target}/assets/css'
+    - '{target}/rev-manifest.json'
+    - '{target}/assets/css-src'
+    - '{target}/assets/js-src'
+
+  zip:
+    - '{target}/**/*'
+    - '!{target}/assets/css/app.css'
+    - '!{target}/assets/css/lib.css'
+    - '!{target}/assets/js/app.js'
+    - '!{target}/assets/js/lib.js'
+    - '!{target}/assets/js/template.js'
+
+  deploy: &deploy
+    ssh_home: /home/visionet/nginx_web/
+    ssh_shell:
+      - cd nginx_web
+      - rm -rf .vx-web-bak
+      - mv vx-web .vx-web-bak
+      - unzip -o www.zip -d vx-web
+      - rm -rf .vx-web
+      - mkdir .vx-web
+      - mkdir .vx-web/assets
+      - cd vx-web
+      - mv index.thtml ../.vx-web/
+      - cd assets
+      - mv css-src js-src ../../.vx-web/assets
+
+  #全局变量
+  vs_env: &vs_env
+    COPY_RIGHT: '© Copyright 2017 上海微企信息'
+    APPNAME: 'visionet2017'
+    APIURL: /conference
+    RESOURCE_BASE: /www/
+    HTML5MODE: false
+    #WEB_VIEW: 如果没有改属性则默认根据环境自动判断 如果为true/false为强制赋值
+    IMGSTYLE_MD: -md
+    IMGSTYLE_LG: -lg
+    IMGSTYLE_SM: -sm
+    CLIENT_ADDR: client/download/
+    MODULES:
+      - 'ui.router'
+      - templates
+      - 'ui.bootstrap'
+      - 'ui.tree'
+      - ngResource
+      - 'mwl.confirm'
+      - ngFileUpload
+      - 'ui.select'
+      - textAngular
+      - LocalStorageModule
+      - ngAnimate
+
+  appendJs: |
+
+  prependJs: |
+    'use strict';
+
+  #browser-sync配置参数
+  browserSync: &browserSync
+    server:
+      baseDir: '{target}'
+      index:
+        - index.htm
+    port: 30001
+    browser:
+      - google chrome
+    startPath: /#/home
+    reloadOnRestart: true
+    notify: false
+    open: external
+    files:
+      - {match: '{target}/**.*',options: {ignored: '*.css'}}
+  #代理相关的配置
+  browserSyncProxy: &browserSyncProxy
+#    route: /api  === vs_env.APIURL
+#    url: http://192.168.16.175:8080/conference/
+#阿里
+    url: http://139.224.29.241:8080/conference/
+
+
+  #压缩js,css文件
+  min: false
+
+  #js,css文件名追加hash值
+  rev: false
+
+  #默认任务是否需要实时刷新浏览器
+  watch: true
+
+  #是否压缩www文件夹
+#  zip: false
+
+# 开发配置
+dev:
+  <<: *default
+
+# 生产配置
+product:
+  <<: *default
+
+
+
+
+
+
+
+

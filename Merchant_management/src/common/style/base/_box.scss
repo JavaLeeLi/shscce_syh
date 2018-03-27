@@ -1,0 +1,15 @@
+@include box－util(margin,m,0,40,5);
+@include box－util(padding,p,0,40,5);
+@include box－util(border,b,0,8,1);
+
+@include border-color-util(bc,$brand-primary,primary);
+@include border-color-util(bc,$brand-info,info);
+@include border-color-util(bc,$brand-success,success);
+@include border-color-util(bc,$brand-warning,warning);
+@include border-color-util(bc,$brand-danger,danger);
+@include border-color-util(bc,$gray,gray);
+@include border-color-util(bc,$gray-base,base);
+@include border-color-util(bc,$gray-dark,dark);
+@include border-color-util(bc,$gray-darker,darker);
+@include border-color-util(bc,$gray-light,light);
+@include border-color-util(bc,$gray-lighter,lighter);

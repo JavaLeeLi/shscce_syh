@@ -1,0 +1,130 @@
+<view class='main'>
+    <view class='main-details'>
+        <!--顶部关注  -->
+        <view class='commodity-header'>
+            <view class='header-left'>
+                <view class='header-left-img'>
+                    <image src='../../image/imgError.jpg'></image>
+                </view>
+                <view class='header-left-username'>
+                    <view>
+                        <text>she</text>
+                    </view>
+                    <view>
+                        <text>Lv.4</text>
+                        <text>个人认证</text>
+                    </view>
+                </view>
+            </view>
+            <view class='header-right'>
+                <view class='header-right-left'>
+                    <icon type="success" size="20" />
+                </view>
+                <view class='header-right-right'>
+                    <icon type="success" size="20" />
+                </view>
+            </view>
+        </view>
+        <!--顶部轮播  -->
+        <view class='commodity-shuffling'>
+            <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}">
+                <block wx:for="{{movies}}" wx:for-index="index">
+                    <swiper-item>
+                        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <!--商品详情  -->
+
+        <view class='commodity-detail'>
+            <view class='commodity-detail-top'>
+                <view class='commodity-detail-top-left'>
+                    <view class='commodity-detail-top-left-img'>
+                        <image src='../../image/imgError.jpg'></image>
+                    </view>
+                </view>
+                <view class='commodity-detail-top-right'>
+                    <view class='commodity-detail-top-right-top'>
+                        <text>哦gj路</text>
+                    </view>
+                    <view class='commodity-detail-top-right-bottom'>
+                        <view class='detail-top-right-bottom-left'>￥7.00</view>
+                        <view class='detail-top-right-bottom-right'>13</view>
+                    </view>
+
+                </view>
+            </view>
+        </view>
+        <!--  详情-->
+        <view class='commodity-detail-center'>
+            <view class='commodity-detail-item'>
+                <view class='commodity-detail-item-list'>
+                    <view class='commodity-detail-item-list-left'>
+                        求购数量
+                    </view>
+                    <view class='commodity-detail-item-list-right'>
+                        198
+                    </view>
+                </view>
+            </view>
+            <view class='commodity-detail-item'>
+                <view class='commodity-detail-item-list'>
+                    <view class='commodity-detail-item-list-left'>
+                        求购数量
+                    </view>
+                    <view class='commodity-detail-item-list-right'>
+                        198
+                    </view>
+                </view>
+            </view>
+            <view class='commodity-detail-item'>
+                <view class='commodity-detail-item-list'>
+                    <view class='commodity-detail-item-list-left'>
+                        求购数量
+                    </view>
+                    <view class='commodity-detail-item-list-right'>
+                        198
+                    </view>
+                </view>
+            </view>
+            <view class='commodity-detail-item'>
+                <view class='commodity-detail-item-list'>
+                    <view class='commodity-detail-item-list-left'>
+                        求购数量
+                    </view>
+                    <view class='commodity-detail-item-list-right'>
+                        198
+                    </view>
+                </view>
+            </view>
+            <view class='commodity-detail-item'>
+                <view class='commodity-detail-item-list'>
+                    <view class='commodity-detail-item-list-left'>
+                        求购数量
+                    </view>
+                    <view class='commodity-detail-item-list-right'>
+                        198
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <!--注意事项  -->
+        <view class='commodity-detail-matters'>
+            <view class='commodity-detail-item'>
+                <view class='commodity-detail-item-list'>
+                    <view class='commodity-detail-item-list-left'>
+                        求购数量 :
+                        <text>hhhh </text>
+                    </view>
+
+                </view>
+            </view>
+        </view>
+        <!--发布按钮  -->
+        <view class='commodity-submit' bindtap='shopsupplys'>
+            <button class="weui-btn" type="warn">供货</button>
+        </view>
+    </view>
+</view>

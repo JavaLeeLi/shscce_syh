@@ -1,0 +1,30 @@
+.coolect {
+    width: 100%;
+    background-color: gray;
+    font-size: 14px;
+}
+page {
+    background-color: #edf0f3;
+}
+
+.collect-top {
+    width: 100%;
+    display: flex;
+    background-color: white;
+    border-bottom:  1px solid black;
+}
+
+.top-left {
+    width: 30%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.top-left image {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+.right-botton{
+    color: red;
+}

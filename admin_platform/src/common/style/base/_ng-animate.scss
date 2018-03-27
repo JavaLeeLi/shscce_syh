@@ -1,0 +1,22 @@
+.vs-fade-in{
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.vs-fade-in.ng-enter{
+  animation-name: fadeIn;
+}
+
+.vs-fade-in.ng-leave{
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,155 @@
+<ul class="nav nav-pills mb20" ng-init="vm.tab = 'all'">
+    <li role="presentation" ng-class="{'active':vm.tab == 'all'}"><a ng-click="vm.switch('all')">管理模板</a></li>
+</ul>
+
+<div class="row">
+    <div class="table-responsive col-xs-12">
+        <table class="table table-hover text-center" >
+            <thead>
+            <tr>
+                <td width="40%">模板名称</td>
+                <td width="20%">是否包邮</td>
+                <td width="20%">计价方式</td>
+                <td width="20%">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in vm.data">
+                <td >{{user.code}}</td>
+                <td >{{user.status}}</td>
+                <td >{{user.dt}}</td>
+                <td >
+                    <span class="cz">编辑</span>
+                    <a mwl-confirm on-confirm="vm.delete($index)" title="确定删除吗?" confirm-text="确定" cancel-text="取消" placement="left">
+                        <span class="cz">删除</span>
+                    </a>
+                    <span class="cz">复制</span>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>
+</div>
+
+<!--<uib-tabset type="pills mb20">
+    <uib-tab heading="管理模板">
+        <div class="row">
+            <div class="table-responsive col-xs-12">
+                <table class="table table-hover text-center" >
+                    <thead>
+                    <tr>
+                        <td width="40%">模板名称</td>
+                        <td width="20%">是否包邮</td>
+                        <td width="20%">计价方式</td>
+                        <td width="20%">操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="user in vm.data">
+                        <td >{{user.code}}</td>
+                        <td >{{user.status}}</td>
+                        <td >{{user.dt}}</td>
+                        <td >
+                            <span class="cz">编辑</span>
+                            <a mwl-confirm on-confirm="vm.delete($index)" title="确定删除吗?" confirm-text="确定" cancel-text="取消" placement="left">
+                                <span class="cz">删除</span>
+                            </a>
+                            <span class="cz">复制</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            </div>
+        </div>
+    </uib-tab>
+
+    <uib-tab heading="新增模板">
+        <div class="row search-bar">
+            <form class="form-inline form-padding">
+                <div class="form-group">
+                    <label >运费模板名称：</label>
+                    <input type="text" class="form-control form-template">
+                </div><br>
+                <div class="form-group">
+                    <label class="label-title">发货地址：</label>
+                    <select class="form-control search-select" >
+                        <option value="0">请选择省份</option>
+                        <option ng-repeat="x in vm.sites">{{x.site}}</option>
+                    </select>
+                    <select class="form-control search-select" >
+                        <option value="0">请选择城市</option>
+                        <option ng-repeat="x in vm.sites">{{x.site}}</option>
+                    </select>
+                    <select class="form-control search-select" >
+                        <option value="0">请选择区县</option>
+                        <option ng-repeat="x in vm.sites">{{x.site}}</option>
+                    </select>
+                    <select class="form-control search-select" >
+                        <option value="0">请选择街道</option>
+                        <option ng-repeat="x in vm.sites">{{x.site}}</option>
+                    </select>
+                </div><br>
+                <div class="form-group">
+                    <label class="label-title">是否包邮：</label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="否">自定义运费 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="是">卖家承担运费
+                </div><br>
+                <div class="form-group">
+                    <label class="label-title">发货时间：</label>
+                    <select class="form-control search-select" >
+                        <option value="0">请选择发货时间</option>
+                        <option ng-repeat="x in vm.sites">{{x.site}}</option>
+                    </select>
+                </div><br>
+                <div class="form-group">
+                    <label class="label-title">计价方式：</label>
+                    <input type="radio" name="optionsRadios2" id="optionsRadios2_1" value="按件数">按件数 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="optionsRadios2" id="optionsRadios2_2" value="按重量">按重量 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="optionsRadios2" id="optionsRadios2_3" value="按体积">按体积
+                </div><br>
+                <div class="form-group col-xs-12" style="display: inline-flex">
+                    <label class="label-title-table">运送方式：</label>
+                    <div class="row col-xs-10 transport">
+                        <div class="table-responsive col-xs-12">
+                            <table class="table table-hover text-center table-solid" style="border: 1px solid #dddddd;">
+                                <thead>
+                                <tr>
+                                    <td width="20%">运送到</td>
+                                    <td width="20%">首件(件)</td>
+                                    <td width="20%">首费(元)</td>
+                                    <td width="20%">续件(件)</td>
+                                    <td width="20%">续费(元)</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="user in vm.data2">
+                                    <td >{{user.code}}</td>
+                                    <td >{{user.dt}}</td>
+                                    <td >{{user.id}}</td>
+                                    <td >{{user.dt}}</td>
+                                    <td >{{user.id}}</td>
+                                </tr>
+                                </tbody>
+                                <tfoot></tfoot>
+                            </table>
+                            <div class="add">
+                                <a>
+                                    <i class="fa fa-plus-circle" aria-hidden="true" style="color: #0000AA;"></i>
+                                    <span class="cz">添加配送区域与运费</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-info btn-save">保存</button>
+                </div>
+            </form>
+        </div>
+
+    </uib-tab>
+</uib-tabset>-->
+
+

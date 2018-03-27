@@ -1,0 +1,16 @@
+<div ui-tree-handle>
+  <a ng-click="item.open = !item.open">
+    <i class="fa" ng-if="item.childs.length > 0" ng-class="{'fa-plus-square-o': !item.open, 'fa-minus-square-o': item.open}"></i>
+    <span ng-bind="item.name"></span>
+  </a>
+  <a ng-click="vm.showSaveModal(item.id)">
+    <i class="fa fa-plus"></i>
+  </a>
+  <a mwl-confirm title="确定删除吗?" on-confirm="vm.remove(item,$index)" >
+    <i class="fa fa-close"></i>
+  </a>
+</div>
+
+<ul class="list-unstyled" ng-model="item.childs" ui-tree-nodes ng-show="item.open && item.childs.length > 0" >
+  <li ng-repeat="item in item.childs" ui-tree-node ng-include="'common/component/tree-node/tree-node'"></li>
+</ul>

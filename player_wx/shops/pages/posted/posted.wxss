@@ -1,0 +1,127 @@
+.containers {
+    background-color: gray;
+    font-size: 14px;
+}
+
+.main {
+    position: fixed;
+    width: 100%;
+    bottom: 150px;
+}
+
+.main-top {
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+}
+
+.main-bottom {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+.purchase {
+    display: flex;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.purchase-sell-botton {
+    display: flex;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.purchase-sell-top {
+    width: 60px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchase-sell-top image {
+    width: 85%;
+    height: 65%;
+}
+
+.purchase-sell-bottom {
+    text-align: center;
+}
+
+.sold {
+    display: flex;
+    background-color: white;
+    border-radius: 100%;
+    justify-content: center;
+}
+
+.sold-sell-top {
+    width: 60px;
+    height: 50px;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sold-sell-top image {
+    width: 85%;
+    height: 65%;
+}
+
+.sold-sell-botton {
+    text-align: center;
+}
+
+.sold-sell-botton  {
+    text-align: center;
+}
+.bidding-sell-top {
+    width: 60px;
+    height: 50px;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bidding-sell-top image {
+    width: 85%;
+    height: 65%;
+}
+
+.bidding-sell-botton {
+    text-align: center;
+}
+.bidding {
+    display: flex;
+    background-color: #fff;
+    border-radius: 100%;
+    justify-content: center;
+}
+.commodity_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.2;
+    overflow: hidden;
+    z-index: 1000;
+    color: #fff;
+}
+
+.commodity_attr_box {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    background: #fff;
+    padding-top: 20rpx;
+}

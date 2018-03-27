@@ -1,0 +1,16 @@
+<h3>商家促销工具</h3>
+<div class="box-flex">
+    <div class="tool" ng-repeat="item in vm.tools">
+        <div class="media">
+            <div class="media-left media-middle">
+                <div class="logo">
+                    <span ng-bind="item.logo"></span>
+                </div>
+            </div>
+            <div class="media-body">
+                <div class="media-heading title" ng-bind="item.title"></div>
+                <div ng-bind="item.content"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,352 @@
+<!--index.wxml-->
+<view class="containers">
+<!--我的  -->
+    <view class='mine-top'>
+        <view class='mine-top-left'></view>
+        <view class='mine-top-center'>我的</view>
+        <view class='mine-top-img' bindtap='showSetting'>
+                <view class='mine-top-set-img'>
+                    <image src='../image/setting.png'></image>
+                </view>
+        </view>
+    </view>
+    <view bindtap="bindViewTap" class="userinfo">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <view>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <text class='name-top-right' bindtap="showDialogBtn">我要认证</text>
+            <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+            <view class="modal-dialog" wx:if="{{showModal}}">
+                <view class='mine-personal-close' bindtap='hideModal'>
+                    <image src='../image/close.png'></image>
+                </view>
+                <view class="modal-title">请选择认证类型</view>
+                <view class="modal-footer">
+                    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">个人认证</view>
+                    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">商家认证</view>
+                </view>
+            </view>
+        </view>
+        <view class='user-top-levles'>
+            <text class='user-top-levle'>
+                <text>Lv.4</text>
+                <text>未认证</text>
+            </text>
+        </view>
+    </view>
+    <!--我的分类  -->
+    <view class='user-tab'>
+
+        <view class='user-tab-content'>
+            <view class='user-tab-item' bindtap='showCollect'>
+                <view class='user-tab-item-img'>
+                    <image src='../image/collect.png'></image>
+                </view>
+                <view>
+                    <text>收藏</text>
+                </view>
+                <view>
+                    <text>1</text>
+                </view>
+
+            </view>
+            <view class='user-tab-item' bindtap='showPayto'>
+                <view class='user-tab-item-img'>
+                    <image src='../image/Payto.png'></image>
+                </view>
+                <view>
+                    <text>关注</text>
+                </view>
+                <view>
+                    <text>1</text>
+                </view>
+            </view>
+            <view class='user-tab-item' bindtap='showIncome'>
+                <view class='user-tab-item-img'>
+                    <image src='../image/income.png'></image>
+                </view>
+                <view>
+                    <text>收入</text>
+                </view>
+                <view>
+                    <text>1</text>
+                </view>
+            </view>
+        </view>
+
+
+    </view>
+    <!--我的功能  -->
+
+    <view class='user-type-tab'>
+        <view class='user-tab-type-content'>
+            <view class='user-tab-type-item' bindtap='showCoupon'>
+                <view class='user-tab-type-item-icon'>
+                    <image src='../image/coupon.png'></image>
+                    <view>
+                        <text>优惠券</text>
+                    </view>
+                </view>
+
+            </view>
+            <view class='user-tab-type-item' bindtap='showPurse'>
+                <view class='user-tab-type-item-icon'>
+                    <image src='../image/purse.png'></image>
+                    <view>
+                        <text>钱包</text>
+                    </view>
+                </view>
+
+            </view>
+            <view class='user-tab-type-item' bindtap='showRoughdraft'>
+                <view class='user-tab-type-item-icon'>
+                    <image src='../image/roughdraft.png'></image>
+                    <view>
+                        <text>草稿</text>
+                    </view>
+                </view>
+
+            </view>
+            <view class='user-tab-type-item' bindtap='showAddress'>
+                <view class='user-tab-type-item-icon'>
+                    <image src='../image/address.png'></image>
+                    <view>
+                        <text>地址</text>
+                    </view>
+                </view>
+
+            </view>
+            <view class='user-tab-type-item'>
+                <view class='user-tab-type-item-icon'>
+                    <image src='../image/showdata.png'></image>
+                    <view>
+                        <text>数据</text>
+                    </view>
+                </view>
+
+            </view>
+            <view class='user-tab-type-item' bindtap='showService'>
+                <view class='user-tab-type-item-icon'>
+                    <image src='../image/service.png'></image>
+                    <view>
+                        <text>服务中心</text>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+
+    <!--我的买单  -->
+
+    <view class='my-order'>
+        <view class='my-order-left'>
+            <view class='order-left'>
+                <text>我的买单(6)</text>
+            </view>
+        </view>
+        <view class='my-order-right'>
+            <navigator url='../mine/myorder/myorder'>查看全部订单</navigator>
+        </view>
+    </view>
+
+    <!--买单列表  -->
+
+    <view class='order-list'>
+        <view class='order-list-item'>
+            <view class='work-order-left'>
+                <image src='../image/index.png'></image>
+                <view>
+                    <text>09月28日</text>
+                    <text>15.41</text>
+                </view>
+            </view>
+            <view class='work-order-center'>
+                <image src='../image/index.png'></image>
+            </view>
+
+            <view class='work-order-right'>
+                <view class='order-right-top'>
+                    <text>一个</text>
+                </view>
+                <view class='order-right-center'>
+                    <view class='right-center-left'>
+                        <text>待支付</text>
+                    </view>
+                    <view class='right-center-right'>
+                        <text>￥12.00</text>
+                    </view>
+                </view>
+                <view class='order-right-botton'>
+                    <text>￥100.0</text>
+                </view>
+            </view>
+        </view>
+        <!-- <view class='work-order-left'>
+            <image src='../image/index.png'></image>
+            <text>09月28日</text>
+            <text>15.41</text>
+        </view>
+        <view class='work-order-left'>
+            <image src='../image/index.png'></image>
+            <text>09月28日</text>
+            <text>15.41</text>
+        </view> -->
+    </view>
+    <view class='order-list'>
+        <view class='order-list-item'>
+            <view class='work-order-left'>
+                <image src='../image/index.png'></image>
+                <view>
+                    <text>09月28日</text>
+                    <text>15.41</text>
+                </view>
+            </view>
+            <view class='work-order-center'>
+                <image src='../image/index.png'></image>
+            </view>
+
+            <view class='work-order-right'>
+                <view class='order-right-top'>
+                    <text>一个</text>
+                </view>
+                <view class='order-right-center'>
+                    <view class='right-center-left'>
+                        <text>待支付</text>
+                    </view>
+                    <view class='right-center-right'>
+                        <text>￥12.00</text>
+                    </view>
+                </view>
+                <view class='order-right-botton'>
+                    <text>￥100.0</text>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <!--我的卖单  -->
+    <view class='my-order'>
+        <view class='my-order-left'>
+            <view class='order-left'>
+                <text>我的卖单(6)</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='order-list'>
+        <view class='order-list-item'>
+            <view class='work-order-left'>
+                <image src='../image/index.png'></image>
+                <view>
+                    <text>09月28日</text>
+                    <text>15.41</text>
+                </view>
+            </view>
+            <view class='work-order-center'>
+                <image src='../image/index.png'></image>
+            </view>
+
+            <view class='work-order-right'>
+                <view class='order-right-top'>
+                    <text>一个</text>
+                </view>
+                <view class='order-right-center'>
+                    <view class='right-center-left'>
+                        <text>待支付</text>
+                    </view>
+                </view>
+                <view class='order-right-botton'>
+                    <text>￥100.0</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='order-list'>
+        <view class='order-list-item'>
+            <view class='work-order-left'>
+                <image src='../image/index.png'></image>
+                <view>
+                    <text>09月28日</text>
+                    <text>15.41</text>
+                </view>
+            </view>
+            <view class='work-order-center'>
+                <image src='../image/index.png'></image>
+            </view>
+
+            <view class='work-order-right'>
+                <view class='order-right-top'>
+                    <text>一个</text>
+                </view>
+                <view class='order-right-center'>
+                    <view class='right-center-left'>
+                        <text>待支付</text>
+                    </view>
+                </view>
+                <view class='order-right-botton'>
+                    <text>￥100.0</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='order-list'>
+        <view class='order-list-item'>
+            <view class='work-order-left'>
+                <image src='../image/index.png'></image>
+                <view>
+                    <text>09月28日</text>
+                    <text>15.41</text>
+                </view>
+            </view>
+            <view class='work-order-center'>
+                <image src='../image/index.png'></image>
+            </view>
+
+            <view class='work-order-right'>
+                <view class='order-right-top'>
+                    <text>一个</text>
+                </view>
+                <view class='order-right-center'>
+                    <view class='right-center-left'>
+                        <text>待支付</text>
+                    </view>
+                </view>
+                <view class='order-right-botton'>
+                    <text>￥100.0</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='order-list'>
+        <view class='order-list-item'>
+            <view class='work-order-left'>
+                <image src='../image/index.png'></image>
+                <view>
+                    <text>09月28日</text>
+                    <text>15.41</text>
+                </view>
+            </view>
+            <view class='work-order-center'>
+                <image src='../image/index.png'></image>
+            </view>
+
+            <view class='work-order-right'>
+                <view class='order-right-top'>
+                    <text>一个</text>
+                </view>
+                <view class='order-right-center'>
+                    <view class='right-center-left'>
+                        <text>待支付</text>
+                    </view>
+                </view>
+                <view class='order-right-botton'>
+                    <text>￥100.0</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

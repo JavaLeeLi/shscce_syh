@@ -1,0 +1,66 @@
+$theme-style: 'rounded';
+$theme-type: 'material-design';
+
+@import "theme/default";
+@import "variables";
+@import "layout/variables";
+
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+@import "mixin/**/*.scss";
+@import "plugins/**/*.scss";
+@import "base/**/*.scss";
+@import "component/**/*.scss";
+
+html, body, div{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 1024px;
+}
+.col-md-1{
+
+}
+.cancelannimate *.ng-hide-add, .cancelannimate *.ng-hide-remove {
+    transition: all linear 0s !important;
+}
+[ui-view], ui-view {
+    display: block;
+}
+
+[ui-view = 'header']{
+    margin-bottom: 30px;
+    position: relative;
+}
+.content_banner{
+    background-color: #e5e5e5;
+    margin-bottom: 30px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+.title_section{
+    color: #111;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+a{
+    text-decoration: none;
+    outline: 0;
+    background-color: transparent;
+    transition: all 0.2s;
+}
+
+.nav-tabs > li > a{
+    background-color: #f5f5f5;
+    border:1px solid #eee;
+    margin-right:0px;
+    color: #999;
+    font-weight: 700;
+    font-size: 14px;
+}
